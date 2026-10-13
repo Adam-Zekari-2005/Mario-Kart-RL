@@ -1,0 +1,87 @@
+AUDIT MooMooMeadows: objects=5125, missingScripts=0, missingMeshes=16, missingSkins=0, unsupportedMaterials=94
+Missing mesh: Baby Mario/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Luigi/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Mario/StandardKart/Kart/Tires/TIRE BL/TireChild/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Shyguy/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Waluigi/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Shyguy/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Lemmy/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Toad/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Waluigi/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Lemmy/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Baby Mario/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Luigi/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Mario/StandardKart/Kart/Tires/TIRE BR/TireChild/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Toad/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Peach/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Peach/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+AUDIT Toad Harbor: objects=8438, missingScripts=0, missingMeshes=16, missingSkins=0, unsupportedMaterials=34
+Missing mesh: Peach/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Luigi/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Toad/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Lemmy/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Shyguy/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Waluigi/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Toad/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Mario/StandardKart/Kart/Tires/TIRE BL/TireChild/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Luigi/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Mario/StandardKart/Kart/Tires/TIRE BR/TireChild/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Lemmy/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Baby Mario/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Waluigi/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Baby Mario/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Peach/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Shyguy/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001
+AUDIT Mario Circuit: objects=4364, missingScripts=0, missingMeshes=18, missingSkins=0, unsupportedMaterials=24
+Missing mesh: Waluigi/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Toad/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: DisplayCar/Tires (1)/TIRE BL/TireChild/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Baby Mario/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Mario/StandardKart/Kart/Tires/TIRE BR/TireChild/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: DisplayCar/Tires (1)/TIRE BR/TireChild/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Toad/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Shyguy/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Luigi/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Mario/StandardKart/Kart/Tires/TIRE BL/TireChild/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Baby Mario/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Lemmy/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Waluigi/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Shyguy/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Luigi/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Peach/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Peach/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Lemmy/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+AUDIT Rainbow Road: objects=5091, missingScripts=0, missingMeshes=16, missingSkins=0, unsupportedMaterials=24
+Missing mesh: Mario/StandardKart/Kart/Tires/TIRE BL/TireChild/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Luigi/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Baby Mario/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Peach/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Peach/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Shyguy/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Luigi/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Waluigi/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Waluigi/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Lemmy/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Mario/StandardKart/Kart/Tires/TIRE BR/TireChild/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Shyguy/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Lemmy/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Baby Mario/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Toad/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Toad/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001
+AUDIT Water Park: objects=4452, missingScripts=0, missingMeshes=16, missingSkins=0, unsupportedMaterials=25
+Missing mesh: Waluigi/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Baby Mario/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Peach/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Toad/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Lemmy/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Waluigi/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Toad/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Lemmy/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Luigi/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Baby Mario/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Peach/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Shyguy/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Mario/StandardKart/Kart/Tires/TIRE BL/TireChild/BackTire1Main/TireB (1)/Cylinder003_001
+Missing mesh: Mario/StandardKart/Kart/Tires/TIRE BR/TireChild/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Luigi/StandardKart/Kart/Tires/BackTire2Main/TireB (2)/Cylinder003_001
+Missing mesh: Shyguy/StandardKart/Kart/Tires/BackTire1Main/TireB (1)/Cylinder003_001

@@ -1,0 +1,122 @@
+[
+  {
+    "source": "ANimations\\Toads\\TOAD.blend",
+    "fbx": "ANimations\\Toads\\TOAD.fbx",
+    "bytes": 134044
+  },
+  {
+    "source": "Models\\Characters\\Baby Mario.blend",
+    "fbx": "Models\\Characters\\Baby Mario.fbx",
+    "bytes": 478012
+  },
+  {
+    "source": "Models\\Characters\\Lemmy.blend",
+    "fbx": "Models\\Characters\\Lemmy.fbx",
+    "bytes": 574348
+  },
+  {
+    "source": "Models\\Characters\\Luigi.blend",
+    "fbx": "Models\\Characters\\Luigi.fbx",
+    "bytes": 570780
+  },
+  {
+    "source": "Models\\Characters\\Mario.blend",
+    "fbx": "Models\\Characters\\Mario.fbx",
+    "bytes": 1745740
+  },
+  {
+    "source": "Models\\Characters\\Peach.blend",
+    "fbx": "Models\\Characters\\Peach.fbx",
+    "bytes": 535948
+  },
+  {
+    "source": "Models\\Characters\\Shyguy.blend",
+    "fbx": "Models\\Characters\\Shyguy.fbx",
+    "bytes": 460380
+  },
+  {
+    "source": "Models\\Characters\\Toad.blend",
+    "fbx": "Models\\Characters\\Toad.fbx",
+    "bytes": 448732
+  },
+  {
+    "source": "Models\\Characters\\Waluigi.blend",
+    "fbx": "Models\\Characters\\Waluigi.fbx",
+    "bytes": 563356
+  },
+  {
+    "source": "Models\\Cows\\CowRegularStandAndWalkBlend.blend",
+    "fbx": "Models\\Cows\\CowRegularStandAndWalkBlend.fbx",
+    "bytes": 307084
+  },
+  {
+    "source": "Models\\Cows\\CowSitBlend.blend",
+    "fbx": "Models\\Cows\\CowSitBlend.fbx",
+    "bytes": 165516
+  },
+  {
+    "source": "Models\\Glider\\Glider.blend",
+    "fbx": "Models\\Glider\\Glider.fbx",
+    "bytes": 62252
+  },
+  {
+    "source": "Models\\Items\\Bo bomb\\Bobomb-Hold.blend",
+    "fbx": "Models\\Items\\Bo bomb\\Bobomb-Hold.fbx",
+    "bytes": 88076
+  },
+  {
+    "source": "Models\\Items\\Bo bomb\\BobombItem.blend",
+    "fbx": "Models\\Items\\Bo bomb\\BobombItem.fbx",
+    "bytes": 99532
+  },
+  {
+    "source": "Models\\Items\\Bullet Bill\\BulletBillPlayer.blend",
+    "fbx": "Models\\Items\\Bullet Bill\\BulletBillPlayer.fbx",
+    "bytes": 314924
+  },
+  {
+    "source": "Models\\Kart\\Tire\\TireB.blend",
+    "fbx": "Models\\Kart\\Tire\\TireB.fbx",
+    "bytes": 77916
+  },
+  {
+    "source": "Models\\Kart\\TireArm.blend",
+    "fbx": "Models\\Kart\\TireArm.fbx",
+    "bytes": 44780
+  },
+  {
+    "source": "Models\\MooMoo Meadows\\StartFlagBlend.blend",
+    "fbx": "Models\\MooMoo Meadows\\StartFlagBlend.fbx",
+    "bytes": 58876
+  },
+  {
+    "source": "Models\\Test\\Pyramid.blend",
+    "fbx": "Models\\Test\\Pyramid.fbx",
+    "bytes": 11324
+  },
+  {
+    "source": "Models\\TireSTD\\TIRES.blend",
+    "fbx": "Models\\TireSTD\\TIRES.fbx",
+    "bytes": 80620
+  },
+  {
+    "source": "Models\\Wii U - Mario Kart 8 - Toad Harbor\\LargeRamp.blend",
+    "fbx": "Models\\Wii U - Mario Kart 8 - Toad Harbor\\LargeRamp.fbx",
+    "bytes": 23900
+  },
+  {
+    "source": "Models\\Wii U - Mario Kart 8 - Toad Harbor\\PalmTree\\PalmTree.blend",
+    "fbx": "Models\\Wii U - Mario Kart 8 - Toad Harbor\\PalmTree\\PalmTree.fbx",
+    "bytes": 239740
+  },
+  {
+    "source": "Models\\Wii U - Mario Kart 8 - Toad Harbor\\PalmTree.blend",
+    "fbx": "Models\\Wii U - Mario Kart 8 - Toad Harbor\\PalmTree.fbx",
+    "bytes": 239740
+  },
+  {
+    "source": "Models\\Wii U - Mario Kart 8 - Toad Harbor\\ToadHarborBlend.blend",
+    "fbx": "Models\\Wii U - Mario Kart 8 - Toad Harbor\\ToadHarborBlend.fbx",
+    "bytes": 8252700
+  }
+]

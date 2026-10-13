@@ -1,0 +1,45 @@
+TAKE Armature|BoostTurnRightWithItem source=Armature|BoostTurnRightWithItem
+TAKE Armature|BoostWithItemNormal source=Armature|BoostWithItemNormal
+TAKE Armature|FirstPlace source=Armature|FirstPlace
+TAKE Armature|GliderTrick source=Armature|GliderTrick
+TAKE Armature|Hasitem source=Armature|Hasitem
+TAKE Armature|HitByOpponent source=Armature|HitByOpponent
+TAKE Armature|HitOpponentItem source=Armature|HitOpponentItem
+TAKE Armature|JumpTrick1 source=Armature|JumpTrick1
+TAKE Armature|JumpTrick2 source=Armature|JumpTrick2
+TAKE Armature|LoseAnim source=Armature|LoseAnim
+TAKE Armature|Normal source=Armature|Normal
+TAKE Armature|NormalWithItem source=Armature|NormalWithItem
+TAKE Armature|Reverse source=Armature|Reverse
+TAKE Armature|ThrowBackwards source=Armature|ThrowBackwards
+TAKE Armature|ThrowForwardShell source=Armature|ThrowForwardShell
+TAKE Armature|TurningLeftWithItem source=Armature|TurningLeftWithItem
+TAKE Armature|TurnLeft source=Armature|TurnLeft
+TAKE Armature|TurnRight source=Armature|TurnRight
+TAKE Armature|TurnRightWithItem source=Armature|TurnRightWithItem
+UNMATCHED Default Take
+UNMATCHED BoostTurnLeftWithItem
+BOUND BoostTurnRightWithItem -> Armature|BoostTurnRightWithItem
+BOUND BoostWithItemNormal -> Armature|BoostWithItemNormal
+BOUND Hasitem -> Armature|Hasitem
+BOUND Normal -> Armature|Normal
+BOUND NormalWithItem -> Armature|NormalWithItem
+BOUND TurningLeftWithItem -> Armature|TurningLeftWithItem
+BOUND TurnLeft -> Armature|TurnLeft
+BOUND TurnRight -> Armature|TurnRight
+BOUND TurnRightWithItem -> Armature|TurnRightWithItem
+BOUND ThrowForwardShell -> Armature|ThrowForwardShell
+BOUND ThrowBackwards -> Armature|ThrowBackwards
+BOUND GliderTrick -> Armature|GliderTrick
+BOUND HitOpponentItem -> Armature|HitOpponentItem
+BOUND FirstPlace -> Armature|FirstPlace
+BOUND HitByOpponent -> Armature|HitByOpponent
+BOUND Reverse -> Armature|Reverse
+BOUND LoseAnim -> Armature|LoseAnim
+BOUND JumpTrick1 -> Armature|JumpTrick1
+BOUND JumpTrick2 -> Armature|JumpTrick2
+MooMooMeadows BOMB skins: ItemBomhei__m_ItemBomhei material=Bobomb, ItemBomhei__m_ItemBomhei_001 material=Bobomb Glow
+Toad Harbor BOMB skins: ItemBomhei__m_ItemBomhei material=Bobomb, ItemBomhei__m_ItemBomhei_001 material=Bobomb Glow
+Mario Circuit BOMB skins: ItemBomhei__m_ItemBomhei material=Bobomb, ItemBomhei__m_ItemBomhei_001 material=Bobomb Glow
+Rainbow Road BOMB skins: ItemBomhei__m_ItemBomhei material=Bobomb, ItemBomhei__m_ItemBomhei_001 material=Bobomb Glow
+Water Park BOMB skins: ItemBomhei__m_ItemBomhei material=Bobomb, ItemBomhei__m_ItemBomhei_001 material=Bobomb Glow

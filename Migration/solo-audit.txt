@@ -1,0 +1,5 @@
+SOLO MooMooMeadows: removed=7, humans=1, botsRemaining=0, registeredRacers=1
+SOLO Toad Harbor: removed=7, humans=1, botsRemaining=0, registeredRacers=1
+SOLO Mario Circuit: removed=7, humans=1, botsRemaining=0, registeredRacers=1
+SOLO Rainbow Road: removed=7, humans=1, botsRemaining=0, registeredRacers=1
+SOLO Water Park: removed=7, humans=1, botsRemaining=0, registeredRacers=1

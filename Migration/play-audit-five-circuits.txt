@@ -1,0 +1,14 @@
+PLAY MooMooMeadows: simulatedSeconds=35,0, raceStarted=True, botsMoved=0/0, errors=0
+
+PLAY Toad Harbor: simulatedSeconds=35,0, raceStarted=True, botsMoved=0/0, errors=0
+
+PLAY Mario Circuit: simulatedSeconds=35,0, raceStarted=True, botsMoved=0/0, errors=1
+Recovery returns to a saved track position
+UnityEngine.Debug:Assert (bool,string)
+MigrationPlayAudit:Tick () (at Assets/Editor/Migration/MigrationPlayAudit.cs:96)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+PLAY Rainbow Road: simulatedSeconds=35,0, raceStarted=True, botsMoved=0/0, errors=0
+
+PLAY Water Park: simulatedSeconds=35,0, raceStarted=True, botsMoved=0/0, errors=0
+

@@ -1,0 +1,52 @@
+PLAY MooMooMeadows: simulatedSeconds=35,0, raceStarted=True, botsMoved=7/7, errors=1
+UnassignedReferenceException: The variable renderers of Bobomb has not been assigned.
+You probably need to assign the renderers variable of the Bobomb script in the inspector.
+UnityEngine.Object+MarshalledUnityObject.TryThrowEditorNullExceptionObject (UnityEngine.Object unityObj, System.String parameterName) (at <93e6391e4688454a985ab5dc6ed6bd98>:0)
+UnityEngine.Bindings.ThrowHelper.ThrowNullReferenceException (System.Object obj) (at <93e6391e4688454a985ab5dc6ed6bd98>:0)
+UnityEngine.Renderer.SetMaterial (UnityEngine.Material m) (at <93e6391e4688454a985ab5dc6ed6bd98>:0)
+UnityEngine.Renderer.set_material (UnityEngine.Material value) (at <93e6391e4688454a985ab5dc6ed6bd98>:0)
+Bobomb.Start () (at Assets/Scripts/Items/Bobomb.cs:48)
+UnityEngine.StackTraceUtility:ExtractStringFromExceptionInternal(Object, String&, String&)
+
+PLAY Toad Harbor: simulatedSeconds=35,0, raceStarted=True, botsMoved=7/7, errors=1
+UnassignedReferenceException: The variable renderers of Bobomb has not been assigned.
+You probably need to assign the renderers variable of the Bobomb script in the inspector.
+UnityEngine.Object+MarshalledUnityObject.TryThrowEditorNullExceptionObject (UnityEngine.Object unityObj, System.String parameterName) (at <93e6391e4688454a985ab5dc6ed6bd98>:0)
+UnityEngine.Bindings.ThrowHelper.ThrowNullReferenceException (System.Object obj) (at <93e6391e4688454a985ab5dc6ed6bd98>:0)
+UnityEngine.Renderer.SetMaterial (UnityEngine.Material m) (at <93e6391e4688454a985ab5dc6ed6bd98>:0)
+UnityEngine.Renderer.set_material (UnityEngine.Material value) (at <93e6391e4688454a985ab5dc6ed6bd98>:0)
+Bobomb.Start () (at Assets/Scripts/Items/Bobomb.cs:48)
+UnityEngine.StackTraceUtility:ExtractStringFromExceptionInternal(Object, String&, String&)
+
+PLAY Mario Circuit: simulatedSeconds=35,0, raceStarted=True, botsMoved=7/7, errors=1
+UnassignedReferenceException: The variable renderers of Bobomb has not been assigned.
+You probably need to assign the renderers variable of the Bobomb script in the inspector.
+UnityEngine.Object+MarshalledUnityObject.TryThrowEditorNullExceptionObject (UnityEngine.Object unityObj, System.String parameterName) (at <93e6391e4688454a985ab5dc6ed6bd98>:0)
+UnityEngine.Bindings.ThrowHelper.ThrowNullReferenceException (System.Object obj) (at <93e6391e4688454a985ab5dc6ed6bd98>:0)
+UnityEngine.Renderer.SetMaterial (UnityEngine.Material m) (at <93e6391e4688454a985ab5dc6ed6bd98>:0)
+UnityEngine.Renderer.set_material (UnityEngine.Material value) (at <93e6391e4688454a985ab5dc6ed6bd98>:0)
+Bobomb.Start () (at Assets/Scripts/Items/Bobomb.cs:48)
+UnityEngine.StackTraceUtility:ExtractStringFromExceptionInternal(Object, String&, String&)
+
+PLAY Rainbow Road: simulatedSeconds=35,0, raceStarted=True, botsMoved=7/7, errors=2
+UnassignedReferenceException: The variable renderers of Bobomb has not been assigned.
+You probably need to assign the renderers variable of the Bobomb script in the inspector.
+UnityEngine.Object+MarshalledUnityObject.TryThrowEditorNullExceptionObject (UnityEngine.Object unityObj, System.String parameterName) (at <93e6391e4688454a985ab5dc6ed6bd98>:0)
+UnityEngine.Bindings.ThrowHelper.ThrowNullReferenceException (System.Object obj) (at <93e6391e4688454a985ab5dc6ed6bd98>:0)
+UnityEngine.Renderer.SetMaterial (UnityEngine.Material m) (at <93e6391e4688454a985ab5dc6ed6bd98>:0)
+UnityEngine.Renderer.set_material (UnityEngine.Material value) (at <93e6391e4688454a985ab5dc6ed6bd98>:0)
+Bobomb.Start () (at Assets/Scripts/Items/Bobomb.cs:48)
+UnityEngine.StackTraceUtility:ExtractStringFromExceptionInternal(Object, String&, String&)
+
+'Glider' AnimationEvent 'gliderOpenflapSound' on animation 'Unfold' has no receiver! Are you missing a component?
+
+PLAY Water Park: simulatedSeconds=35,0, raceStarted=True, botsMoved=7/7, errors=1
+UnassignedReferenceException: The variable renderers of Bobomb has not been assigned.
+You probably need to assign the renderers variable of the Bobomb script in the inspector.
+UnityEngine.Object+MarshalledUnityObject.TryThrowEditorNullExceptionObject (UnityEngine.Object unityObj, System.String parameterName) (at <93e6391e4688454a985ab5dc6ed6bd98>:0)
+UnityEngine.Bindings.ThrowHelper.ThrowNullReferenceException (System.Object obj) (at <93e6391e4688454a985ab5dc6ed6bd98>:0)
+UnityEngine.Renderer.SetMaterial (UnityEngine.Material m) (at <93e6391e4688454a985ab5dc6ed6bd98>:0)
+UnityEngine.Renderer.set_material (UnityEngine.Material value) (at <93e6391e4688454a985ab5dc6ed6bd98>:0)
+Bobomb.Start () (at Assets/Scripts/Items/Bobomb.cs:48)
+UnityEngine.StackTraceUtility:ExtractStringFromExceptionInternal(Object, String&, String&)
+
