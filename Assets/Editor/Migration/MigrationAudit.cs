@@ -9,7 +9,7 @@ using Object=UnityEngine.Object;
 
 public static class MigrationAudit
 {
-    public static readonly string[] Tracks={"MooMooMeadows","Toad Harbor","Mario Circuit","Rainbow Road","Water Park"};
+    public static readonly string[] Tracks={"MooMooMeadows","Mario Circuit"};
     [MenuItem("Mario Kart/Ouvrir le menu du jeu migre")]
     public static void OpenMenu(){if(!EditorApplication.isPlaying && EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())EditorSceneManager.OpenScene("Assets/Scenes/WhiteScreen.unity");}
     public static void Run()

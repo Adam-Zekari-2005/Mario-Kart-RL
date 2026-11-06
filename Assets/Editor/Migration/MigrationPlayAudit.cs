@@ -20,7 +20,7 @@ public static class MigrationPlayAudit
     static void Log(string message,string stack,LogType type){if(SessionState.GetBool(Key,false)&&(type==LogType.Exception||type==LogType.Error||type==LogType.Assert))errors.Add(message+"\n"+stack);}
     public static void RunSolo(){Run();SessionState.SetBool(Key+"solo",true);}
     public static void RunSoloFirst(){RunSolo();SessionState.SetInt(Key+"limit",1);}
-    public static void RunRecovery(){RunSolo();SessionState.SetInt(Key+"index",2);SessionState.SetInt(Key+"limit",3);}
+    public static void RunRecovery(){RunSolo();int index=Array.IndexOf(MigrationAudit.Tracks,"Mario Circuit");SessionState.SetInt(Key+"index",index);SessionState.SetInt(Key+"limit",index+1);}
     public static void RunFirst(){Run();SessionState.SetInt(Key+"limit",1);}
     public static void Run()
     {
@@ -34,10 +34,19 @@ public static class MigrationPlayAudit
         if(stage=="next"&&!EditorApplication.isPlayingOrWillChangePlaymode)
         {
             if(index==SessionState.GetInt(Key+"limit",MigrationAudit.Tracks.Length)){SessionState.SetBool(Key,false);EditorSceneManager.OpenScene("Assets/Scenes/WhiteScreen.unity");Debug.Log("PLAY AUDIT COMPLETE");EditorApplication.Exit(0);return;}
-            EditorSceneManager.OpenScene("Assets/Scenes/"+MigrationAudit.Tracks[index]+".unity");
-            SessionState.SetString(Key+"stage","starting");EditorApplication.isPlaying=true;return;
+            EditorSceneManager.OpenScene("Assets/Scenes/WhiteScreen.unity");
+            SessionState.SetString(Key+"stage","menu");EditorApplication.isPlaying=true;return;
         }
-        if(stage=="starting"&&EditorApplication.isPlaying)
+        if(stage=="menu"&&EditorApplication.isPlaying)
+        {
+            string method=MigrationAudit.Tracks[index].Replace(" ","");
+            foreach(var button in Object.FindObjectsByType<UnityEngine.UI.Button>(FindObjectsSortMode.None))
+                for(int call=0;call<button.onClick.GetPersistentEventCount();call++)
+                    if(button.onClick.GetPersistentMethodName(call)==method)
+                    {SessionState.SetString(Key+"stage","starting");button.onClick.Invoke();return;}
+            Debug.LogError("Missing menu button: "+method);SessionState.SetBool(Key,false);EditorApplication.Exit(1);return;
+        }
+        if(stage=="starting"&&EditorApplication.isPlaying&&UnityEngine.SceneManagement.SceneManager.GetActiveScene().name==MigrationAudit.Tracks[index])
         {
             started=EditorApplication.timeSinceStartup;driveStart=-1;peakForward=0;peakReverse=0;peakSteering=0;driftSeen=false;previousElapsed=-1;bots.Clear();foreach(var bot in Object.FindObjectsByType<ComputerDriver>(FindObjectsSortMode.None))bots[bot]=bot.transform.position;
             itemPrepared=false;itemBoostSeen=false;SessionState.SetString(Key+"stage","playing");return;
@@ -97,6 +106,20 @@ public static class MigrationPlayAudit
             Debug.Assert(lap.currentCheckpointVal==checkpoint&&lap.LAPCOUNT==lapNumber&&lap.totalCheckpointVal==total,"Recovery preserves race progression");
             Debug.Assert(Vector3.Distance(human.GetComponent<Rigidbody>().position,displaced)>50,"Recovery leaves the displaced position");
             Debug.Assert(Vector3.Distance(human.transform.position,human.GetComponent<Rigidbody>().position)<.01f,"Recovery synchronizes the visible kart and physics");
+            // Exercise checkpoint ordering with the real scene colliders, without a full lap of steering.
+            var finish=GameObject.FindGameObjectWithTag("NextLapCollider").GetComponent<Collider>();
+            lap.SendMessage("OnTriggerEnter",finish);
+            Debug.Assert(lap.LAPCOUNT==lapNumber,"Finish alone cannot grant an incomplete lap");
+            int visited=0;
+            while(lap.currentCheckpointVal<lap.checkpoints.childCount&&visited++<lap.checkpoints.childCount)
+            {
+                var checkpointCollider=lap.checkpoints.GetChild(lap.currentCheckpointVal).GetComponent<Collider>();
+                Debug.Assert(checkpointCollider!=null,"Checkpoint collider exists");
+                lap.SendMessage("OnTriggerEnter",checkpointCollider);
+            }
+            lap.SendMessage("OnTriggerEnter",finish);
+            Debug.Assert(lap.LAPCOUNT==lapNumber+1,"Ordered checkpoints followed by finish grant one lap");
+            lap.currentCheckpointVal%=lap.checkpoints.childCount;
             manager.resultsUI.createResults(manager.lapCounters);
             Debug.Assert(manager.resultsUI.transform.GetChild(0).gameObject.activeSelf,"Solo result displayed");
             for(int row=1;row<manager.resultsUI.transform.childCount;row++)Debug.Assert(!manager.resultsUI.transform.GetChild(row).gameObject.activeSelf,"Unused result row hidden");

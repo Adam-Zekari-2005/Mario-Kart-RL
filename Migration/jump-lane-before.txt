@@ -1,0 +1,36 @@
+Actual kart passage audit
+LANE 0 offset=-12 origin=(-16599.84, 23241.87, -11606.81) direction=(-0.91, 0.00, -0.42)
+t=0,00 pos=(-16599.84, 23241.87, -11606.81) progress=0,00 speed=0,00 forward=(-0.91, 0.00, -0.42) obstacles=
+t=0,50 pos=(-16603.81, 23241.50, -11608.68) progress=4,39 speed=17,66 forward=(-0.91, -0.03, -0.42) obstacles=
+t=1,00 pos=(-16611.32, 23241.49, -11612.32) progress=12,74 speed=0,03 forward=(-0.91, 0.03, -0.42) obstacles=Cube (1) distance=0,14 normal=(1.00, 0.00, 0.00)
+t=1,50 pos=(-16611.32, 23241.49, -11612.37) progress=12,76 speed=0,03 forward=(-0.91, 0.05, -0.42) obstacles=Cube (1) distance=0,14 normal=(1.00, 0.00, 0.00)
+t=2,00 pos=(-16611.32, 23241.49, -11612.44) progress=12,79 speed=0,04 forward=(-0.91, 0.04, -0.42) obstacles=Cube (1) distance=0,14 normal=(1.00, 0.00, 0.00)
+t=2,50 pos=(-16611.32, 23241.50, -11612.51) progress=12,82 speed=0,04 forward=(-0.91, 0.04, -0.42) obstacles=Cube (1) distance=0,14 normal=(1.00, 0.00, 0.00)
+LANE 1 offset=-18 origin=(-16597.31, 23241.68, -11612.25) direction=(-0.91, 0.00, -0.42)
+t=0,00 pos=(-16597.31, 23241.68, -11612.25) progress=0,00 speed=0,00 forward=(-0.91, 0.00, -0.42) obstacles=
+t=0,50 pos=(-16601.34, 23241.38, -11614.15) progress=4,45 speed=18,13 forward=(-0.91, -0.02, -0.42) obstacles=load__mm_road distance=1,77 normal=(0.03, 1.00, -0.02)
+t=1,00 pos=(-16611.32, 23241.62, -11618.89) progress=15,50 speed=0,04 forward=(-0.91, 0.02, -0.42) obstacles=Cube (1) distance=0,14 normal=(1.00, 0.00, 0.00)
+t=1,50 pos=(-16611.32, 23241.62, -11618.96) progress=15,53 speed=0,04 forward=(-0.91, 0.02, -0.42) obstacles=Cube (1) distance=0,14 normal=(1.00, 0.00, 0.00)
+t=2,00 pos=(-16611.32, 23241.62, -11619.05) progress=15,57 speed=0,07 forward=(-0.91, 0.03, -0.42) obstacles=Cube (1) distance=0,14 normal=(1.00, 0.00, 0.00)
+t=2,50 pos=(-16611.32, 23241.62, -11619.16) progress=15,61 speed=0,08 forward=(-0.91, 0.03, -0.42) obstacles=Cube (1) distance=0,14 normal=(1.00, 0.00, 0.00)
+LANE 2 offset=-24 origin=(-16594.79, 23241.36, -11617.70) direction=(-0.91, 0.00, -0.42)
+t=0,00 pos=(-16594.79, 23241.36, -11617.70) progress=0,00 speed=0,00 forward=(-0.91, 0.00, -0.42) obstacles=
+t=0,51 pos=(-16599.11, 23241.20, -11619.74) progress=4,78 speed=18,73 forward=(-0.91, 0.01, -0.42) obstacles=
+t=1,01 pos=(-16611.35, 23241.50, -11625.45) progress=18,29 speed=34,17 forward=(-0.91, 0.02, -0.42) obstacles=
+t=1,51 pos=(-16629.61, 23242.67, -11633.99) progress=38,45 speed=45,97 forward=(-0.90, 0.07, -0.42) obstacles=loftedSurface107__mm_Lawn02 distance=1,28 normal=(0.47, 0.87, -0.16); load__mm_road distance=1,36 normal=(0.28, 0.96, -0.08)
+t=2,01 pos=(-16649.39, 23245.68, -11643.65) progress=60,46 speed=38,01 forward=(-0.90, 0.13, -0.42) obstacles=
+t=2,51 pos=(-16664.22, 23246.60, -11650.68) progress=76,86 speed=30,75 forward=(-0.91, 0.04, -0.41) obstacles=
+LANE 3 offset=12 origin=(-16609.93, 23243.56, -11585.04) direction=(-0.91, 0.00, -0.42)
+t=0,00 pos=(-16609.93, 23243.56, -11585.04) progress=0,00 speed=0,00 forward=(-0.91, 0.00, -0.42) obstacles=
+t=0,51 pos=(-16614.01, 23242.88, -11587.04) progress=4,54 speed=18,35 forward=(-0.91, -0.10, -0.41) obstacles=load__mm_road distance=0,16 normal=(0.57, 0.00, -0.82)
+t=1,01 pos=(-16625.60, 23242.83, -11592.72) progress=17,44 speed=33,29 forward=(-0.90, 0.03, -0.43) obstacles=load__mm_road distance=0,00 normal=(0.90, -0.03, 0.43)
+t=1,51 pos=(-16642.79, 23245.05, -11601.29) progress=36,64 speed=46,51 forward=(-0.88, 0.18, -0.44) obstacles=
+t=2,01 pos=(-16659.52, 23248.29, -11609.70) progress=55,36 speed=31,93 forward=(-0.88, 0.15, -0.45) obstacles=
+t=2,51 pos=(-16673.81, 23248.26, -11616.99) progress=71,39 speed=31,93 forward=(-0.88, -0.04, -0.47) obstacles=
+LANE 4 offset=18 origin=(-16612.46, 23244.75, -11579.60) direction=(-0.91, 0.00, -0.42)
+t=0,00 pos=(-16612.46, 23244.75, -11579.60) progress=0,00 speed=0,00 forward=(-0.91, 0.00, -0.42) obstacles=
+t=0,51 pos=(-16619.36, 23243.86, -11582.92) progress=7,66 speed=24,48 forward=(-0.91, -0.09, -0.41) obstacles=load__mm_road distance=0,00 normal=(0.91, 0.09, 0.41)
+t=1,01 pos=(-16633.33, 23244.10, -11589.81) progress=23,24 speed=37,14 forward=(-0.90, 0.03, -0.43) obstacles=load__mm_road distance=0,00 normal=(0.90, -0.03, 0.43)
+t=1,51 pos=(-16652.38, 23246.21, -11599.00) progress=44,38 speed=43,82 forward=(-0.89, 0.14, -0.43) obstacles=loftedSurface107__mm_Lawn01 distance=0,00 normal=(0.89, -0.14, 0.43)
+t=2,01 pos=(-16668.56, 23247.71, -11606.80) progress=62,33 speed=33,01 forward=(-0.89, 0.04, -0.45) obstacles=
+t=2,51 pos=(-16682.09, 23247.18, -11613.56) progress=77,46 speed=29,52 forward=(-0.89, -0.05, -0.46) obstacles=

@@ -156,8 +156,8 @@ ModelImporter:
       name: BoostTurnRightWithItem
       takeName: Armature|BoostTurnRightWithItem
       internalID: 26751539943989830
-      firstFrame: -1
-      lastFrame: 4
+      firstFrame: 0
+      lastFrame: 5
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -185,8 +185,8 @@ ModelImporter:
       name: BoostWithItemNormal
       takeName: Armature|BoostWithItemNormal
       internalID: 1595700063960530370
-      firstFrame: -1
-      lastFrame: 0
+      firstFrame: 0
+      lastFrame: 1
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -214,8 +214,8 @@ ModelImporter:
       name: Hasitem
       takeName: Armature|Hasitem
       internalID: -4559174286200113199
-      firstFrame: -1
-      lastFrame: 11
+      firstFrame: 0
+      lastFrame: 12
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -243,8 +243,8 @@ ModelImporter:
       name: Normal
       takeName: Armature|Normal
       internalID: -944011950971682048
-      firstFrame: -1
-      lastFrame: 19
+      firstFrame: 0
+      lastFrame: 20
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -272,8 +272,8 @@ ModelImporter:
       name: NormalWithItem
       takeName: Armature|NormalWithItem
       internalID: 2091613463395489294
-      firstFrame: -1
-      lastFrame: 0
+      firstFrame: 0
+      lastFrame: 1
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -301,8 +301,8 @@ ModelImporter:
       name: TurningLeftWithItem
       takeName: Armature|TurningLeftWithItem
       internalID: 7989394936740458828
-      firstFrame: -1
-      lastFrame: 4
+      firstFrame: 0
+      lastFrame: 5
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -330,8 +330,8 @@ ModelImporter:
       name: TurnLeft
       takeName: Armature|TurnLeft
       internalID: -4049585584969071195
-      firstFrame: -1
-      lastFrame: 4
+      firstFrame: 0
+      lastFrame: 5
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -359,8 +359,8 @@ ModelImporter:
       name: TurnRight
       takeName: Armature|TurnRight
       internalID: 1628252986623654205
-      firstFrame: -1
-      lastFrame: 4
+      firstFrame: 0
+      lastFrame: 5
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -388,8 +388,8 @@ ModelImporter:
       name: TurnRightWithItem
       takeName: Armature|TurnRightWithItem
       internalID: 3736963746510641304
-      firstFrame: -1
-      lastFrame: 4
+      firstFrame: 0
+      lastFrame: 5
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -417,8 +417,8 @@ ModelImporter:
       name: ThrowForwardShell
       takeName: Armature|ThrowForwardShell
       internalID: 3425839809734610190
-      firstFrame: -1
-      lastFrame: 29
+      firstFrame: 0
+      lastFrame: 34
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -446,8 +446,8 @@ ModelImporter:
       name: ThrowBackwards
       takeName: Armature|ThrowBackwards
       internalID: 714722445734564992
-      firstFrame: 2
-      lastFrame: 44
+      firstFrame: 0
+      lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -475,8 +475,8 @@ ModelImporter:
       name: GliderTrick
       takeName: Armature|GliderTrick
       internalID: 85456204526099989
-      firstFrame: -1
-      lastFrame: 49
+      firstFrame: 0
+      lastFrame: 23
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -504,8 +504,8 @@ ModelImporter:
       name: HitOpponentItem
       takeName: Armature|HitOpponentItem
       internalID: -3193531963788832181
-      firstFrame: -1
-      lastFrame: 34
+      firstFrame: 0
+      lastFrame: 35
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -533,8 +533,8 @@ ModelImporter:
       name: FirstPlace
       takeName: Armature|FirstPlace
       internalID: 144780154973670464
-      firstFrame: -1
-      lastFrame: 79
+      firstFrame: 0
+      lastFrame: 80
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -562,8 +562,8 @@ ModelImporter:
       name: HitByOpponent
       takeName: Armature|HitByOpponent
       internalID: -82240870639804880
-      firstFrame: -1
-      lastFrame: 54
+      firstFrame: 0
+      lastFrame: 55
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -591,8 +591,8 @@ ModelImporter:
       name: Reverse
       takeName: Armature|Reverse
       internalID: -4790819089152541403
-      firstFrame: -1
-      lastFrame: 0
+      firstFrame: 0
+      lastFrame: 1
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -620,8 +620,8 @@ ModelImporter:
       name: LoseAnim
       takeName: Armature|LoseAnim
       internalID: 6912285933553339583
-      firstFrame: -1
-      lastFrame: 82
+      firstFrame: 0
+      lastFrame: 83
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -649,8 +649,8 @@ ModelImporter:
       name: JumpTrick1
       takeName: Armature|JumpTrick1
       internalID: 7034108186874952755
-      firstFrame: -1
-      lastFrame: 34
+      firstFrame: 0
+      lastFrame: 35
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -678,8 +678,8 @@ ModelImporter:
       name: JumpTrick2
       takeName: Armature|JumpTrick2
       internalID: -2890220971036376482
-      firstFrame: -1
-      lastFrame: 24
+      firstFrame: 0
+      lastFrame: 25
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

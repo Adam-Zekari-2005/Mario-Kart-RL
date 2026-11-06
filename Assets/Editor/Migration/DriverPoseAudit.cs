@@ -11,15 +11,19 @@ public static class DriverPoseAudit
     const string Key="DriverPoseAudit";
     static float start=-1;
     static int sample;
-    static readonly float[] moments={.5f,2.5f,3.5f,5f,7f,8.8f,10f};
+    static float maxSpeed;
+    static Quaternion seatedRoot;
+    static int failures;
+    static readonly float[] moments={.5f,5f,10f,15.5f,17f,20f,24f};
     static DriverPoseAudit(){EditorApplication.update+=Tick;}
     public static void Run()
     {
         Directory.CreateDirectory("Migration/PoseAudit");File.WriteAllText("Migration/PoseAudit/report.txt","");
+        SessionState.SetInt(Key+"failures",0);
         EditorSceneManager.OpenScene("Assets/Scenes/MooMooMeadows.unity");
         SessionState.SetInt(Key+"track",0);SessionState.SetInt(Key+"limit",1);SessionState.SetInt(Key,1);EditorApplication.isPlaying=true;
     }
-    public static void RunOtherTracks(){Run();SessionState.SetInt(Key+"track",1);SessionState.SetInt(Key+"limit",5);EditorApplication.isPlaying=false;SessionState.SetInt(Key,3);}
+    public static void RunOtherTracks(){Run();SessionState.SetInt(Key+"track",1);SessionState.SetInt(Key+"limit",MigrationAudit.Tracks.Length);EditorApplication.isPlaying=false;SessionState.SetInt(Key,3);}
     static void Tick()
     {
         int stage=SessionState.GetInt(Key,0);
@@ -27,7 +31,7 @@ public static class DriverPoseAudit
         if((stage==2||stage==3)&&!EditorApplication.isPlayingOrWillChangePlaymode)
         {
             int next=SessionState.GetInt(Key+"track",0)+(stage==2?1:0);
-            if(next>=SessionState.GetInt(Key+"limit",1)){SessionState.SetInt(Key,0);EditorApplication.Exit(0);return;}
+            if(next>=SessionState.GetInt(Key+"limit",1)){SessionState.SetInt(Key,0);EditorSceneManager.OpenScene("Assets/Scenes/WhiteScreen.unity");EditorApplication.Exit(SessionState.GetInt(Key+"failures",0) == 0 ? 0 : 1);return;}
             SessionState.SetInt(Key+"track",next);start=-1;sample=0;
             EditorSceneManager.OpenScene("Assets/Scenes/"+MigrationAudit.Tracks[next]+".unity");SessionState.SetInt(Key,1);EditorApplication.isPlaying=true;return;
         }
@@ -35,9 +39,21 @@ public static class DriverPoseAudit
         var p=Object.FindAnyObjectByType<Player>();
         if(start<0)start=Time.time;
         float t=Time.time-start;
-        KartKeyboard.TestHeld=k=>(k==KeyCode.UpArrow&&t>=1&&t<3)||(k==KeyCode.A&&t>=8&&t<9);
+        KartKeyboard.TestHeld=k=>(k==KeyCode.UpArrow&&t>=1&&t<15);
+        maxSpeed = Mathf.Max(maxSpeed, p.currentspeed);
+        // Exercise the faulty state regardless of the randomly selected item.
+        if (t >= 12) p.Driver.SetBool("hasItem", true);
         if(sample<moments.Length&&t>=moments[sample])
         {
+            var root = p.Driver.transform.Find("Armature/Bone");
+            if (sample == 0) seatedRoot = root.localRotation;
+            if (sample >= 3)
+            {
+                bool seated = Quaternion.Angle(seatedRoot, root.localRotation) < 15;
+                bool withItem = p.Driver.GetCurrentAnimatorClipInfo(0).Any(c => c.clip.name == "NormalWithItem");
+                if (!seated || !withItem) failures++;
+                File.AppendAllText("Migration/PoseAudit/report.txt", $"CHECK released-with-item seated={seated} withItem={withItem}\n");
+            }
             string track=MigrationAudit.Tracks[SessionState.GetInt(Key+"track",0)];
             string report=$"SAMPLE {track} {sample} time={t:F2} speed={p.currentspeed:F2}\n";
             foreach(var animator in p.GetComponentsInChildren<Animator>(true))
@@ -52,8 +68,19 @@ public static class DriverPoseAudit
             camera.transform.position=p.transform.position+p.transform.right*7-p.transform.forward*2+p.transform.up*3;
             camera.transform.LookAt(p.transform.position+p.transform.up*1.2f);
             MigrationAudit.Capture(camera,$"Migration/PoseAudit/{track}-{sample}.png");
+            if (sample == 6)
+            {
+                camera.transform.position=p.transform.position+p.transform.right*3+p.transform.forward*5+p.transform.up*2.5f;
+                camera.transform.LookAt(p.transform.position+p.transform.up*1.4f);
+                MigrationAudit.Capture(camera,$"Migration/PoseAudit/{track}-face.png");
+            }
             camera.transform.SetPositionAndRotation(pos,rot);sample++;
         }
-        if(t>11){KartKeyboard.TestHeld=null;SessionState.SetInt(Key,2);EditorApplication.isPlaying=false;}
+        if(t>25){
+            if (maxSpeed < 70) failures++;
+            File.AppendAllText("Migration/PoseAudit/report.txt", $"RESULT maxSpeed={maxSpeed} failures={failures}\n");
+            SessionState.SetInt(Key+"failures", SessionState.GetInt(Key+"failures",0)+failures);
+            KartKeyboard.TestHeld=null;SessionState.SetInt(Key,2);EditorApplication.isPlaying=false;
+        }
     }
 }
