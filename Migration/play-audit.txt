@@ -1,2 +1,4 @@
+PLAY MooMooMeadows: simulatedSeconds=35,0, raceStarted=True, botsMoved=0/0, errors=0
+
 PLAY Mario Circuit: simulatedSeconds=35,0, raceStarted=True, botsMoved=0/0, errors=0
 

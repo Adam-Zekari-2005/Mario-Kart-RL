@@ -1,0 +1,795 @@
+TAKE Armature|BoostTurnRightWithItem Armature|BoostTurnRightWithItem 0..5
+TAKE Armature|BoostWithItemNormal Armature|BoostWithItemNormal 0..1
+TAKE Armature|FirstPlace Armature|FirstPlace 0..80
+TAKE Armature|GliderTrick Armature|GliderTrick 0..23
+TAKE Armature|Hasitem Armature|Hasitem 0..12
+TAKE Armature|HitByOpponent Armature|HitByOpponent 0..55
+TAKE Armature|HitOpponentItem Armature|HitOpponentItem 0..35
+TAKE Armature|JumpTrick1 Armature|JumpTrick1 0..35
+TAKE Armature|JumpTrick2 Armature|JumpTrick2 0..25
+TAKE Armature|LoseAnim Armature|LoseAnim 0..83
+TAKE Armature|Normal Armature|Normal 0..20
+TAKE Armature|NormalWithItem Armature|NormalWithItem 0..1
+TAKE Armature|Reverse Armature|Reverse 0..1
+TAKE Armature|ThrowBackwards Armature|ThrowBackwards 0..40
+TAKE Armature|ThrowForwardShell Armature|ThrowForwardShell 0..34
+TAKE Armature|TurningLeftWithItem Armature|TurningLeftWithItem 0..5
+TAKE Armature|TurnLeft Armature|TurnLeft 0..5
+TAKE Armature|TurnRight Armature|TurnRight 0..5
+TAKE Armature|TurnRightWithItem Armature|TurnRightWithItem 0..5
+CLIP Default Take Default Take 0..11
+CLIP BoostTurnLeftWithItem BoostTurnLeftWithItem -1..4
+CLIP BoostTurnRightWithItem Armature|BoostTurnRightWithItem -1..4
+CLIP BoostWithItemNormal Armature|BoostWithItemNormal -1..0
+CLIP Hasitem Armature|Hasitem -1..11
+CLIP Normal Armature|Normal -1..19
+CLIP NormalWithItem Armature|NormalWithItem -1..0
+CLIP TurningLeftWithItem Armature|TurningLeftWithItem -1..4
+CLIP TurnLeft Armature|TurnLeft -1..4
+CLIP TurnRight Armature|TurnRight -1..4
+CLIP TurnRightWithItem Armature|TurnRightWithItem -1..4
+CLIP ThrowForwardShell Armature|ThrowForwardShell -1..29
+CLIP ThrowBackwards Armature|ThrowBackwards 2..44
+CLIP GliderTrick Armature|GliderTrick -1..49
+CLIP HitOpponentItem Armature|HitOpponentItem -1..34
+CLIP FirstPlace Armature|FirstPlace -1..79
+CLIP HitByOpponent Armature|HitByOpponent -1..54
+CLIP Reverse Armature|Reverse -1..0
+CLIP LoseAnim Armature|LoseAnim -1..82
+CLIP JumpTrick1 Armature|JumpTrick1 -1..34
+CLIP JumpTrick2 Armature|JumpTrick2 -1..24
+CURVES __preview__Armature|FirstPlace length=3,333333
+Armature/Bone m_LocalRotation.x: 0,3802014 -> 0,3802014
+Armature/Bone m_LocalRotation.y: -0,432212 -> -0,432212
+Armature/Bone m_LocalRotation.z: 0,5400819 -> 0,5400819
+Armature/Bone m_LocalRotation.w: 0,6139637 -> 0,6139637
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290961 -> -0,09290961
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324737 -> 0,1324737
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666331 -> 0,5666331
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079267 -> 0,8079267
+Armature/Bone m_LocalPosition.x: 0 -> 0
+Armature/Bone m_LocalPosition.y: 0,5595788 -> 0,5595788
+Armature/Bone m_LocalPosition.z: -1,030143 -> -1,030143
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,3441699 -> 0,3441699
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806183 -> 0,1806183
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021879 -> 1,021879
+Armature/Bone m_LocalScale.x: 1 -> 1
+Armature/Bone m_LocalScale.y: 1 -> 1
+Armature/Bone m_LocalScale.z: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 1 -> 1
+CURVES __preview__Armature|GliderTrick length=1
+Armature/Bone m_LocalRotation.x: 0,4070382 -> 0,3832135
+Armature/Bone m_LocalRotation.y: -0,4070383 -> -0,4301908
+Armature/Bone m_LocalRotation.z: 0,578204 -> 0,5942622
+Armature/Bone m_LocalRotation.w: 0,578204 -> 0,5611914
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290962 -> -0,09290962
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324736 -> 0,1324736
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666332 -> 0,5666332
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079265 -> 0,8079265
+Armature/Bone m_LocalPosition.x: 0 -> 1,390032E-09
+Armature/Bone m_LocalPosition.y: 0,5595788 -> 0,3477832
+Armature/Bone m_LocalPosition.z: -1,030143 -> -0,2504739
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,3441698 -> 0,3441698
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806183 -> 0,1806183
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021879 -> 1,021879
+Armature/Bone m_LocalScale.x: 1 -> 1
+Armature/Bone m_LocalScale.y: 1 -> 1
+Armature/Bone m_LocalScale.z: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 0,9999999 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 1 -> 1
+CURVES __preview__Armature|Hasitem length=1
+Armature/Bone m_LocalRotation.x: -0,5649011 -> -0,5649011
+Armature/Bone m_LocalRotation.y: 0,8072498 -> 0,8072498
+Armature/Bone m_LocalRotation.z: 0,169274 -> 0,169274
+Armature/Bone m_LocalRotation.w: -0,02410378 -> -0,02410378
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290962 -> -0,09290962
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324736 -> 0,1324736
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666331 -> 0,5666331
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079267 -> 0,8079267
+Armature/Bone m_LocalPosition.x: 0,1885421 -> 0,1885421
+Armature/Bone m_LocalPosition.y: -0,1430187 -> -0,1430187
+Armature/Bone m_LocalPosition.z: 1,769649 -> 1,769649
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,34417 -> 0,34417
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806184 -> 0,1806184
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021878 -> 1,021878
+Armature/Bone m_LocalScale.x: 0,9999999 -> 0,9999999
+Armature/Bone m_LocalScale.y: 0,9999999 -> 0,9999999
+Armature/Bone m_LocalScale.z: 0,9999998 -> 0,9999998
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 1 -> 1
+CURVES __preview__Armature|HitByOpponent length=2,291667
+Armature/Bone m_LocalRotation.x: 0,4663788 -> 0,4663788
+Armature/Bone m_LocalRotation.y: -0,3430551 -> -0,3430551
+Armature/Bone m_LocalRotation.z: 0,5314986 -> 0,5314986
+Armature/Bone m_LocalRotation.w: 0,6183149 -> 0,6183149
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290963 -> -0,09290963
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324736 -> 0,1324736
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666332 -> 0,5666332
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079265 -> 0,8079265
+Armature/Bone m_LocalPosition.x: 0 -> 0
+Armature/Bone m_LocalPosition.y: 0,5595788 -> 0,5595788
+Armature/Bone m_LocalPosition.z: -1,030143 -> -1,030143
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,3441698 -> 0,3441698
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806183 -> 0,1806183
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021879 -> 1,021879
+Armature/Bone m_LocalScale.x: 1 -> 1
+Armature/Bone m_LocalScale.y: 1 -> 1
+Armature/Bone m_LocalScale.z: 0,9999999 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 0,9999999 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 1 -> 1
+CURVES __preview__Armature|HitOpponentItem length=1,458333
+Armature/Bone m_LocalRotation.x: 0,4070382 -> 0,4098088
+Armature/Bone m_LocalRotation.y: -0,4070383 -> -0,4042581
+Armature/Bone m_LocalRotation.z: 0,578204 -> 0,5762438
+Armature/Bone m_LocalRotation.w: 0,578204 -> 0,5801511
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290962 -> -0,09290962
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324736 -> 0,1324736
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666332 -> 0,5666332
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079265 -> 0,8079265
+Armature/Bone m_LocalPosition.x: 0 -> 2,516232E-10
+Armature/Bone m_LocalPosition.y: 0,5595788 -> 0,5595788
+Armature/Bone m_LocalPosition.z: -1,030143 -> -1,04703
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,3441698 -> 0,3441698
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806183 -> 0,1806183
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021879 -> 1,021879
+Armature/Bone m_LocalScale.x: 1 -> 1
+Armature/Bone m_LocalScale.y: 1 -> 1
+Armature/Bone m_LocalScale.z: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 0,9999999 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 1 -> 1
+CURVES __preview__Armature|JumpTrick1 length=1,458333
+Armature/Bone m_LocalRotation.x: 0,4070382 -> -0,4275073
+Armature/Bone m_LocalRotation.y: -0,4070383 -> 0,3882684
+Armature/Bone m_LocalRotation.z: 0,578204 -> -0,59964
+Armature/Bone m_LocalRotation.w: 0,578204 -> -0,5540009
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290963 -> -0,09290963
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324736 -> 0,1324736
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666332 -> 0,5666332
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079265 -> 0,8079265
+Armature/Bone m_LocalPosition.x: 0 -> -0,01548288
+Armature/Bone m_LocalPosition.y: 0,5595788 -> 0,5589307
+Armature/Bone m_LocalPosition.z: -1,030143 -> -1,049023
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,3441698 -> 0,3441698
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806183 -> 0,1806183
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021878 -> 1,021878
+Armature/Bone m_LocalScale.x: 1 -> 1
+Armature/Bone m_LocalScale.y: 1 -> 1
+Armature/Bone m_LocalScale.z: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 0,9999999 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 0,9999999 -> 0,9999999
+CURVES __preview__Armature|JumpTrick2 length=1,041667
+Armature/Bone m_LocalRotation.x: 0,4070382 -> 0,4070382
+Armature/Bone m_LocalRotation.y: -0,4070383 -> -0,4070383
+Armature/Bone m_LocalRotation.z: 0,578204 -> 0,578204
+Armature/Bone m_LocalRotation.w: 0,578204 -> 0,578204
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290963 -> -0,09290963
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324736 -> 0,1324736
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666332 -> 0,5666332
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079265 -> 0,8079265
+Armature/Bone m_LocalPosition.x: 0 -> 0
+Armature/Bone m_LocalPosition.y: 0,5595788 -> 0,5595788
+Armature/Bone m_LocalPosition.z: -1,030143 -> -1,030143
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,3441698 -> 0,3441698
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806183 -> 0,1806183
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021878 -> 1,021878
+Armature/Bone m_LocalScale.x: 1 -> 1
+Armature/Bone m_LocalScale.y: 1 -> 1
+Armature/Bone m_LocalScale.z: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 0,9999999 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 0,9999999 -> 0,9999999
+CURVES __preview__Armature|LoseAnim length=3,458333
+Armature/Bone m_LocalRotation.x: 0,4070382 -> 0,4070382
+Armature/Bone m_LocalRotation.y: -0,4070383 -> -0,4070383
+Armature/Bone m_LocalRotation.z: 0,578204 -> 0,578204
+Armature/Bone m_LocalRotation.w: 0,578204 -> 0,578204
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290962 -> -0,09290962
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324736 -> 0,1324736
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666331 -> 0,5666331
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079267 -> 0,8079267
+Armature/Bone m_LocalPosition.x: 0 -> 0
+Armature/Bone m_LocalPosition.y: 0,5595788 -> 0,5595788
+Armature/Bone m_LocalPosition.z: -1,030143 -> -1,030143
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,3441699 -> 0,3441699
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806183 -> 0,1806183
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021879 -> 1,021879
+Armature/Bone m_LocalScale.x: 1 -> 1
+Armature/Bone m_LocalScale.y: 1 -> 1
+Armature/Bone m_LocalScale.z: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 0,9999999 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 0,9999999 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 1 -> 1
+CURVES __preview__Armature|Normal length=1
+Armature/Bone m_LocalRotation.x: 0,4070382 -> 0,4070382
+Armature/Bone m_LocalRotation.y: -0,4070383 -> -0,4070383
+Armature/Bone m_LocalRotation.z: 0,578204 -> 0,578204
+Armature/Bone m_LocalRotation.w: 0,578204 -> 0,578204
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290963 -> -0,09290963
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324736 -> 0,1324736
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666332 -> 0,5666332
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079265 -> 0,8079265
+Armature/Bone m_LocalPosition.x: 0 -> 0
+Armature/Bone m_LocalPosition.y: 0,5595788 -> 0,5595788
+Armature/Bone m_LocalPosition.z: -1,030143 -> -1,030143
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,3441698 -> 0,3441698
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806183 -> 0,1806183
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021878 -> 1,021878
+Armature/Bone m_LocalScale.x: 1 -> 1
+Armature/Bone m_LocalScale.y: 1 -> 1
+Armature/Bone m_LocalScale.z: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 0,9999999 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 0,9999999 -> 0,9999999
+CURVES __preview__Armature|NormalWithItem length=1
+Armature/Bone m_LocalRotation.x: 0,4070382 -> 0,4070382
+Armature/Bone m_LocalRotation.y: -0,4070383 -> -0,4070383
+Armature/Bone m_LocalRotation.z: 0,578204 -> 0,578204
+Armature/Bone m_LocalRotation.w: 0,578204 -> 0,578204
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290962 -> -0,09290962
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324736 -> 0,1324736
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666332 -> 0,5666332
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079265 -> 0,8079265
+Armature/Bone m_LocalPosition.x: 0 -> 0
+Armature/Bone m_LocalPosition.y: 0,5595788 -> 0,5595788
+Armature/Bone m_LocalPosition.z: -1,030143 -> -1,030143
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,3441698 -> 0,3441698
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806183 -> 0,1806183
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021879 -> 1,021879
+Armature/Bone m_LocalScale.x: 1 -> 1
+Armature/Bone m_LocalScale.y: 1 -> 1
+Armature/Bone m_LocalScale.z: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 0,9999999 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 1 -> 1
+CURVES __preview__Armature|Reverse length=1
+Armature/Bone m_LocalRotation.x: 0,2407074 -> 0,2407074
+Armature/Bone m_LocalRotation.y: -0,522896 -> -0,522896
+Armature/Bone m_LocalRotation.z: 0,3419286 -> 0,3419286
+Armature/Bone m_LocalRotation.w: 0,7427816 -> 0,7427816
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290961 -> -0,09290961
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324736 -> 0,1324736
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666332 -> 0,5666332
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079265 -> 0,8079265
+Armature/Bone m_LocalPosition.x: 0 -> 0
+Armature/Bone m_LocalPosition.y: 0,5595788 -> 0,5595788
+Armature/Bone m_LocalPosition.z: -1,030143 -> -1,030143
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,3441697 -> 0,3441698
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806183 -> 0,1806181
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021879 -> 1,021878
+Armature/Bone m_LocalScale.x: 1 -> 1
+Armature/Bone m_LocalScale.y: 1 -> 1
+Armature/Bone m_LocalScale.z: 0,9999999 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 1 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 0,9999999 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 0,9999999 -> 0,9999999
+CURVES __preview__Armature|ThrowBackwards length=1,666667
+Armature/Bone m_LocalRotation.x: 0,4070382 -> 0,4070382
+Armature/Bone m_LocalRotation.y: -0,4070383 -> -0,4070383
+Armature/Bone m_LocalRotation.z: 0,578204 -> 0,578204
+Armature/Bone m_LocalRotation.w: 0,578204 -> 0,578204
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290962 -> -0,09290962
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324736 -> 0,1324736
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666332 -> 0,5666332
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079265 -> 0,8079265
+Armature/Bone m_LocalPosition.x: 0 -> 0
+Armature/Bone m_LocalPosition.y: 0,5595788 -> 0,5595788
+Armature/Bone m_LocalPosition.z: -1,030143 -> -1,030143
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,3441698 -> 0,3441698
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806183 -> 0,1806183
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021879 -> 1,021879
+Armature/Bone m_LocalScale.x: 1 -> 1
+Armature/Bone m_LocalScale.y: 1 -> 1
+Armature/Bone m_LocalScale.z: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 0,9999999 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 1 -> 1
+CURVES __preview__Armature|ThrowForwardShell length=1,416667
+Armature/Bone m_LocalRotation.x: 0,4070382 -> 0,4070382
+Armature/Bone m_LocalRotation.y: -0,4070383 -> -0,4070383
+Armature/Bone m_LocalRotation.z: 0,578204 -> 0,578204
+Armature/Bone m_LocalRotation.w: 0,578204 -> 0,578204
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290962 -> -0,09290962
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324736 -> 0,1324736
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666332 -> 0,5666332
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079265 -> 0,8079265
+Armature/Bone m_LocalPosition.x: 0 -> 0
+Armature/Bone m_LocalPosition.y: 0,5595788 -> 0,5595788
+Armature/Bone m_LocalPosition.z: -1,030143 -> -1,030143
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,3441698 -> 0,3441698
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806183 -> 0,1806183
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021879 -> 1,021879
+Armature/Bone m_LocalScale.x: 1 -> 1
+Armature/Bone m_LocalScale.y: 1 -> 1
+Armature/Bone m_LocalScale.z: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 0,9999999 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 1 -> 1
+CURVES __preview__Armature|TurningLeftWithItem length=1
+Armature/Bone m_LocalRotation.x: 0,4070382 -> 0,4070382
+Armature/Bone m_LocalRotation.y: -0,4070383 -> -0,4070383
+Armature/Bone m_LocalRotation.z: 0,578204 -> 0,578204
+Armature/Bone m_LocalRotation.w: 0,578204 -> 0,578204
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290962 -> -0,09290962
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324736 -> 0,1324736
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666332 -> 0,5666332
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079265 -> 0,8079265
+Armature/Bone m_LocalPosition.x: 0 -> 0
+Armature/Bone m_LocalPosition.y: 0,5595788 -> 0,5595788
+Armature/Bone m_LocalPosition.z: -1,030143 -> -1,030143
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,3441698 -> 0,3441698
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806183 -> 0,1806183
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021879 -> 1,021879
+Armature/Bone m_LocalScale.x: 1 -> 1
+Armature/Bone m_LocalScale.y: 1 -> 1
+Armature/Bone m_LocalScale.z: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 0,9999999 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 1 -> 1
+CURVES __preview__Armature|TurnLeft length=1
+Armature/Bone m_LocalRotation.x: 0,4070382 -> 0,4070382
+Armature/Bone m_LocalRotation.y: -0,4070383 -> -0,4070383
+Armature/Bone m_LocalRotation.z: 0,578204 -> 0,578204
+Armature/Bone m_LocalRotation.w: 0,578204 -> 0,578204
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290961 -> -0,09290961
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324737 -> 0,1324737
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666331 -> 0,5666331
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079267 -> 0,8079267
+Armature/Bone m_LocalPosition.x: 0 -> 0
+Armature/Bone m_LocalPosition.y: 0,5595788 -> 0,5595788
+Armature/Bone m_LocalPosition.z: -1,030143 -> -1,030143
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,3441699 -> 0,3441699
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806183 -> 0,1806183
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021878 -> 1,021878
+Armature/Bone m_LocalScale.x: 1 -> 1
+Armature/Bone m_LocalScale.y: 1 -> 1
+Armature/Bone m_LocalScale.z: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 0,9999999 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 1 -> 1
+CURVES __preview__Armature|TurnRight length=1
+Armature/Bone m_LocalRotation.x: 0,4070382 -> 0,4070382
+Armature/Bone m_LocalRotation.y: -0,4070383 -> -0,4070383
+Armature/Bone m_LocalRotation.z: 0,578204 -> 0,578204
+Armature/Bone m_LocalRotation.w: 0,578204 -> 0,578204
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290962 -> -0,09290962
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324736 -> 0,1324736
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666331 -> 0,5666331
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079267 -> 0,8079267
+Armature/Bone m_LocalPosition.x: 0 -> 0
+Armature/Bone m_LocalPosition.y: 0,5595788 -> 0,5595788
+Armature/Bone m_LocalPosition.z: -1,030143 -> -1,030143
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,3441698 -> 0,3441698
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806183 -> 0,1806183
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021878 -> 1,021878
+Armature/Bone m_LocalScale.x: 1 -> 1
+Armature/Bone m_LocalScale.y: 1 -> 1
+Armature/Bone m_LocalScale.z: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 0,9999998 -> 0,9999998
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 0,9999999 -> 0,9999999
+CURVES __preview__Armature|TurnRightWithItem length=1
+Armature/Bone m_LocalRotation.x: 0,4070382 -> 0,4070382
+Armature/Bone m_LocalRotation.y: -0,4070383 -> -0,4070383
+Armature/Bone m_LocalRotation.z: 0,578204 -> 0,578204
+Armature/Bone m_LocalRotation.w: 0,578204 -> 0,578204
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290962 -> -0,09290962
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324736 -> 0,1324736
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666332 -> 0,5666332
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079265 -> 0,8079265
+Armature/Bone m_LocalPosition.x: 0 -> 0
+Armature/Bone m_LocalPosition.y: 0,5595788 -> 0,5595788
+Armature/Bone m_LocalPosition.z: -1,030143 -> -1,030143
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,3441698 -> 0,3441698
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806183 -> 0,1806183
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021879 -> 1,021879
+Armature/Bone m_LocalScale.x: 1 -> 1
+Armature/Bone m_LocalScale.y: 1 -> 1
+Armature/Bone m_LocalScale.z: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 0,9999999 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 1 -> 1
+CURVES Reverse length=1
+CURVES Hasitem length=0,5
+Armature/Bone m_LocalRotation.x: -0,5649011 -> -0,5649011
+Armature/Bone m_LocalRotation.y: 0,8072498 -> 0,8072498
+Armature/Bone m_LocalRotation.z: 0,169274 -> 0,169274
+Armature/Bone m_LocalRotation.w: -0,02410378 -> -0,02410378
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290962 -> -0,09290962
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324736 -> 0,1324736
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666331 -> 0,5666331
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079267 -> 0,8079267
+Armature/Bone m_LocalPosition.x: 0,1885421 -> 0,1885421
+Armature/Bone m_LocalPosition.y: -0,1430187 -> -0,1430187
+Armature/Bone m_LocalPosition.z: 1,769649 -> 1,769649
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,34417 -> 0,34417
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806184 -> 0,1806184
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021878 -> 1,021878
+Armature/Bone m_LocalScale.x: 0,9999999 -> 0,9999999
+Armature/Bone m_LocalScale.y: 0,9999999 -> 0,9999999
+Armature/Bone m_LocalScale.z: 0,9999998 -> 0,9999998
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 1 -> 1
+CURVES TurnLeft length=0,2083333
+Armature/Bone m_LocalRotation.x: 0,4070382 -> 0,4070382
+Armature/Bone m_LocalRotation.y: -0,4070383 -> -0,4070383
+Armature/Bone m_LocalRotation.z: 0,578204 -> 0,578204
+Armature/Bone m_LocalRotation.w: 0,578204 -> 0,578204
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290961 -> -0,09290961
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324737 -> 0,1324737
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666331 -> 0,5666331
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079267 -> 0,8079267
+Armature/Bone m_LocalPosition.x: 0 -> 0
+Armature/Bone m_LocalPosition.y: 0,5595788 -> 0,5595788
+Armature/Bone m_LocalPosition.z: -1,030143 -> -1,030143
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,3441699 -> 0,3441699
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806183 -> 0,1806183
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021878 -> 1,021878
+Armature/Bone m_LocalScale.x: 1 -> 1
+Armature/Bone m_LocalScale.y: 1 -> 1
+Armature/Bone m_LocalScale.z: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 0,9999999 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 1 -> 1
+CURVES HitOpponentItem length=1,458333
+Armature/Bone m_LocalRotation.x: 0,4070382 -> 0,4096542
+Armature/Bone m_LocalRotation.y: -0,4070383 -> -0,4043106
+Armature/Bone m_LocalRotation.z: 0,578204 -> 0,5763533
+Armature/Bone m_LocalRotation.w: 0,578204 -> 0,5801153
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290962 -> -0,09290962
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324736 -> 0,1324736
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666332 -> 0,5666332
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079265 -> 0,8079265
+Armature/Bone m_LocalPosition.x: 0 -> 2,444339E-10
+Armature/Bone m_LocalPosition.y: 0,5595788 -> 0,5595788
+Armature/Bone m_LocalPosition.z: -1,030143 -> -1,062135
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,3441698 -> 0,3441698
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806183 -> 0,1806183
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021879 -> 1,021879
+Armature/Bone m_LocalScale.x: 1 -> 1
+Armature/Bone m_LocalScale.y: 1 -> 1
+Armature/Bone m_LocalScale.z: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 0,9999999 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 1 -> 1
+CURVES JumpTrick2 length=1,041667
+Armature/Bone m_LocalRotation.x: 0,4070382 -> 0,4151879
+Armature/Bone m_LocalRotation.y: -0,4070383 -> -0,4205515
+Armature/Bone m_LocalRotation.z: 0,578204 -> 0,568275
+Armature/Bone m_LocalRotation.w: 0,578204 -> 0,5725547
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290963 -> -0,09290963
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324736 -> 0,1324736
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666332 -> 0,5666332
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079265 -> 0,8079265
+Armature/Bone m_LocalPosition.x: 0 -> 0,004392117
+Armature/Bone m_LocalPosition.y: 0,5595788 -> 0,5432118
+Armature/Bone m_LocalPosition.z: -1,030143 -> -0,964922
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,3441698 -> 0,3441698
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806183 -> 0,1806183
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021878 -> 1,021878
+Armature/Bone m_LocalScale.x: 1 -> 1
+Armature/Bone m_LocalScale.y: 1 -> 1
+Armature/Bone m_LocalScale.z: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 0,9999999 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 0,9999999 -> 0,9999999
+CURVES Normal length=0,8333334
+Armature/Bone m_LocalRotation.x: 0,4070382 -> 0,4070382
+Armature/Bone m_LocalRotation.y: -0,4070383 -> -0,4070383
+Armature/Bone m_LocalRotation.z: 0,578204 -> 0,578204
+Armature/Bone m_LocalRotation.w: 0,578204 -> 0,578204
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290963 -> -0,09290963
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324736 -> 0,1324736
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666332 -> 0,5666332
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079265 -> 0,8079265
+Armature/Bone m_LocalPosition.x: 0 -> 0
+Armature/Bone m_LocalPosition.y: 0,5595788 -> 0,5595788
+Armature/Bone m_LocalPosition.z: -1,030143 -> -1,030143
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,3441698 -> 0,3441698
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806183 -> 0,1806183
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021878 -> 1,021878
+Armature/Bone m_LocalScale.x: 1 -> 1
+Armature/Bone m_LocalScale.y: 1 -> 1
+Armature/Bone m_LocalScale.z: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 0,9999999 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 0,9999999 -> 0,9999999
+CURVES HitByOpponent length=2,291667
+Armature/Bone m_LocalRotation.x: 0,4663788 -> 0,4659713
+Armature/Bone m_LocalRotation.y: -0,3430551 -> -0,3439575
+Armature/Bone m_LocalRotation.z: 0,5314986 -> 0,5319259
+Armature/Bone m_LocalRotation.w: 0,6183149 -> 0,6177574
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290963 -> -0,09290963
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324736 -> 0,1324736
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666332 -> 0,5666332
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079265 -> 0,8079265
+Armature/Bone m_LocalPosition.x: 0 -> 0
+Armature/Bone m_LocalPosition.y: 0,5595788 -> 0,5595788
+Armature/Bone m_LocalPosition.z: -1,030143 -> -1,030143
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,3441698 -> 0,3441698
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806183 -> 0,1806183
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021879 -> 1,021879
+Armature/Bone m_LocalScale.x: 1 -> 1
+Armature/Bone m_LocalScale.y: 1 -> 1
+Armature/Bone m_LocalScale.z: 0,9999999 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 0,9999999 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 1 -> 1
+CURVES BoostTurnRightWithItem length=0,2083333
+Armature/Bone m_LocalRotation.x: 0,4070382 -> 0,4185146
+Armature/Bone m_LocalRotation.y: -0,4070383 -> -0,3953653
+Armature/Bone m_LocalRotation.z: 0,578204 -> 0,5699378
+Armature/Bone m_LocalRotation.w: 0,578204 -> 0,5862333
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290963 -> -0,09290963
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324736 -> 0,1324736
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666332 -> 0,5666332
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079265 -> 0,8079265
+Armature/Bone m_LocalPosition.x: 0 -> -0,08173346
+Armature/Bone m_LocalPosition.y: 0,5595788 -> 0,5595788
+Armature/Bone m_LocalPosition.z: -1,119953 -> -1,110951
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,3441699 -> 0,3441699
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806183 -> 0,1806183
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021879 -> 1,021879
+Armature/Bone m_LocalScale.x: 1 -> 1
+Armature/Bone m_LocalScale.y: 1 -> 1
+Armature/Bone m_LocalScale.z: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 0,9999999 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 0,9999999 -> 0,9999999
+CURVES GliderTrick length=1
+Armature/Bone m_LocalRotation.x: 0,4070382 -> 0,3832135
+Armature/Bone m_LocalRotation.y: -0,4070383 -> -0,4301908
+Armature/Bone m_LocalRotation.z: 0,578204 -> 0,5942622
+Armature/Bone m_LocalRotation.w: 0,578204 -> 0,5611914
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290962 -> -0,09290962
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324736 -> 0,1324736
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666332 -> 0,5666332
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079265 -> 0,8079265
+Armature/Bone m_LocalPosition.x: 0 -> 1,390032E-09
+Armature/Bone m_LocalPosition.y: 0,5595788 -> 0,3477832
+Armature/Bone m_LocalPosition.z: -1,030143 -> -0,2504739
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,3441698 -> 0,3441698
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806183 -> 0,1806183
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021879 -> 1,021879
+Armature/Bone m_LocalScale.x: 1 -> 1
+Armature/Bone m_LocalScale.y: 1 -> 1
+Armature/Bone m_LocalScale.z: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 0,9999999 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 1 -> 1
+CURVES FirstPlace length=3,333333
+Armature/Bone m_LocalRotation.x: 0,3802014 -> 0,3802365
+Armature/Bone m_LocalRotation.y: -0,432212 -> -0,4321823
+Armature/Bone m_LocalRotation.z: 0,5400819 -> 0,5401316
+Armature/Bone m_LocalRotation.w: 0,6139637 -> 0,6139215
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290961 -> -0,09290961
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324737 -> 0,1324737
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666331 -> 0,5666331
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079267 -> 0,8079267
+Armature/Bone m_LocalPosition.x: 0 -> 0
+Armature/Bone m_LocalPosition.y: 0,5595788 -> 0,5595788
+Armature/Bone m_LocalPosition.z: -1,030143 -> -1,030143
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,3441699 -> 0,3441699
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806183 -> 0,1806183
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021879 -> 1,021879
+Armature/Bone m_LocalScale.x: 1 -> 1
+Armature/Bone m_LocalScale.y: 1 -> 1
+Armature/Bone m_LocalScale.z: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 1 -> 1
+CURVES ThrowBackwards length=1,583333
+Armature/Bone m_LocalRotation.x: 0,4070382 -> 0,4070382
+Armature/Bone m_LocalRotation.y: -0,4070383 -> -0,4070383
+Armature/Bone m_LocalRotation.z: 0,578204 -> 0,578204
+Armature/Bone m_LocalRotation.w: 0,578204 -> 0,578204
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290962 -> -0,09290962
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324736 -> 0,1324736
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666332 -> 0,5666332
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079265 -> 0,8079265
+Armature/Bone m_LocalPosition.x: 0 -> 0
+Armature/Bone m_LocalPosition.y: 0,5595788 -> 0,5595788
+Armature/Bone m_LocalPosition.z: -1,030143 -> -1,030143
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,3441698 -> 0,3441698
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806183 -> 0,1806183
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021879 -> 1,021879
+Armature/Bone m_LocalScale.x: 1 -> 1
+Armature/Bone m_LocalScale.y: 1 -> 1
+Armature/Bone m_LocalScale.z: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 0,9999999 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 1 -> 1
+CURVES BoostWithItemNormal length=1
+CURVES TurnRight length=0,2083333
+Armature/Bone m_LocalRotation.x: 0,4070382 -> 0,4070382
+Armature/Bone m_LocalRotation.y: -0,4070383 -> -0,4070383
+Armature/Bone m_LocalRotation.z: 0,578204 -> 0,578204
+Armature/Bone m_LocalRotation.w: 0,578204 -> 0,578204
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290962 -> -0,09290962
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324736 -> 0,1324736
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666331 -> 0,5666331
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079267 -> 0,8079267
+Armature/Bone m_LocalPosition.x: 0 -> 0
+Armature/Bone m_LocalPosition.y: 0,5595788 -> 0,5595788
+Armature/Bone m_LocalPosition.z: -1,030143 -> -1,030143
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,3441698 -> 0,3441698
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806183 -> 0,1806183
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021878 -> 1,021878
+Armature/Bone m_LocalScale.x: 1 -> 1
+Armature/Bone m_LocalScale.y: 1 -> 1
+Armature/Bone m_LocalScale.z: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 0,9999998 -> 0,9999998
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 0,9999999 -> 0,9999999
+CURVES NormalWithItem length=1
+CURVES ThrowForwardShell length=1,25
+Armature/Bone m_LocalRotation.x: 0,4070382 -> 0,438471
+Armature/Bone m_LocalRotation.y: -0,4070383 -> -0,4384711
+Armature/Bone m_LocalRotation.z: 0,578204 -> 0,5545433
+Armature/Bone m_LocalRotation.w: 0,578204 -> 0,5545433
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290962 -> -0,09290962
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324736 -> 0,1324736
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666332 -> 0,5666332
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079265 -> 0,8079265
+Armature/Bone m_LocalPosition.x: 0 -> 0
+Armature/Bone m_LocalPosition.y: 0,5595788 -> 0,411066
+Armature/Bone m_LocalPosition.z: -1,030143 -> -0,7019296
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,3441698 -> 0,3441698
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806183 -> 0,1806183
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021879 -> 1,021879
+Armature/Bone m_LocalScale.x: 1 -> 1
+Armature/Bone m_LocalScale.y: 1 -> 1
+Armature/Bone m_LocalScale.z: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 0,9999999 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 1 -> 1
+CURVES TurnRightWithItem length=0,2083333
+Armature/Bone m_LocalRotation.x: 0,4070382 -> 0,4070382
+Armature/Bone m_LocalRotation.y: -0,4070383 -> -0,4070383
+Armature/Bone m_LocalRotation.z: 0,578204 -> 0,578204
+Armature/Bone m_LocalRotation.w: 0,578204 -> 0,578204
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290962 -> -0,09290962
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324736 -> 0,1324736
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666332 -> 0,5666332
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079265 -> 0,8079265
+Armature/Bone m_LocalPosition.x: 0 -> 0
+Armature/Bone m_LocalPosition.y: 0,5595788 -> 0,5595788
+Armature/Bone m_LocalPosition.z: -1,030143 -> -1,030143
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,3441698 -> 0,3441698
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806183 -> 0,1806183
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021879 -> 1,021879
+Armature/Bone m_LocalScale.x: 1 -> 1
+Armature/Bone m_LocalScale.y: 1 -> 1
+Armature/Bone m_LocalScale.z: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 0,9999999 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 1 -> 1
+CURVES LoseAnim length=3,458333
+Armature/Bone m_LocalRotation.x: 0,4070382 -> 0,4070382
+Armature/Bone m_LocalRotation.y: -0,4070383 -> -0,4070383
+Armature/Bone m_LocalRotation.z: 0,578204 -> 0,578204
+Armature/Bone m_LocalRotation.w: 0,578204 -> 0,578204
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290962 -> -0,09290962
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324736 -> 0,1324736
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666331 -> 0,5666331
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079267 -> 0,8079267
+Armature/Bone m_LocalPosition.x: 0 -> 0
+Armature/Bone m_LocalPosition.y: 0,5595788 -> 0,5595788
+Armature/Bone m_LocalPosition.z: -1,030143 -> -1,030143
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,3441699 -> 0,3441699
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806183 -> 0,1806183
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021879 -> 1,021879
+Armature/Bone m_LocalScale.x: 1 -> 1
+Armature/Bone m_LocalScale.y: 1 -> 1
+Armature/Bone m_LocalScale.z: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 0,9999999 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 0,9999999 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 1 -> 1
+CURVES JumpTrick1 length=1,458333
+Armature/Bone m_LocalRotation.x: 0,4070382 -> -0,4221838
+Armature/Bone m_LocalRotation.y: -0,4070383 -> 0,3967519
+Armature/Bone m_LocalRotation.z: 0,578204 -> -0,5904731
+Armature/Bone m_LocalRotation.w: 0,578204 -> -0,562486
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290963 -> -0,09290963
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324736 -> 0,1324736
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666332 -> 0,5666332
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079265 -> 0,8079265
+Armature/Bone m_LocalPosition.x: 0 -> -0,01465761
+Armature/Bone m_LocalPosition.y: 0,5595788 -> 0,5543075
+Armature/Bone m_LocalPosition.z: -1,030143 -> -1,012916
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,3441698 -> 0,3441698
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806183 -> 0,1806183
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021878 -> 1,021878
+Armature/Bone m_LocalScale.x: 1 -> 1
+Armature/Bone m_LocalScale.y: 1 -> 1
+Armature/Bone m_LocalScale.z: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 0,9999999 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 0,9999999 -> 0,9999999
+CURVES TurningLeftWithItem length=0,2083333
+Armature/Bone m_LocalRotation.x: 0,4070382 -> 0,4070382
+Armature/Bone m_LocalRotation.y: -0,4070383 -> -0,4070383
+Armature/Bone m_LocalRotation.z: 0,578204 -> 0,578204
+Armature/Bone m_LocalRotation.w: 0,578204 -> 0,578204
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290962 -> -0,09290962
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324736 -> 0,1324736
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666332 -> 0,5666332
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079265 -> 0,8079265
+Armature/Bone m_LocalPosition.x: 0 -> 0
+Armature/Bone m_LocalPosition.y: 0,5595788 -> 0,5595788
+Armature/Bone m_LocalPosition.z: -1,030143 -> -1,030143
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,3441698 -> 0,3441698
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806183 -> 0,1806183
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021879 -> 1,021879
+Armature/Bone m_LocalScale.x: 1 -> 1
+Armature/Bone m_LocalScale.y: 1 -> 1
+Armature/Bone m_LocalScale.z: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 0,9999999 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 1 -> 1
+CURVES __preview__Armature|BoostTurnRightWithItem length=1
+Armature/Bone m_LocalRotation.x: 0,4070382 -> 0,4204918
+Armature/Bone m_LocalRotation.y: -0,4070383 -> -0,3933605
+Armature/Bone m_LocalRotation.z: 0,578204 -> 0,5684951
+Armature/Bone m_LocalRotation.w: 0,578204 -> 0,5875947
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290963 -> -0,09290963
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324736 -> 0,1324736
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666332 -> 0,5666332
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079265 -> 0,8079265
+Armature/Bone m_LocalPosition.x: 0 -> -0,08970747
+Armature/Bone m_LocalPosition.y: 0,5595788 -> 0,5595788
+Armature/Bone m_LocalPosition.z: -1,119953 -> -1,110073
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,3441699 -> 0,3441699
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806183 -> 0,1806183
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021879 -> 1,021879
+Armature/Bone m_LocalScale.x: 1 -> 1
+Armature/Bone m_LocalScale.y: 1 -> 1
+Armature/Bone m_LocalScale.z: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 0,9999999 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 0,9999999 -> 0,9999999
+CURVES __preview__Armature|BoostWithItemNormal length=1
+Armature/Bone m_LocalRotation.x: 0,4070382 -> 0,4070382
+Armature/Bone m_LocalRotation.y: -0,4070383 -> -0,4070383
+Armature/Bone m_LocalRotation.z: 0,578204 -> 0,578204
+Armature/Bone m_LocalRotation.w: 0,578204 -> 0,578204
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.x: -0,09290963 -> -0,09290963
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.y: 0,1324736 -> 0,1324736
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.z: 0,5666332 -> 0,5666332
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalRotation.w: 0,8079265 -> 0,8079265
+Armature/Bone m_LocalPosition.x: 0 -> 0
+Armature/Bone m_LocalPosition.y: 0,5595788 -> 0,5595788
+Armature/Bone m_LocalPosition.z: -1,119953 -> -1,119953
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.x: 0,3441699 -> 0,3441699
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.y: 0,1806183 -> 0,1806183
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalPosition.z: 1,021879 -> 1,021879
+Armature/Bone m_LocalScale.x: 1 -> 1
+Armature/Bone m_LocalScale.y: 1 -> 1
+Armature/Bone m_LocalScale.z: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.x: 1 -> 1
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.y: 0,9999999 -> 0,9999999
+Armature/Bone/Bone_009/Bone_016/Bone_017/Bone_048 m_LocalScale.z: 0,9999999 -> 0,9999999
+COLLIDER BoostPanel type=BoxCollider trigger=True bounds=Center: (-16630.29, 23246.32, -11607.71), Extents: (7.38, 2.21, 8.51) position=(-16630.29, 23246.32, -11607.71) id=GlobalObjectId_V1-2-ca649371757997541b74e958de65d097-84075308-0
+COLLIDER Cube type=BoxCollider trigger=False bounds=Center: (-16614.73, 23240.35, -11600.49), Extents: (6.13, 1.36, 8.51) position=(-16614.73, 23240.35, -11600.49) id=GlobalObjectId_V1-2-ca649371757997541b74e958de65d097-1550386877-0
+COLLIDER Banana type=CapsuleCollider trigger=False bounds=Center: (-16803.35, 23259.06, -11958.11), Extents: (0.95, 0.95, 0.95) position=(-16803.35, 23258.89, -11957.87) id=GlobalObjectId_V1-2-ca649371757997541b74e958de65d097-2022677591-0
+COLLIDER BobombItem type=CapsuleCollider trigger=False bounds=Center: (-16845.35, 23212.62, -11903.45), Extents: (0.70, 0.76, 0.70) position=(-16845.35, 23212.57, -11903.46) id=GlobalObjectId_V1-2-ca649371757997541b74e958de65d097-1616440015-0
+COLLIDER DashPanelShape_ef_dashboard__ef_dashboard (1) type=MeshCollider trigger=False bounds=Center: (-16630.02, 23245.52, -11607.46), Extents: (8.17, 1.82, 9.14) position=(-16582.99, 23174.82, -11912.29) id=GlobalObjectId_V1-2-ca649371757997541b74e958de65d097-279759218-0
+COLLIDER DashPanelShape_mm_jumpboard6__PanelFlame type=MeshCollider trigger=False bounds=Center: (-16530.34, 23258.16, -11565.44), Extents: (109.53, 18.11, 52.35) position=(-16582.99, 23174.82, -11912.29) id=GlobalObjectId_V1-2-ca649371757997541b74e958de65d097-3475331987078104867-0
+COLLIDER Gwii_MooMooMeadows type=MeshCollider trigger=False bounds=Center: (-16582.99, 23174.82, -11912.29), Extents: (0.00, 0.00, 0.00) position=(-16582.99, 23174.82, -11912.29) id=GlobalObjectId_V1-2-ca649371757997541b74e958de65d097-2726749787344041247-0
+COLLIDER CowRegularStandAndWalkBlend (3) type=SphereCollider trigger=False bounds=Center: (-16359.28, 23242.15, -12069.27), Extents: (2.80, 2.80, 2.80) position=(-16361.53, 23241.74, -12067.77) id=GlobalObjectId_V1-2-ca649371757997541b74e958de65d097-1437493213-0
+COLLIDER CowRegularStandAndWalkBlend (4) type=SphereCollider trigger=False bounds=Center: (-16361.32, 23243.27, -12094.50), Extents: (2.80, 2.80, 2.80) position=(-16363.53, 23242.46, -12093.12) id=GlobalObjectId_V1-2-ca649371757997541b74e958de65d097-593795566-0
+COLLIDER Mario type=SphereCollider trigger=False bounds=Center: (-16886.20, 23257.76, -11889.28), Extents: (1.31, 1.31, 1.31) position=(-16886.20, 23257.43, -11889.60) id=GlobalObjectId_V1-2-ca649371757997541b74e958de65d097-1592907044-0
+COLLIDER CowRegularStandAndWalkBlend type=SphereCollider trigger=False bounds=Center: (-16515.75, 23236.79, -12046.69), Extents: (2.80, 2.80, 2.80) position=(-16515.01, 23236.38, -12049.29) id=GlobalObjectId_V1-2-ca649371757997541b74e958de65d097-6026250621904046488-0
+COLLIDER CowRegularStandAndWalkBlend (1) type=SphereCollider trigger=False bounds=Center: (-16500.73, 23234.91, -12053.43), Extents: (2.80, 2.80, 2.80) position=(-16499.69, 23234.29, -12055.89) id=GlobalObjectId_V1-2-ca649371757997541b74e958de65d097-603929181-0
+COLLIDER CowRegularStandAndWalkBlend (6) type=SphereCollider trigger=False bounds=Center: (-16308.43, 23238.63, -11952.48), Extents: (2.80, 2.80, 2.80) position=(-16311.03, 23238.60, -11953.32) id=GlobalObjectId_V1-2-ca649371757997541b74e958de65d097-2074791866-0
+COLLIDER CowRegularStandAndWalkBlend (7) type=SphereCollider trigger=False bounds=Center: (-16289.97, 23238.52, -11969.73), Extents: (2.80, 2.80, 2.80) position=(-16292.51, 23238.07, -11970.61) id=GlobalObjectId_V1-2-ca649371757997541b74e958de65d097-755946398-0
+COLLIDER CowRegularStandAndWalkBlend (8) type=SphereCollider trigger=False bounds=Center: (-16314.86, 23239.66, -11936.30), Extents: (2.80, 2.80, 2.80) position=(-16317.54, 23239.30, -11936.66) id=GlobalObjectId_V1-2-ca649371757997541b74e958de65d097-1383615325-0
+COLLIDER CowRegularStandAndWalkBlend (2) type=SphereCollider trigger=False bounds=Center: (-16484.22, 23234.77, -12037.37), Extents: (2.80, 2.80, 2.80) position=(-16482.30, 23234.43, -12039.28) id=GlobalObjectId_V1-2-ca649371757997541b74e958de65d097-409815823-0
+COLLIDER CowRegularStandAndWalkBlend (5) type=SphereCollider trigger=False bounds=Center: (-16350.51, 23241.32, -12054.27), Extents: (2.80, 2.80, 2.80) position=(-16352.40, 23240.58, -12052.44) id=GlobalObjectId_V1-2-ca649371757997541b74e958de65d097-247871009-0
