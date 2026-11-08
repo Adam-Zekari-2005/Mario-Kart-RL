@@ -306952,6 +306952,8 @@ GameObject:
   - component: {fileID: 1592907051}
   - component: {fileID: 1592907052}
   - component: {fileID: 1592907053}
+  - component: {fileID: 1592907055}
+  - component: {fileID: 1592907054}
   m_Layer: 10
   m_Name: Mario
   m_TagString: Player
@@ -307469,6 +307471,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d0168051fd6d2d4d982a4768dff06d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoloPlayerAssist
+--- !u!114 &1592907054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592907039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6017397caf2f4d4f98421abc59d45e69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KartEpisode
+  rewardPerMetre: 0.01
+  lapBonus: 100
+  failurePenalty: -10
+  stuckSeconds: 15
+  maximumSeconds: 300
+  timePenaltyPerSecond: 0.2
+  grassPenaltyPerSecond: 1
+  collisionPenalty: 2
+  minimumImpactSpeed: 2
+  collisionCooldown: 0.75
+--- !u!114 &1592907055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592907039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56e98971f1764ed581b71f31d0e96b70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TrackProgress
 --- !u!1 &1593065473
 GameObject:
   m_ObjectHideFlags: 0
