@@ -3,6 +3,35 @@ using UnityEngine;
 // Adapter for the original game's logical controls. Physics stays unchanged.
 public static class KartKeyboard
 {
+    // Optional single-kart policy input. Logical controls retain the original physics.
+    public static bool AgentControl;
+    public static float AgentThrottle, AgentSteering;
+    public static bool AgentDrift;
+    static bool previousDrift, sampledDrift;
+    static int agentFrame = -1;
+    public static void SetAgentInput(float throttle, float turn, bool drift)
+    {
+        AgentControl = true;
+        AgentThrottle = Mathf.Clamp(throttle, -1, 1);
+        AgentSteering = Mathf.Clamp(turn, -1, 1);
+        AgentDrift = drift;
+    }
+    static bool AgentKey(KeyCode key)
+    {
+        if (key == KeyCode.Space) return AgentThrottle > 0.1f;
+        if (key == KeyCode.S || key == KeyCode.DownArrow) return AgentThrottle < -0.1f;
+        if (key == KeyCode.LeftArrow) return AgentSteering < -0.1f;
+        if (key == KeyCode.RightArrow) return AgentSteering > 0.1f;
+        if (key == KeyCode.V) return AgentDrift;
+        return false;
+    }
+    static void SampleAgentButtons()
+    {
+        if (agentFrame == Time.frameCount) return;
+        agentFrame = Time.frameCount;
+        previousDrift = sampledDrift;
+        sampledDrift = AgentDrift;
+    }
     static readonly KeyCode[] Accelerate={KeyCode.UpArrow,KeyCode.Z,KeyCode.W};
     static readonly KeyCode[] Reverse={KeyCode.DownArrow,KeyCode.S};
     static readonly KeyCode[] Left={KeyCode.LeftArrow,KeyCode.Q,KeyCode.A};
@@ -42,6 +71,8 @@ public static class KartKeyboard
     }
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
     static void Reset(){frame=-1;steering=0;
+        AgentControl=false;AgentThrottle=AgentSteering=0;AgentDrift=false;
+        agentFrame=-1;previousDrift=sampledDrift=false;
 #if UNITY_EDITOR
         TestHeld=null;TestDown=null;TestUp=null;
         testFrame=-1;testNow.Clear();testBefore.Clear();
@@ -72,22 +103,26 @@ public static class KartKeyboard
     }
     public static bool GetKey(KeyCode logical)
     {
+        if (AgentControl) return AgentKey(logical);
         var keys=Keys(logical);if(keys==null)return Held(logical);
         foreach(var key in keys)if(Held(key))return true;return false;
     }
     public static bool GetKeyDown(KeyCode logical)
     {
+        if (AgentControl) { SampleAgentButtons(); return logical == KeyCode.V && sampledDrift && !previousDrift; }
         var keys=Keys(logical);if(keys==null)return Down(logical);
         foreach(var key in keys)if(Down(key))return true;return false;
     }
     public static bool GetKeyUp(KeyCode logical)
     {
+        if (AgentControl) { SampleAgentButtons(); return logical == KeyCode.V && !sampledDrift && previousDrift; }
         if(GetKey(logical))return false;
         var keys=Keys(logical);if(keys==null)return Up(logical);
         foreach(var key in keys)if(Up(key))return true;return false;
     }
     public static float GetAxis(string axis)
     {
+        if (AgentControl && axis == "Horizontal") return AgentSteering;
         if(axis!="Horizontal")return Input.GetAxis(axis);
         if(frame!=Time.frameCount)
         {
