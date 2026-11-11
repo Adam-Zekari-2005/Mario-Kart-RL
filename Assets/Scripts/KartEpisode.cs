@@ -22,6 +22,7 @@ public sealed class KartEpisode : MonoBehaviour
     public float GrassCost { get; private set; }
     public float TimeCost { get; private set; }
     public float Score { get; private set; }
+    public float LapBonusAwarded { get; private set; }
     public float ElapsedSeconds { get; private set; }
     public string LastReason { get; private set; }
     TrackProgress progress;
@@ -65,7 +66,9 @@ public sealed class KartEpisode : MonoBehaviour
         ElapsedSeconds += Time.deltaTime;
         if (progress.CompletedLaps > rewardedLaps)
         {
-            Score += (progress.CompletedLaps - rewardedLaps) * lapBonus;
+            float lapReward = (progress.CompletedLaps - rewardedLaps) * lapBonus;
+            LapBonusAwarded += lapReward;
+            Score += lapReward;
             rewardedLaps = progress.CompletedLaps;
             EndEpisode("tour termine", false);
         }
@@ -81,7 +84,7 @@ public sealed class KartEpisode : MonoBehaviour
         if (failed) Score += failurePenalty;
         LastReason = reason;
         previousResult = $"Essai {episodeNumber} : {reason} | score {Score:F2} | {ElapsedSeconds:F1} s | {progress.CheckpointsPassed} checkpoints | {progress.CompletedLaps} tour(s)\n" +
-            $"Chocs : {Collisions} (-{CollisionCost:F2}) | Gazon : {GrassSeconds:F1} s (-{GrassCost:F2}) | Temps : -{TimeCost:F2}";
+            $"Bonus tour : +{LapBonusAwarded:F2} | Chocs : {Collisions} (-{CollisionCost:F2}) | Gazon : {GrassSeconds:F1} s (-{GrassCost:F2}) | Temps : -{TimeCost:F2}";
         Debug.Log("[KartEpisode] " + previousResult, this);
         // Reload all kart, item, physics, animation, race and checkpoint state together.
         RACE_MANAGER.RACE_STARTED = false;
