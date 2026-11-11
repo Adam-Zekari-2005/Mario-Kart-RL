@@ -9,5 +9,16 @@
 *.csproj
 *.sln
 *.slnx
+
+/.tools/
+/.venv-mlagents/
+/results/
+/Training/Results/
+/Training/__pycache__/
+
+/Assets/Resources/PerformanceTestRunInfo.json*
+/Assets/Resources/PerformanceTestRunSettings.json*
+
 /Assets/ML-Agents/Timers/
 /Assets/ML-Agents/Timers.meta
+/Assets/ML-Agents.meta

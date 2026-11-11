@@ -1,0 +1,11 @@
+utc,run,mode,track,seed,episode,reason,score,seconds,checkpoints,laps,collisions,grass_seconds,collision_cost,grass_cost,time_cost,crossings,profile,checkpoint_goal
+"2026-11-08T16:35:00.1050740Z","balanced-before-full-mario","evaluate","MarioCircuitTraining",42,1,"sans progression",6.01602,10.13335,1,0,2,6.78337,0.50000,1.35667,0.20267,"0@3.433","balanced",0
+"2026-11-08T16:35:01.5001850Z","balanced-before-full-mario","evaluate","MarioCircuitTraining",43,2,"sans progression",5.80302,9.95002,1,0,3,6.61670,0.75000,1.32333,0.19900,"0@3.483","balanced",0
+"2026-11-08T16:35:02.9325237Z","balanced-before-full-mario","evaluate","MarioCircuitTraining",44,3,"sans progression",5.75567,10.31668,1,0,3,6.81670,0.75000,1.36333,0.20633,"0@3.550","balanced",0
+"2026-11-08T16:35:04.3929027Z","balanced-before-full-mario","evaluate","MarioCircuitTraining",45,4,"sans progression",5.80302,9.95002,1,0,3,6.61670,0.75000,1.32333,0.19900,"0@3.483","balanced",0
+"2026-11-08T16:35:05.7699436Z","balanced-before-full-mario","evaluate","MarioCircuitTraining",46,5,"sans progression",5.75567,10.31668,1,0,3,6.81670,0.75000,1.36333,0.20633,"0@3.550","balanced",0
+"2026-11-08T16:35:07.1559441Z","balanced-before-full-mario","evaluate","MarioCircuitTraining",47,6,"sans progression",5.80302,9.95002,1,0,3,6.61670,0.75000,1.32333,0.19900,"0@3.483","balanced",0
+"2026-11-08T16:35:08.7227274Z","balanced-before-full-mario","evaluate","MarioCircuitTraining",48,7,"sans progression",5.75567,10.31668,1,0,3,6.81670,0.75000,1.36333,0.20633,"0@3.550","balanced",0
+"2026-11-08T16:35:10.1800589Z","balanced-before-full-mario","evaluate","MarioCircuitTraining",49,8,"sans progression",5.80302,9.95002,1,0,3,6.61670,0.75000,1.32333,0.19900,"0@3.483","balanced",0
+"2026-11-08T16:35:11.6688326Z","balanced-before-full-mario","evaluate","MarioCircuitTraining",50,9,"sans progression",5.75567,10.31668,1,0,3,6.81670,0.75000,1.36333,0.20633,"0@3.550","balanced",0
+"2026-11-08T16:35:13.1364086Z","balanced-before-full-mario","evaluate","MarioCircuitTraining",51,10,"sans progression",5.80302,9.95002,1,0,3,6.61670,0.75000,1.32333,0.19900,"0@3.483","balanced",0

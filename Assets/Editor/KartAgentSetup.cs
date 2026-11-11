@@ -1,3 +1,4 @@
+using DemoKartAgent = MarioKart.Demo.KartAgent;
 using UnityEditor;
 using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
@@ -35,14 +36,14 @@ public static class KartAgentSetup
         Configure(kart);
     }
 
-    public static KartAgent Configure(GameObject kart)
+    public static DemoKartAgent Configure(GameObject kart)
     {
         var behavior = kart.GetComponent<BehaviorParameters>() ?? Undo.AddComponent<BehaviorParameters>(kart);
         Undo.RecordObject(behavior, "Configurer KartPPO");
-        behavior.BehaviorName = KartAgent.Behavior;
-        behavior.BrainParameters.VectorObservationSize = KartAgent.ObservationCount;
+        behavior.BehaviorName = DemoKartAgent.Behavior;
+        behavior.BrainParameters.VectorObservationSize = DemoKartAgent.ObservationCount;
         behavior.BrainParameters.ActionSpec = ActionSpec.MakeContinuous(2);
-        var agent = kart.GetComponent<KartAgent>() ?? Undo.AddComponent<KartAgent>(kart);
+        var agent = kart.GetComponent<DemoKartAgent>() ?? Undo.AddComponent<DemoKartAgent>(kart);
         var requester = kart.GetComponent<DecisionRequester>() ?? Undo.AddComponent<DecisionRequester>(kart);
         Undo.RecordObject(requester, "Configurer décisions");
         requester.DecisionPeriod = 5;

@@ -1,0 +1,12 @@
+{
+    "unity": "6000.6.4f1",
+    "observation_count": 24,
+    "continuous_actions": [
+        0.03733731806278229,
+        -0.018590331077575684
+    ],
+    "discrete_actions": [
+        1
+    ],
+    "cpu_inference_passed": true
+}
