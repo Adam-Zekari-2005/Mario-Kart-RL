@@ -102,11 +102,11 @@ public class ItemManager : MonoBehaviour
             }
 
 
-            if ((KartKeyboard.GetKeyDown(KeyCode.RightShift) || KartKeyboard.GetKeyDown(KeyCode.LeftControl)) && item_decided && !player_script.HitByBanana_ && !player_script.HitByShell_) //if item array order changes, change the indexes of utility methods and these if statements
+            if ((player_script.Controls.GetKeyDown(KeyCode.RightShift) || player_script.Controls.GetKeyDown(KeyCode.LeftControl)) && item_decided && !player_script.HitByBanana_ && !player_script.HitByShell_) //if item array order changes, change the indexes of utility methods and these if statements
             {
                 if (current_Item.Equals("GreenShell")) //.Equals, not ==
                 {
-                    if (KartKeyboard.GetKeyDown(KeyCode.RightShift))
+                    if (player_script.Controls.GetKeyDown(KeyCode.RightShift))
                     {
                             if (CurrentTrailingItem != null)
                             {
@@ -119,7 +119,7 @@ public class ItemManager : MonoBehaviour
                             current_Item = ""; //1 use only
                             used_Item_Done();
                         }
-                    else if (KartKeyboard.GetKeyDown(KeyCode.LeftControl))
+                    else if (player_script.Controls.GetKeyDown(KeyCode.LeftControl))
                     {
                         if(CurrentTrailingItem == null)
                         {
@@ -151,14 +151,14 @@ public class ItemManager : MonoBehaviour
                 else if (current_Item.Equals("TripleGreenShells") && tripleItemCount > 0)
                 {
 
-                    if (KartKeyboard.GetKeyDown(KeyCode.RightShift))
+                    if (player_script.Controls.GetKeyDown(KeyCode.RightShift))
                     {
                         player_script.Driver.SetTrigger("ThrowForward");
                         item_gameobjects[2].SetActive(true);
                         StartCoroutine(spawnShell(shellSpawnPos, 1));
                         tripleItemCount--;
                     }
-                    else if (KartKeyboard.GetKeyDown(KeyCode.LeftControl))
+                    else if (player_script.Controls.GetKeyDown(KeyCode.LeftControl))
                     {
                         player_script.Driver.SetTrigger("ThrowBackward");
                         item_gameobjects[2].SetActive(true);
@@ -182,7 +182,7 @@ public class ItemManager : MonoBehaviour
                 } //THIS IS FOR TRIPLE GREEEN SHELLS
                 else if (current_Item.Equals("RedShell"))
                 {
-                    if (KartKeyboard.GetKeyDown(KeyCode.RightShift))
+                    if (player_script.Controls.GetKeyDown(KeyCode.RightShift))
                     {
                             if (CurrentTrailingItem != null)
                             {
@@ -195,7 +195,7 @@ public class ItemManager : MonoBehaviour
                         current_Item = ""; //1 use only
                         used_Item_Done();
                     }
-                    else if (KartKeyboard.GetKeyDown(KeyCode.LeftControl))
+                    else if (player_script.Controls.GetKeyDown(KeyCode.LeftControl))
                     {
                             if (CurrentTrailingItem == null)
                             {
@@ -223,14 +223,14 @@ public class ItemManager : MonoBehaviour
                 }
                 else if (current_Item.Equals("TripleRedShells") && tripleItemCount > 0)
                 {
-                    if (KartKeyboard.GetKeyDown(KeyCode.RightShift))
+                    if (player_script.Controls.GetKeyDown(KeyCode.RightShift))
                     {
                         player_script.Driver.SetTrigger("ThrowForward");
                         item_gameobjects[4].SetActive(true);
                         StartCoroutine(spawnRedShell(shellSpawnPos, 1));
                         tripleItemCount--;
                     }
-                    else if (KartKeyboard.GetKeyDown(KeyCode.LeftControl))
+                    else if (player_script.Controls.GetKeyDown(KeyCode.LeftControl))
                     {
                         player_script.Driver.SetTrigger("ThrowBackward");
                         item_gameobjects[4].SetActive(true);
@@ -253,7 +253,7 @@ public class ItemManager : MonoBehaviour
                 }
                 else if (current_Item.Equals("Mushroom"))
                 {
-                    if (KartKeyboard.GetKeyDown(KeyCode.RightShift))
+                    if (player_script.Controls.GetKeyDown(KeyCode.RightShift))
                     {
                         player_script.Boost_time = 2f;
                         for (int i = 0; i < player_script.BoostBurstPS.transform.childCount; i++) //boost burst
@@ -272,7 +272,7 @@ public class ItemManager : MonoBehaviour
                 }
                 else if (current_Item.Equals("TripleMushroom") && tripleItemCount > 0)
                 {
-                    if (KartKeyboard.GetKeyDown(KeyCode.RightShift))
+                    if (player_script.Controls.GetKeyDown(KeyCode.RightShift))
                     {
                         player_script.Boost_time = 2.5f;
                         tripleItemCount--;
@@ -299,7 +299,7 @@ public class ItemManager : MonoBehaviour
                 }
                 else if (current_Item.Equals("Banana"))
                 {
-                    if (KartKeyboard.GetKeyDown(KeyCode.RightShift))
+                    if (player_script.Controls.GetKeyDown(KeyCode.RightShift))
                     {
                         if(CurrentTrailingItem != null)
                             {
@@ -311,7 +311,7 @@ public class ItemManager : MonoBehaviour
                             current_Item = ""; //1 use only
                             used_Item_Done();
                     }
-                    if (KartKeyboard.GetKeyDown(KeyCode.LeftControl))
+                    if (player_script.Controls.GetKeyDown(KeyCode.LeftControl))
                     {
                             if (CurrentTrailingItem == null)
                             {
@@ -337,12 +337,12 @@ public class ItemManager : MonoBehaviour
                 }
                 else if (current_Item.Equals("TripleBananas"))
                 {
-                    if (KartKeyboard.GetKeyDown(KeyCode.RightShift))
+                    if (player_script.Controls.GetKeyDown(KeyCode.RightShift))
                     {
                         player_script.Driver.SetTrigger("ThrowForward");
                         StartCoroutine(spawnBanana(1));
                     }
-                    if (KartKeyboard.GetKeyDown(KeyCode.LeftControl))
+                    if (player_script.Controls.GetKeyDown(KeyCode.LeftControl))
                     {
                         StartCoroutine(spawnBanana(-1));
                         
@@ -366,7 +366,7 @@ public class ItemManager : MonoBehaviour
                 }
                 else if (current_Item.Equals("GoldenMushroom"))
                 {
-                    if (KartKeyboard.GetKeyDown(KeyCode.RightShift))
+                    if (player_script.Controls.GetKeyDown(KeyCode.RightShift))
                     {
                         startMushroomTimer = true;
                         player_script.Boost_time = 2f;
@@ -392,7 +392,7 @@ public class ItemManager : MonoBehaviour
                 }
                 else if (current_Item.Equals("Coin"))
                 {
-                    if (KartKeyboard.GetKeyDown(KeyCode.RightShift))
+                    if (player_script.Controls.GetKeyDown(KeyCode.RightShift))
                     {
                         StartCoroutine(UseCoin());
                             current_Item = ""; //1 use only
@@ -403,7 +403,7 @@ public class ItemManager : MonoBehaviour
                 }
                 else if (current_Item.Equals("ItemStar"))
                 {
-                    if (KartKeyboard.GetKeyDown(KeyCode.RightShift))
+                    if (player_script.Controls.GetKeyDown(KeyCode.RightShift))
                     {
                         current_Item = ""; //1 use only
                         used_Item_Done();
@@ -414,7 +414,7 @@ public class ItemManager : MonoBehaviour
                 }
                 else if (current_Item.Equals("Bullet"))
                 {
-                    if (KartKeyboard.GetKeyDown(KeyCode.RightShift) && !player_script.JUMP_PANEL)
+                    if (player_script.Controls.GetKeyDown(KeyCode.RightShift) && !player_script.JUMP_PANEL)
                     {
                             if (!player_script.antiGravity)
                             {
@@ -434,14 +434,14 @@ public class ItemManager : MonoBehaviour
                 }
                 else if (current_Item.Equals("Bobomb-Hold"))
                 {
-                    if (KartKeyboard.GetKeyDown(KeyCode.RightShift))
+                    if (player_script.Controls.GetKeyDown(KeyCode.RightShift))
                     {
                         player_script.Driver.SetTrigger("ThrowForward");
                         StartCoroutine(useBobomb(1));
                         used_Item_Done();
                         current_Item = "";
                     }
-                    else if (KartKeyboard.GetKeyDown(KeyCode.LeftControl))
+                    else if (player_script.Controls.GetKeyDown(KeyCode.LeftControl))
                     {
                             player_script.Driver.SetTrigger("ThrowBackward");
                             StartCoroutine(useBobomb(-1));
@@ -451,7 +451,7 @@ public class ItemManager : MonoBehaviour
                 }
                 else if (current_Item.Equals("BlueShell"))
                 {
-                    if (KartKeyboard.GetKeyDown(KeyCode.RightShift))
+                    if (player_script.Controls.GetKeyDown(KeyCode.RightShift))
                     {
                         player_script.Driver.SetTrigger("ThrowForward");
                         StartCoroutine(useBlueShell());

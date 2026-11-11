@@ -9,3 +9,5 @@
 *.csproj
 *.sln
 *.slnx
+/Assets/ML-Agents/Timers/
+/Assets/ML-Agents/Timers.meta
