@@ -1,0 +1,11 @@
+utc,run,mode,track,seed,episode,reason,score,seconds,checkpoints,laps,collisions,grass_seconds,collision_cost,grass_cost,time_cost,crossings,profile,checkpoint_goal
+"2026-11-08T15:59:42.5339031Z","balanced-before-full-moo","evaluate","MooMooTraining",42,1,"sans progression",7.48765,11.86666,3,0,4,0.00000,1.00000,0.00000,0.23733,"0@1.983;1@3.650;2@6.983","balanced",0
+"2026-11-08T15:59:46.3025540Z","balanced-before-full-moo","evaluate","MooMooTraining",43,2,"sans progression",8.30873,18.98322,3,0,6,0.15000,1.50000,0.03000,0.37967,"0@2.050;1@3.733;2@8.233","balanced",0
+"2026-11-08T15:59:49.1109198Z","balanced-before-full-moo","evaluate","MooMooTraining",44,3,"sans progression",7.20599,13.11664,3,0,5,0.03333,1.25000,0.00667,0.26234,"0@2.050;1@3.733;2@8.233","balanced",0
+"2026-11-08T15:59:53.0703992Z","balanced-before-full-moo","evaluate","MooMooTraining",45,4,"sans progression",8.31853,18.64989,3,0,6,0.10000,1.50000,0.02000,0.37300,"0@2.000;1@3.650;2@7.967","balanced",0
+"2026-11-08T15:59:55.9951710Z","balanced-before-full-moo","evaluate","MooMooTraining",46,5,"sans progression",7.46365,12.39998,3,0,4,0.06667,1.00000,0.01333,0.24800,"0@2.050;1@3.733;2@7.533","balanced",0
+"2026-11-08T15:59:58.7923689Z","balanced-before-full-moo","evaluate","MooMooTraining",47,6,"sans progression",7.47898,12.29998,3,0,4,0.00000,1.00000,0.00000,0.24600,"0@1.983;1@3.650;2@7.417","balanced",0
+"2026-11-08T16:00:01.4975638Z","balanced-before-full-moo","evaluate","MooMooTraining",48,7,"sans progression",7.46931,12.44998,3,0,4,0.03333,1.00000,0.00667,0.24900,"0@2.000;1@3.650;2@7.533","balanced",0
+"2026-11-08T16:00:06.1778699Z","balanced-before-full-moo","evaluate","MooMooTraining",49,8,"sans progression",8.04655,20.04987,3,0,7,0.15000,1.75000,0.03000,0.40100,"0@2.050;1@3.733;2@8.233","balanced",0
+"2026-11-08T16:00:09.2227710Z","balanced-before-full-moo","evaluate","MooMooTraining",50,9,"sans progression",7.45931,12.78331,3,0,4,0.05000,1.00000,0.01000,0.25567,"0@2.033;1@3.733;2@7.883","balanced",0
+"2026-11-08T16:00:12.1555844Z","balanced-before-full-moo","evaluate","MooMooTraining",51,10,"sans progression",7.45931,12.78331,3,0,4,0.05000,1.00000,0.01000,0.25567,"0@2.033;1@3.733;2@7.883","balanced",0

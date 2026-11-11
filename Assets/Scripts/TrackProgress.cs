@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(LapCounter), typeof(Rigidbody))]
 public sealed class TrackProgress : MonoBehaviour
 {
+    public event System.Action<int> CheckpointPassed;
     public int NextCheckpoint { get; private set; }
     public int CheckpointsPassed { get; private set; }
     public int CompletedLaps { get; private set; }
@@ -60,6 +61,7 @@ public sealed class TrackProgress : MonoBehaviour
             NextCheckpoint = (NextCheckpoint + 1) % points.childCount;
             CheckpointsPassed++;
             passedThisLap++;
+            CheckpointPassed?.Invoke((NextCheckpoint + points.childCount - 1) % points.childCount);
         }
         else if (other.CompareTag("NextLapCollider") && passedThisLap >= points.childCount)
         {
