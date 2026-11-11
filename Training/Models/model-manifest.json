@@ -1,0 +1,56 @@
+{
+  "source_run": "balanced-full-v1",
+  "source_step": 39951,
+  "training_track": "Moo Moo Meadows",
+  "training_curriculum": [
+    {
+      "run": "balanced-six-v1",
+      "steps": 20023,
+      "goal_checkpoints": 6
+    },
+    {
+      "run": "balanced-sixteen-v1",
+      "steps": 40112,
+      "goal_checkpoints": 16
+    },
+    {
+      "run": "balanced-full-v1",
+      "steps": 39951,
+      "goal_checkpoints": 0
+    }
+  ],
+  "sha256": "5beb9bc7213a4185d8b449282d35455c3eb4ed6179585dce760244578fcf9ec0",
+  "unity_asset": "Assets/Resources/Kart.onnx",
+  "observations": 24,
+  "continuous_actions": 2,
+  "discrete_branches": [
+    2
+  ],
+  "reverse_motor_enabled": false,
+  "items_enabled": false,
+  "profile": "balanced",
+  "onnx_checker_passed": true,
+  "selection_series": "select-full-v1-40k",
+  "fresh_test_series": "selected-40k-holdout",
+  "native_unity_series": "native-selected-moo",
+  "transfer_series": "selected-40k-mario",
+  "note": "Mario Circuit is evaluated only; no training on that track.",
+  "verification": {
+    "select-full-v1-40k": {
+      "episodes": 10,
+      "laps": 10
+    },
+    "selected-40k-holdout": {
+      "episodes": 20,
+      "laps": 19
+    },
+    "native-selected-moo": {
+      "episodes": 20,
+      "laps": 20
+    },
+    "selected-40k-mario": {
+      "episodes": 10,
+      "laps": 0
+    }
+  }
+}

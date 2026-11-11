@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(TrackProgress), typeof(Player))]
 public sealed class KartEpisode : MonoBehaviour
 {
+    public event System.Action<float> RewardChanged;
+    public event System.Action<KartEpisode> EpisodeFinished;
+    public bool IsEnding => ending;
+    [Min(0)] public int checkpointGoal;
+    public float checkpointGoalBonus = 10f;
     [Min(0)] public float rewardPerMetre = 0.01f;
     public float lapBonus = 100;
     public float failurePenalty = -10;
@@ -53,21 +58,26 @@ public sealed class KartEpisode : MonoBehaviour
         bestProgress = Mathf.Max(bestProgress, progress.ProgressMetres);
         float timeCost = timePenaltyPerSecond * Time.deltaTime;
         TimeCost += timeCost;
-        Score += advance * rewardPerMetre - timeCost;
+        AddScore(advance * rewardPerMetre - timeCost);
         if (IsOnGrass())
         {
             GrassSeconds += Time.deltaTime;
             float grassCost = grassPenaltyPerSecond * Time.deltaTime;
             GrassCost += grassCost;
-            Score -= grassCost;
+            AddScore(-grassCost);
         }
         noProgressTime = advance > 0.01f ? 0 : noProgressTime + Time.deltaTime;
         ElapsedSeconds += Time.deltaTime;
         if (progress.CompletedLaps > rewardedLaps)
         {
-            Score += (progress.CompletedLaps - rewardedLaps) * lapBonus;
+            AddScore((progress.CompletedLaps - rewardedLaps) * lapBonus);
             rewardedLaps = progress.CompletedLaps;
             EndEpisode("tour termine", false);
+        }
+        else if (checkpointGoal > 0 && progress.CheckpointsPassed >= checkpointGoal)
+        {
+            AddScore(checkpointGoalBonus);
+            EndEpisode("objectif checkpoints atteint", false);
         }
         else if (noProgressTime >= stuckSeconds) EndEpisode("sans progression", true);
         else if (ElapsedSeconds >= maximumSeconds) EndEpisode("temps ecoule", true);
@@ -78,11 +88,13 @@ public sealed class KartEpisode : MonoBehaviour
     {
         if (ending) return;
         ending = true;
-        if (failed) Score += failurePenalty;
+        if (failed) AddScore(failurePenalty);
         LastReason = reason;
         previousResult = $"Essai {episodeNumber} : {reason} | score {Score:F2} | {ElapsedSeconds:F1} s | {progress.CheckpointsPassed} checkpoints | {progress.CompletedLaps} tour(s)\n" +
             $"Chocs : {Collisions} (-{CollisionCost:F2}) | Gazon : {GrassSeconds:F1} s (-{GrassCost:F2}) | Temps : -{TimeCost:F2}";
         Debug.Log("[KartEpisode] " + previousResult, this);
+        EpisodeFinished?.Invoke(this);
+        if (KartRunSettings.StopRequested) return;
         // Reload all kart, item, physics, animation, race and checkpoint state together.
         RACE_MANAGER.RACE_STARTED = false;
         RACE_MANAGER.RACE_COMPLETED = false;
@@ -95,7 +107,8 @@ public sealed class KartEpisode : MonoBehaviour
     {
         GUI.Box(new Rect(12, 175, 850, 165), "Environnement d'apprentissage - essai " + episodeNumber);
         GUI.Label(new Rect(24, 202, 825, 135),
-            $"Score : {Score:F2} | Temps : {ElapsedSeconds:F1} s | Checkpoints : {(progress ? progress.CheckpointsPassed : 0)}\n" +
+            $"Score : {Score:F2} | Temps : {ElapsedSeconds:F1} s | Checkpoints : {(progress ? progress.CheckpointsPassed : 0)}" +
+            (checkpointGoal > 0 ? $" / {checkpointGoal} (objectif partiel)\n" : "\n") +
             $"Progression maximale : {bestProgress:F1} unites | F5 : nouvel essai\n" +
             $"Chocs : {Collisions} (-{CollisionCost:F2}) | Gazon : {GrassSeconds:F1} s (-{GrassCost:F2}) | Temps : -{TimeCost:F2}\n" + previousResult);
     }
@@ -128,10 +141,16 @@ public sealed class KartEpisode : MonoBehaviour
             if (impact < minimumImpactSpeed) continue;
             Collisions++;
             CollisionCost += collisionPenalty;
-            Score -= collisionPenalty;
+            AddScore(-collisionPenalty);
             nextCollisionTime = Time.time + collisionCooldown;
             break;
         }
+    }
+
+    void AddScore(float delta)
+    {
+        Score += delta;
+        RewardChanged?.Invoke(delta);
     }
 }
 

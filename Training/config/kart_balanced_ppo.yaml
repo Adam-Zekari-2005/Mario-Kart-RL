@@ -1,0 +1,30 @@
+behaviors:
+  Kart:
+    checkpoint_interval: 20000
+    hyperparameters:
+      batch_size: 128
+      beta: 0.005
+      buffer_size: 1024
+      epsilon: 0.2
+      lambd: 0.95
+      learning_rate: 0.0003
+      learning_rate_schedule: linear
+      num_epoch: 3
+    keep_checkpoints: 5
+    max_steps: 1000000
+    network_settings:
+      hidden_units: 128
+      normalize: true
+      num_layers: 2
+    reward_signals:
+      extrinsic:
+        gamma: 0.995
+        strength: 1.0
+    summary_freq: 1000
+    time_horizon: 128
+    trainer_type: ppo
+engine_settings:
+  capture_frame_rate: 60
+  no_graphics: true
+  target_frame_rate: -1
+  time_scale: 5
