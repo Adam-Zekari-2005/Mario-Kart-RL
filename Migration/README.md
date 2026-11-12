@@ -1,7 +1,7 @@
 # Migration vers Unity 6.6
 
 Source : Unity3D-Mario-Kart-Racing-Game, Ishaan Patel (Ishaan35).
-Le README d'origine est conserve dans SOURCE-README.md. Le dossier GitHub original n'a pas ete modifie.
+La [présentation du projet ENSISA](../SOURCE-README.md) décrit notre contribution et renvoie au dépôt d’origine.
 
 Cette copie conserve les cinq circuits, les assets des personnages et les objets du projet d'origine. Les courses sont configurees en solo et les touches clavier sont remappees. Notre KartController et ML-Agents ne sont pas integres a cette etape.
 
