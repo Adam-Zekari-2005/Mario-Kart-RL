@@ -73,13 +73,13 @@ public class LapCounter : MonoBehaviour
                 {
                     checkpointsVisited[i] = false;
                 }
-                if(gameObject.tag != "Player")
+                if(TryGetComponent<ComputerDriver>(out var computerDriver))
                 {
                     int max = RACE_MANAGER.allPaths.childCount;
 
                     int rand = Random.Range(0, max);
 
-                    GetComponent<ComputerDriver>().path = RACE_MANAGER.allPaths.GetChild(rand); //assigning a new path
+                    computerDriver.path = RACE_MANAGER.allPaths.GetChild(rand); //assigning a new path
                 }
 
             }

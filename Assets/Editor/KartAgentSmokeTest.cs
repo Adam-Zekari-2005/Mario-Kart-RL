@@ -39,7 +39,7 @@ public static class KartAgentSmokeTest
         {
             if (stage == 1)
             {
-                human = Object.FindAnyObjectByType<Player>();
+                human = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
                 ai = KartAgentSetup.SpawnBeside(human);
                 KartKeyboard.TestHeld = key => key == KeyCode.UpArrow || key == KeyCode.RightArrow;
                 start = Time.time; origin = ai.transform.position; forward = ai.transform.forward; humanOrigin = human.transform.position;

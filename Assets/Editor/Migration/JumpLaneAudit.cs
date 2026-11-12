@@ -44,7 +44,7 @@ public static class JumpLaneAudit
             return;
         }
         if (!EditorApplication.isPlaying || !RACE_MANAGER.RACE_STARTED) return;
-        var player = Object.FindAnyObjectByType<Player>();
+        var player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         if (!player) return;
         if (started < 0)
         {

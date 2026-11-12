@@ -1,5 +1,8 @@
 # KartPPO â€” branchement de l'agent
 
+**Course joueur contre PPO.** Depuis le menu normal du jeu, choisir Moo Moo Meadows. Le rival utilise automatiquement Assets/Resources/Kart.onnx au départ, avec les 24 observations et les commandes du modèle entraîné. Le joueur garde le clavier. Les menus IA ci-dessous sont des outils séparés de démonstration.
+
+
 Projet Unity 6000.6.4f1. La dÃ©pendance C# ML-Agents est fixÃ©e Ã  4.2.0 dans Packages/manifest.json. La 4.0.0 Ã©choue Ã  compiler sur cet Ã©diteur dans Match3ActuatorComponent (ancienne API GetInstanceID).
 
 Dans Unity, **Mario Kart â†’ IA â†’ Tester joueur et IA (Moo Moo Meadows)** lance un essai temporaire sur le circuit. Le kart humain conserve les commandes du jeu. Un second kart reÃ§oit une consigne de conduite fixe via ML-Agents. La console affiche son dÃ©placement et sa rotation. Cette consigne sert Ã  valider les commandes avant l'entraÃ®nement.

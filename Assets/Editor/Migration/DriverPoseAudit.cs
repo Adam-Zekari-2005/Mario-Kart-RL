@@ -36,7 +36,7 @@ public static class DriverPoseAudit
             EditorSceneManager.OpenScene("Assets/Scenes/"+MigrationAudit.Tracks[next]+".unity");SessionState.SetInt(Key,1);EditorApplication.isPlaying=true;return;
         }
         if(!EditorApplication.isPlaying||!RACE_MANAGER.RACE_STARTED)return;
-        var p=Object.FindAnyObjectByType<Player>();
+        var p=GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         if(start<0)start=Time.time;
         float t=Time.time-start;
         KartKeyboard.TestHeld=k=>(k==KeyCode.UpArrow&&t>=1&&t<15);

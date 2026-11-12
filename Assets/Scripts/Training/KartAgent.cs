@@ -17,7 +17,7 @@ public sealed class KartAgent : Agent
     bool finished;
     int decisions;
     System.Random randomPolicy;
-    readonly float[] angles = { -90, -60, -40, -20, 0, 20, 40, 60, 90 };
+    static readonly float[] angles = { -90, -60, -40, -20, 0, 20, 40, 60, 90 };
 
     protected override void OnEnable()
     {
@@ -85,13 +85,20 @@ public sealed class KartAgent : Agent
     }
     public override void CollectObservations(VectorSensor sensor)
     {
+        ObserveKart(sensor, player, progress, body, points);
+    }
+
+    // Both the training agent and the race opponent must encode the same 24 inputs.
+    public static void ObserveKart(VectorSensor sensor, Player player, TrackProgress progress, Rigidbody body, Transform points)
+    {
+        var transform = player.transform;
         progress.Sample();
         sensor.AddObservation(Vector3.ClampMagnitude(transform.InverseTransformDirection(body.linearVelocity) / 100f, 1));
         sensor.AddObservation(transform.InverseTransformDirection(progress.TrackDirection));
         var target = points.GetChild(progress.NextCheckpoint);
         sensor.AddObservation(Vector3.ClampMagnitude(transform.InverseTransformPoint(target.position) / 100f, 1));
         sensor.AddObservation(Mathf.Clamp(progress.ForwardSpeed / 100f, -1, 1));
-        sensor.AddObservation(episode.IsOnGrass());
+        sensor.AddObservation(KartEpisode.IsOnGrass(transform));
         sensor.AddObservation(player.grounded);
         Vector3 nextDirection = (points.GetChild((progress.NextCheckpoint + 1) % points.childCount).position - target.position).normalized;
         sensor.AddObservation(transform.InverseTransformDirection(nextDirection));

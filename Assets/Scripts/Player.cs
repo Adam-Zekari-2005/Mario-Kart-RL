@@ -415,7 +415,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (RACE_MANAGER.RACE_STARTED && !RACE_MANAGER.RACE_COMPLETED)
+        if (RACE_MANAGER.RACE_STARTED && !RACE_MANAGER.RACE_COMPLETED && CompareTag("Player"))
             PositionUI();
 
         if (RACE_MANAGER.RACE_COMPLETED)

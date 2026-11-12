@@ -113,7 +113,9 @@ public sealed class KartEpisode : MonoBehaviour
             $"Chocs : {Collisions} (-{CollisionCost:F2}) | Gazon : {GrassSeconds:F1} s (-{GrassCost:F2}) | Temps : -{TimeCost:F2}\n" + previousResult);
     }
 
-    public bool IsOnGrass()
+    public bool IsOnGrass() => IsOnGrass(transform);
+
+    public static bool IsOnGrass(Transform transform)
     {
         // Use the closest surface under the kart, ignoring its own colliders and triggers.
         // No surface during a jump means no grass penalty.

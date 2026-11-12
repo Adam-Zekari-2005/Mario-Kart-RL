@@ -5,13 +5,29 @@ public sealed class KartDriveInput
 {
     public bool Autonomous { get; private set; }
     float steering, pedal;
-    public float Throttle => Autonomous ? Mathf.Max(0, pedal) : 1;
+    bool trained, drift, sampled, previous;
+    int frame = -1;
+
+    // The shipped policy learned binary throttle and full steering strength with a 0.1 dead zone.
+    public void SetRaceActions(float turn, float throttle, bool drifting)
+    {
+        SetActions(turn, throttle);
+        trained = true;
+        drift = drifting;
+    }
+    void SampleDrift()
+    {
+        if (frame == Time.frameCount) return;
+        previous = sampled; sampled = drift; frame = Time.frameCount;
+    }
+    public float Throttle => Autonomous && !trained ? Mathf.Max(0, pedal) : 1;
     public float Brake => Autonomous ? Mathf.Max(0, -pedal) : 1;
-    public float SteeringGain => Autonomous ? Mathf.Abs(steering) : 1;
+    public float SteeringGain => Autonomous && !trained ? Mathf.Abs(steering) : 1;
 
     public void SetAutonomous(bool enabled)
     {
         Autonomous = enabled;
+        trained = drift = sampled = previous = false; frame = -1;
         SetActions(0, 0);
     }
 
@@ -22,18 +38,21 @@ public sealed class KartDriveInput
     }
 
     public float GetAxis(string axis) => Autonomous ? (axis == "Horizontal" ? steering : 0) : KartKeyboard.GetAxis(axis);
-    public bool GetKeyDown(KeyCode key) => !Autonomous && KartKeyboard.GetKeyDown(key);
-    public bool GetKeyUp(KeyCode key) => !Autonomous && KartKeyboard.GetKeyUp(key);
+    public bool GetKeyDown(KeyCode key) { if (!Autonomous) return KartKeyboard.GetKeyDown(key); SampleDrift(); return key == KeyCode.V && sampled && !previous; }
+    public bool GetKeyUp(KeyCode key) { if (!Autonomous) return KartKeyboard.GetKeyUp(key); SampleDrift(); return key == KeyCode.V && !sampled && previous; }
 
     public bool GetKey(KeyCode key)
     {
         if (!Autonomous) return KartKeyboard.GetKey(key);
+        float threshold = trained ? .1f : 0;
         switch (key)
         {
-            case KeyCode.Space: case KeyCode.UpArrow: return pedal > 0;
+            case KeyCode.V: return drift;
+            case KeyCode.UpArrow: return !trained && pedal > 0;
+            case KeyCode.Space: return pedal > threshold;
             case KeyCode.S: case KeyCode.DownArrow: return pedal < 0;
-            case KeyCode.LeftArrow: return steering < 0;
-            case KeyCode.RightArrow: return steering > 0;
+            case KeyCode.LeftArrow: return steering < -threshold;
+            case KeyCode.RightArrow: return steering > threshold;
             default: return false;
         }
     }
