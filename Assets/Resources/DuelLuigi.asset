@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6110f8839ed6cab4dac3e429b5e65998, type: 3}
+  m_Name: DuelLuigi
+  m_EditorClassIdentifier: Assembly-CSharp::DuelDriverAppearance
+  model: {fileID: -927199367670048503, guid: 04932b25df6ada544afdc78d17f33cba, type: 3}
+  animations: {fileID: 9100000, guid: 1a5c0b20f68c7454c95ebfb602bab5a5, type: 2}
+  suit: {fileID: 2100000, guid: 36c790718ba07184492c4be56107b448, type: 2}
+  face: {fileID: 2100000, guid: 892f1a9093678c748b1f3b548cd27f84, type: 2}
+  mapIcon: {fileID: 21300000, guid: c4cb3c53136ee8042b238eab8e989ec7, type: 3}

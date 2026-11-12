@@ -23,7 +23,8 @@ public class UtilityFunctions : MonoBehaviour
     void Start()
     {
         playersounds = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerSounds>();
-        playerscript = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        playerscript = GetComponentInParent<Player>();
+        if (!playerscript) playerscript = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 
         //cow stuff
         if(gameObject.name.IndexOf("Cow") >= 0)
@@ -49,7 +50,7 @@ public class UtilityFunctions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (KartKeyboard.GetKey(KeyCode.V))
+        if (playerscript.Controls.GetKey(KeyCode.V))
         {
             drifting = true;
         }
@@ -319,21 +320,22 @@ public class UtilityFunctions : MonoBehaviour
     IEnumerator headBoneParent()
     {
         yield return new WaitForSeconds(1);
-        if(gameObject.name == "Bone_017")
+        // A kart cloned during a race already has the reparented bone.
+        if(gameObject.name == "Bone_017" && transform.parent && transform.parent.childCount > 1)
         {
             Transform newParent = transform.parent.GetChild(1);
 
-            transform.parent = newParent;
+            if (newParent != transform) transform.parent = newParent;
         }
     }
     IEnumerator headBoneParentOpponent()
     {
         yield return new WaitForSeconds(1);
-        if(gameObject.name == "Head")
+        if(gameObject.name == "Head" && transform.parent && transform.parent.childCount > 3)
         {
             Transform newParent = transform.parent.GetChild(3);
 
-            transform.parent = newParent;
+            if (newParent != transform) transform.parent = newParent;
         }
     }
 

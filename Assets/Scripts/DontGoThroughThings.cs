@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class DontGoThroughThings : MonoBehaviour
 {
@@ -16,6 +16,7 @@ public class DontGoThroughThings : MonoBehaviour
     private Rigidbody myRigidbody;
     private Collider myCollider;
 
+    public void ResetSweep(Vector3 position) => previousPosition = position;
     //initialize values
     void Start()
     {

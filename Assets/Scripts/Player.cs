@@ -198,6 +198,8 @@ public class Player : MonoBehaviour
 
 
     // Start is called before the first frame update
+    public KartDriveInput Controls { get; } = new KartDriveInput();
+
     void Start()
     {
         kartMat.SetVector("Vector4_70BBF882", new Vector4(0, 0, 0, 0));
@@ -226,7 +228,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (trickAvailable && KartKeyboard.GetKeyDown(KeyCode.V) && REALCURRENTSPEED > 40 && !GLIDER_FLY)
+        if (trickAvailable && Controls.GetKeyDown(KeyCode.V) && REALCURRENTSPEED > 40 && !GLIDER_FLY)
         {
 
             trickAvailable = false;
@@ -282,7 +284,7 @@ public class Player : MonoBehaviour
                 }
                 for(int i = 0; i < 60; i++)
                 {
-                    if (KartKeyboard.GetKey(KeyCode.Space))
+                    if (Controls.GetKey(KeyCode.Space))
                     {
                         currentspeed = Mathf.SmoothStep(currentspeed, boost_speed, 2f * Time.deltaTime);
                     }
@@ -305,7 +307,7 @@ public class Player : MonoBehaviour
 
 
             //dust particles
-            if (REALCURRENTSPEED > 30 && !drift_left && !drift_right && !GLIDER_FLY && !JUMP_PANEL && !KartKeyboard.GetKey(KeyCode.S) && grounded && !item_manager.isBullet && Is_Dirt_Track)
+            if (REALCURRENTSPEED > 30 && !drift_left && !drift_right && !GLIDER_FLY && !JUMP_PANEL && !Controls.GetKey(KeyCode.S) && grounded && !item_manager.isBullet && Is_Dirt_Track)
             {
                 dustParticles.GetChild(0).GetComponent<ParticleSystem>().Play();
                 dustParticles.GetChild(1).GetComponent<ParticleSystem>().Play();
@@ -387,7 +389,7 @@ public class Player : MonoBehaviour
         else if(!RACE_MANAGER.RACE_STARTED && !RACE_MANAGER.RACE_COMPLETED) //before race starts
         {
             GroundNormalRotation();
-            if (KartKeyboard.GetKey(KeyCode.Space))
+            if (Controls.GetKey(KeyCode.Space))
             {
                 transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetBool("StartTurbo", true);
                 tires[2].transform.Rotate(-90 * Time.deltaTime * 75 / 5.5f, 0, 0);
@@ -413,7 +415,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (RACE_MANAGER.RACE_STARTED && !RACE_MANAGER.RACE_COMPLETED)
+        if (RACE_MANAGER.RACE_STARTED && !RACE_MANAGER.RACE_COMPLETED && CompareTag("Player"))
             PositionUI();
 
         if (RACE_MANAGER.RACE_COMPLETED)
@@ -1346,7 +1348,7 @@ public class Player : MonoBehaviour
         if(GLIDER_FLY)
         {
             Vector3 newVel = rb.linearVelocity;
-            if (!KartKeyboard.GetKey(KeyCode.DownArrow))
+            if (!Controls.GetKey(KeyCode.DownArrow))
             {
                 newVel.y *= 0.75f;
             }
@@ -1358,7 +1360,7 @@ public class Player : MonoBehaviour
         }
         if (GLIDER_FLY)
         {
-            if (!KartKeyboard.GetKey(KeyCode.Space))
+            if (!Controls.GetKey(KeyCode.Space))
             {
                 currentspeed = Mathf.Lerp(currentspeed, 65, 2 * Time.deltaTime);
             }
@@ -1369,9 +1371,9 @@ public class Player : MonoBehaviour
         }
 
         //accelerate
-        if (KartKeyboard.GetKey(KeyCode.Space))
+        if (Controls.GetKey(KeyCode.Space))
         {
-            currentspeed = Mathf.Lerp(currentspeed, max_speed, 0.5f * Time.deltaTime);
+            currentspeed = Mathf.Lerp(currentspeed, max_speed * Controls.Throttle, 0.5f * Time.deltaTime);
             if(!drift_right && !drift_left && (!item_manager.StarPowerUp || drift_left || drift_right))
                 rotate_strength = desired_rotate_strength;
             if (item_manager.StarPowerUp && !drift_right && !drift_left)
@@ -1380,9 +1382,9 @@ public class Player : MonoBehaviour
             }
         }
         //reverse
-        if (KartKeyboard.GetKey(KeyCode.S) && !GLIDER_FLY)
+        if (Controls.GetKey(KeyCode.S) && !GLIDER_FLY)
         {
-            currentspeed = Mathf.Lerp(currentspeed, -max_speed / 1.6f, 0.03f);
+            currentspeed = Mathf.Lerp(currentspeed, -max_speed * Controls.Brake / 1.6f, 0.03f);
             if(REALCURRENTSPEED <= 0)
             {
                 rotate_strength = 120;
@@ -1390,7 +1392,7 @@ public class Player : MonoBehaviour
             
         }
         //slowdown by itself
-        if (!KartKeyboard.GetKey(KeyCode.Space))
+        if (!Controls.GetKey(KeyCode.Space))
         {
             currentspeed = Mathf.Lerp(currentspeed, 0, 0.01f);
             drift_right = false;
@@ -1403,7 +1405,7 @@ public class Player : MonoBehaviour
         if (!grounded && !Boost && !item_manager.StarPowerUp)
         {
             max_speed = 30;
-            if (KartKeyboard.GetKey(KeyCode.Space))
+            if (Controls.GetKey(KeyCode.Space))
             {
                 currentspeed = Mathf.Lerp(currentspeed, max_speed, 3 * Time.deltaTime);
             }
@@ -1425,7 +1427,7 @@ public class Player : MonoBehaviour
         if (item_manager.StarPowerUp)
         {
             max_speed = boost_speed - 5;
-            if (KartKeyboard.GetKey(KeyCode.Space))
+            if (Controls.GetKey(KeyCode.Space))
             {
                 currentspeed = Mathf.Lerp(currentspeed, max_speed, 3 * Time.deltaTime);
             }
@@ -1448,12 +1450,12 @@ public class Player : MonoBehaviour
         }
 
 
-        if((KartKeyboard.GetKey(KeyCode.Space) && REALCURRENTSPEED < 0) || (currentspeed > 40 && REALCURRENTSPEED <= 5 && KartKeyboard.GetKey(KeyCode.Space)))//skid effect
+        if((Controls.GetKey(KeyCode.Space) && REALCURRENTSPEED < 0) || (currentspeed > 40 && REALCURRENTSPEED <= 5 && Controls.GetKey(KeyCode.Space)))//skid effect
         {
             reverseSkid = true;    
         }
 
-        if (reverseSkid && REALCURRENTSPEED < 20 && KartKeyboard.GetKey(KeyCode.Space) && !IN_WATER)
+        if (reverseSkid && REALCURRENTSPEED < 20 && Controls.GetKey(KeyCode.Space) && !IN_WATER)
         {
             AccelBeforeStartDust.GetChild(0).GetComponent<ParticleSystem>().Play();
             AccelBeforeStartDust.GetChild(1).GetComponent<ParticleSystem>().Play();
@@ -1470,19 +1472,19 @@ public class Player : MonoBehaviour
             AccelBeforeStartDust.GetChild(0).GetComponent<ParticleSystem>().Stop();
             AccelBeforeStartDust.GetChild(1).GetComponent<ParticleSystem>().Stop();
             playersounds.effectSounds[20].Stop();
-            if(!KartKeyboard.GetKey(KeyCode.B) && GameObject.Find("RaceManager").GetComponent<RACE_MANAGER>().FrontCam.activeSelf)
+            if(!Controls.GetKey(KeyCode.B) && GameObject.Find("RaceManager").GetComponent<RACE_MANAGER>().FrontCam.activeSelf)
                 GameObject.Find("Main Camera").GetComponent<Animator>().SetBool("Vibrate", false);
 
         }
 
         //reverse face and animation
-        if(KartKeyboard.GetKey(KeyCode.S) && !KartKeyboard.GetKey(KeyCode.Space) && REALCURRENTSPEED < 0 && !SpecialFace)
+        if(Controls.GetKey(KeyCode.S) && !Controls.GetKey(KeyCode.Space) && REALCURRENTSPEED < 0 && !SpecialFace)
         {
             reversing = true;
             Driver.SetBool("Reverse", true);
             reversingTime += Time.deltaTime;
         }
-        else if (KartKeyboard.GetKeyUp(KeyCode.S) || KartKeyboard.GetKeyDown(KeyCode.Space)){
+        else if (Controls.GetKeyUp(KeyCode.S) || Controls.GetKeyDown(KeyCode.Space)){
             current_face_material = faces[0];
             Driver.SetBool("Reverse", false);
             reversing = false;
@@ -1550,14 +1552,14 @@ public class Player : MonoBehaviour
         float force = 50000;
 
         //steer
-        if (KartKeyboard.GetAxis("Horizontal") != 0)
+        if (Controls.GetAxis("Horizontal") != 0)
         {
             
 
             //turning mechanism if drifting
             if (drift_right && !drift_left)
             {
-                direction = KartKeyboard.GetAxis("Horizontal") > 0 ? 2.1f : 0.5f;
+                direction = Controls.GetAxis("Horizontal") > 0 ? 2.1f : 0.5f;
                 transform.GetChild(0).localRotation = Quaternion.Lerp(transform.GetChild(0).localRotation, Quaternion.Euler(0, 20f, 0), 8f * Time.deltaTime);
                 max_speed = desiredMaxSpeed - 10;
 
@@ -1575,7 +1577,7 @@ public class Player : MonoBehaviour
             }
             if (drift_left && !drift_right)
             {
-                direction = KartKeyboard.GetAxis("Horizontal") < 0 ? -2.1f : -0.5f;
+                direction = Controls.GetAxis("Horizontal") < 0 ? -2.1f : -0.5f;
                 transform.GetChild(0).localRotation = Quaternion.Lerp(transform.GetChild(0).localRotation, Quaternion.Euler(0, -20f, 0), 8f * Time.deltaTime);
                 max_speed = desiredMaxSpeed - 10;
 
@@ -1609,20 +1611,20 @@ public class Player : MonoBehaviour
             if (REALCURRENTSPEED >= 40 && !drift_right && !drift_left)
                 speed_rotate_rate = 1.75f;
 
-            if (REALCURRENTSPEED < -5 && !KartKeyboard.GetKey(KeyCode.Space)) //reverse
+            if (REALCURRENTSPEED < -5 && !Controls.GetKey(KeyCode.Space)) //reverse
                 speed_rotate_rate = -0.5f;
 
 
             //final rotations
             //transform.localEulerAngles = Vector3.Lerp(transform.localEulerAngles, new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y + rotate_strength * direction * speed_rotate_rate, transform.localEulerAngles.z), 1f * Time.deltaTime); //which direction to rotate kart 
 
-            if(KartKeyboard.GetKey(KeyCode.RightArrow) || KartKeyboard.GetKey(KeyCode.LeftArrow))
-                transform.Rotate(new Vector3(0, rotate_strength * direction * speed_rotate_rate * 0.025f, 0), Space.Self); //changed to suit anti-gravity contitions from the euler angle method
+            if(Controls.GetKey(KeyCode.RightArrow) || Controls.GetKey(KeyCode.LeftArrow))
+                transform.Rotate(new Vector3(0, rotate_strength * direction * Controls.SteeringGain * speed_rotate_rate * 0.025f, 0), Space.Self); //changed to suit anti-gravity contitions from the euler angle method
         }
 
         if (!drift_right && !drift_left) //no drift
         {
-            direction = KartKeyboard.GetAxis("Horizontal") > 0 ? 1 : -1; //-1 = left, 1 = right
+            direction = Controls.GetAxis("Horizontal") > 0 ? 1 : -1; //-1 = left, 1 = right
             transform.GetChild(0).localRotation = Quaternion.Lerp(transform.GetChild(0).localRotation, Quaternion.Euler(0, 0, 0), 8f * Time.deltaTime);
             max_speed = desiredMaxSpeed;
 
@@ -1646,7 +1648,7 @@ public class Player : MonoBehaviour
         
 
         //drift hop
-        if (KartKeyboard.GetKeyDown(KeyCode.V) && ! GLIDER_FLY && ! JUMP_PANEL && onGround)
+        if (Controls.GetKeyDown(KeyCode.V) && ! GLIDER_FLY && ! JUMP_PANEL && onGround)
         {
             transform.GetChild(0).gameObject.GetComponent<Animator>().SetTrigger("Drift");
 
@@ -1669,7 +1671,7 @@ public class Player : MonoBehaviour
         }
 
         //while v is pressed, you are drifting
-        if (KartKeyboard.GetKey(KeyCode.V) && grounded && currentspeed > 40 && KartKeyboard.GetAxis("Horizontal") != 0 && ! GLIDER_FLY && !JUMP_PANEL && !HitByBanana_ && !HitByShell_)
+        if (Controls.GetKey(KeyCode.V) && grounded && currentspeed > 40 && Controls.GetAxis("Horizontal") != 0 && ! GLIDER_FLY && !JUMP_PANEL && !HitByBanana_ && !HitByShell_)
         {
             rotate_strength = Mathf.Lerp(rotate_strength, desired_rotate_strength, 3 * Time.deltaTime);
             Drift_time += Time.deltaTime;
@@ -1805,7 +1807,7 @@ public class Player : MonoBehaviour
 
 
         //no more drift
-        if (!KartKeyboard.GetKey(KeyCode.V)) //if not drifting, or drifting without direction
+        if (!Controls.GetKey(KeyCode.V)) //if not drifting, or drifting without direction
         {
 
             drifting = false;
@@ -1890,17 +1892,17 @@ public class Player : MonoBehaviour
     }
     void player_animations()
     {
-        if (!KartKeyboard.GetKey(KeyCode.LeftArrow) && !KartKeyboard.GetKey(KeyCode.RightArrow))
+        if (!Controls.GetKey(KeyCode.LeftArrow) && !Controls.GetKey(KeyCode.RightArrow))
         {
             Driver.SetBool("TurnLeft", false);
             Driver.SetBool("TurnRight", false);
         }
-        if (KartKeyboard.GetKey(KeyCode.RightArrow))
+        if (Controls.GetKey(KeyCode.RightArrow))
         {
             Driver.SetBool("TurnLeft", false);
             Driver.SetBool("TurnRight", true);
         }
-        if(KartKeyboard.GetKey(KeyCode.LeftArrow))
+        if(Controls.GetKey(KeyCode.LeftArrow))
         {
             Driver.SetBool("TurnLeft", true);
             Driver.SetBool("TurnRight", false);
@@ -1934,7 +1936,7 @@ public class Player : MonoBehaviour
         if (!antiGravity)
         {
             //tire gameObject steer and rotate and steeringwheel rotate
-            float x = KartKeyboard.GetAxis("Horizontal"); //direction 
+            float x = Controls.GetAxis("Horizontal"); //direction 
             float rotate_speed = 12f;
             if (x >= 0.1)
             {
@@ -1973,7 +1975,7 @@ public class Player : MonoBehaviour
           //tire spinning
         for (int i = 0; i < 4; i++)
         {
-            if (KartKeyboard.GetKey(KeyCode.Space) && REALCURRENTSPEED < 0)
+            if (Controls.GetKey(KeyCode.Space) && REALCURRENTSPEED < 0)
             {
 
                 tires[0].transform.Rotate(-90 * Time.deltaTime * REALCURRENTSPEED * 0.5f, 0, 0);
@@ -2086,7 +2088,7 @@ public class Player : MonoBehaviour
         glidingTime += Time.deltaTime;
 
         float none = 0;
-        inputHorizontalSmooth = Mathf.SmoothDamp(inputHorizontalSmooth, KartKeyboard.GetAxis("Horizontal") * -1, ref none, 5 * Time.deltaTime);
+        inputHorizontalSmooth = Mathf.SmoothDamp(inputHorizontalSmooth, Controls.GetAxis("Horizontal") * -1, ref none, 5 * Time.deltaTime);
         if (RACE_MANAGER.RACE_COMPLETED)
         {
             inputHorizontalSmooth = 0;
@@ -2112,12 +2114,12 @@ public class Player : MonoBehaviour
         //turn left and right, up and down
         
         {
-            if (KartKeyboard.GetKey(KeyCode.UpArrow) && !RACE_MANAGER.RACE_COMPLETED)
+            if (Controls.GetKey(KeyCode.UpArrow) && !RACE_MANAGER.RACE_COMPLETED)
             {
                 kart.rotation = Quaternion.SlerpUnclamped(kart.rotation, Quaternion.Euler(25 + glideAngleX, kart.eulerAngles.y, kart.eulerAngles.z), 1.5f * Time.deltaTime);
                 rb.AddForce(Vector3.down * 2000 * Time.deltaTime, ForceMode.Acceleration);
             }
-            else if (KartKeyboard.GetKey(KeyCode.DownArrow) && !RACE_MANAGER.RACE_COMPLETED)
+            else if (Controls.GetKey(KeyCode.DownArrow) && !RACE_MANAGER.RACE_COMPLETED)
             {
                 float angle = transform.localEulerAngles.x;
                 angle = (angle > 180) ? angle - 360 : angle;
@@ -2753,7 +2755,7 @@ public class Player : MonoBehaviour
     {
         if (Is_Dirt_Track)
         {
-            if (KartKeyboard.GetKey(KeyCode.Space) && !item_manager.isBullet && !item_manager.StarPowerUp)
+            if (Controls.GetKey(KeyCode.Space) && !item_manager.isBullet && !item_manager.StarPowerUp)
             {
                 for(int i = 0; i < tireRenderers.Length; i++)
                 {

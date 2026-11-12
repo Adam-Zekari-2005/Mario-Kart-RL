@@ -54,7 +54,7 @@ public static class MigrationPlayAudit
         if(stage!="playing"||!EditorApplication.isPlaying)return;
         if(SessionState.GetBool(Key+"solo",false) && RACE_MANAGER.RACE_STARTED)
         {
-            var human=Object.FindAnyObjectByType<Player>();
+            var human=GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
             if(driveStart<0){driveStart=Time.time;startPosition=human.transform.position;}
             float elapsed=Time.time-driveStart;
             bool drift=elapsed>=1.9f&&elapsed<2.9f;
@@ -94,9 +94,9 @@ public static class MigrationPlayAudit
             Debug.Assert(itemBoostSeen,"Left Shift consumes a mushroom and starts its boost");
             if(index==0)Debug.Assert(driftSeen,"Space activates drift on the starting straight");
             Debug.Assert(Object.FindObjectsByType<ComputerDriver>(FindObjectsInactive.Include,FindObjectsSortMode.None).Length==0,"No bot instances in solo scene");
-            Debug.Assert(Object.FindObjectsByType<Player>(FindObjectsSortMode.None).Length==1,"Exactly one human player");
-            Debug.Assert(manager.lapCounters.Count==1,"Exactly one registered racer");
-            var human=Object.FindAnyObjectByType<Player>();
+            Debug.Assert(GameObject.FindGameObjectsWithTag("Player").Length==1,"Exactly one human player");
+            Debug.Assert(manager.lapCounters.Count==(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name=="MooMooMeadows"?2:1),"Expected racers registered for this circuit");
+            var human=GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
             foreach(var clip in human.Driver.GetCurrentAnimatorClipInfo(0))Debug.Log("IDLE CLIP "+clip.clip.name);
             var lap=human.GetComponent<LapCounter>();int checkpoint=lap.currentCheckpointVal,lapNumber=lap.LAPCOUNT,total=lap.totalCheckpointVal;
             human.GetComponent<Rigidbody>().position+=Vector3.up*100;
@@ -131,7 +131,7 @@ public static class MigrationPlayAudit
         var race=Object.FindAnyObjectByType<RACE_MANAGER>();var camera=race!=null&&race.FrontCam!=null?race.FrontCam.GetComponent<Camera>():Camera.main;
         if(camera!=null)
         {
-            var player=Object.FindAnyObjectByType<Player>();
+            var player=GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
             camera.transform.position=player.transform.position-player.transform.forward*8+player.transform.up*4;
             camera.transform.LookAt(player.transform.position+player.transform.forward*8+player.transform.up);
             MigrationAudit.Capture(camera,"Migration/Previews/Play-"+track+".png");
