@@ -1,10 +1,9 @@
 # Modeles
 
-- `kart-ppo.onnx` : modele retenu pour terminer Moo Moo Meadows. Copie identique a `Assets/Resources/Kart.onnx`. Les resultats de verification sont dans `../Reports/02-evaluations.md`.
-- `kart-ppo-checkpoint.pt` : poids Python permettant de poursuivre son apprentissage, sans repartir de zero.
-- `model-manifest.json` : provenance precise, empreinte SHA-256 et noms des evaluations.
-- `phase-six-v1.onnx` : objectif intermediaire de six checkpoints ; ce n est pas le modele final.
-- `phase-full-v1.onnx` : dernier poids de la premiere phase tour complet. Moins regulier sur Moo Moo Meadows que la sauvegarde retenue, mais a termine 4/10 essais Mario Circuit. Ce resultat n est pas attribue au modele livre.
-- `diagnostic-forward-only.onnx` : ancien diagnostic, conserve pour retracer les essais ; ne pas l utiliser comme modele abouti.
+- `kart-ppo.onnx` : modele actuel du duel, copie identique a Assets/Resources/Kart.onnx ; 31 observations, commandes analogiques par kart.
+- `kart-ppo-checkpoint.pt` : checkpoint Python pour poursuivre son apprentissage.
+- `model-manifest.json` : provenance, empreinte et mesures de verification.
+- `solo24-kart-ppo.onnx`, `solo24-kart-ppo-checkpoint.pt`, `solo24-model-manifest.json` : ancien modele solo, conserve pour reproduire l historique a 24 observations.
+- `phase-six-v1.onnx`, `phase-full-v1.onnx`, `diagnostic-forward-only.onnx` : anciens essais, incompatibles avec le contrat actuel a 31 observations ; ne pas les assigner au rival actuel.
 
-Les grandes series de travail restent dans `results/` et `Training/Results/`, ignores par Git. Les CSV du rapport sont copies dans `Training/Reports/data/` pour pouvoir partager les preuves avec le modele.
+Le rapport courant est ../Reports/03-duel-evaluations.md. Les grandes series de travail restent dans results et Training/Results, ignores par Git ; les donnees a partager sont archivees dans Reports/duel-data.

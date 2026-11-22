@@ -1,0 +1,307 @@
+[
+  {
+    "series": "duel-before-144",
+    "trials": 5,
+    "completed_three_laps": 0,
+    "mean_grass_seconds": 32.6262,
+    "mean_successful_seconds": null,
+    "mean_successful_collisions": null,
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ]
+  },
+  {
+    "series": "duel-before-30",
+    "trials": 5,
+    "completed_three_laps": 0,
+    "mean_grass_seconds": 45.0662,
+    "mean_successful_seconds": null,
+    "mean_successful_collisions": null,
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ]
+  },
+  {
+    "series": "duel-before-60",
+    "trials": 5,
+    "completed_three_laps": 2,
+    "mean_grass_seconds": 26.0834,
+    "mean_successful_seconds": 111.95949999999999,
+    "mean_successful_collisions": 301.5,
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ]
+  },
+  {
+    "series": "duel-final-144-strict",
+    "trials": 5,
+    "completed_three_laps": 5,
+    "mean_grass_seconds": 12.7418,
+    "mean_successful_seconds": 158.3522,
+    "mean_successful_collisions": 3.4,
+    "seeds": [
+      62042,
+      62043,
+      62044,
+      62045,
+      62046
+    ],
+    "recoveries": 0
+  },
+  {
+    "series": "duel-final-30-strict",
+    "trials": 5,
+    "completed_three_laps": 5,
+    "mean_grass_seconds": 12.7534,
+    "mean_successful_seconds": 163.2924,
+    "mean_successful_collisions": 5.0,
+    "seeds": [
+      60042,
+      60043,
+      60044,
+      60045,
+      60046
+    ],
+    "recoveries": 0
+  },
+  {
+    "series": "duel-final-60-strict",
+    "trials": 5,
+    "completed_three_laps": 5,
+    "mean_grass_seconds": 13.74,
+    "mean_successful_seconds": 159.915,
+    "mean_successful_collisions": 4.0,
+    "seeds": [
+      61042,
+      61043,
+      61044,
+      61045,
+      61046
+    ],
+    "recoveries": 0
+  },
+  {
+    "series": "duel-final-human",
+    "trials": 5,
+    "completed_three_laps": 5,
+    "mean_grass_seconds": 12.4434,
+    "mean_successful_seconds": 158.00900000000001,
+    "mean_successful_collisions": 1.0,
+    "seeds": [
+      63042,
+      63043,
+      63044,
+      63045,
+      63046
+    ],
+    "recoveries": 0
+  },
+  {
+    "series": "duel-physics-only-60",
+    "trials": 5,
+    "completed_three_laps": 0,
+    "mean_grass_seconds": 19.16,
+    "mean_successful_seconds": null,
+    "mean_successful_collisions": null,
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ]
+  },
+  {
+    "series": "episodes-duel-analog-start-eval",
+    "trials": 5,
+    "completed_three_laps": 5,
+    "mean_grass_seconds": 24.126468,
+    "mean_successful_seconds": 156.75916,
+    "mean_successful_collisions": 3.8,
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ]
+  },
+  {
+    "series": "episodes-duel-clean-20k-eval",
+    "trials": 5,
+    "completed_three_laps": 0,
+    "mean_grass_seconds": 27.439754,
+    "mean_successful_seconds": null,
+    "mean_successful_collisions": null,
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ]
+  },
+  {
+    "series": "episodes-duel-nav-20k-eval",
+    "trials": 5,
+    "completed_three_laps": 5,
+    "mean_grass_seconds": 10.09335,
+    "mean_successful_seconds": 155.10626,
+    "mean_successful_collisions": 5.0,
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ]
+  },
+  {
+    "series": "episodes-duel-nav-final-eval",
+    "trials": 10,
+    "completed_three_laps": 10,
+    "mean_grass_seconds": 13.699961,
+    "mean_successful_seconds": 159.33523,
+    "mean_successful_collisions": 4.2,
+    "seeds": [
+      50042,
+      50043,
+      50044,
+      50045,
+      50046,
+      50047,
+      50048,
+      50049,
+      50050,
+      50051
+    ]
+  },
+  {
+    "series": "episodes-duel-nav-start-eval",
+    "trials": 5,
+    "completed_three_laps": 5,
+    "mean_grass_seconds": 7.07337,
+    "mean_successful_seconds": 154.34642,
+    "mean_successful_collisions": 7.8,
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ]
+  },
+  {
+    "series": "episodes-duel-road-10k-eval",
+    "trials": 5,
+    "completed_three_laps": 1,
+    "mean_grass_seconds": 14.253264,
+    "mean_successful_seconds": 102.4907,
+    "mean_successful_collisions": 8.0,
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ]
+  },
+  {
+    "series": "episodes-duel-road-20k-eval",
+    "trials": 5,
+    "completed_three_laps": 2,
+    "mean_grass_seconds": 8.206688,
+    "mean_successful_seconds": 101.06545,
+    "mean_successful_collisions": 9.0,
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ]
+  },
+  {
+    "series": "episodes-duel-road-30k-eval",
+    "trials": 5,
+    "completed_three_laps": 0,
+    "mean_grass_seconds": 5.443302,
+    "mean_successful_seconds": null,
+    "mean_successful_collisions": null,
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ]
+  },
+  {
+    "series": "episodes-duel-road-40k-eval",
+    "trials": 5,
+    "completed_three_laps": 3,
+    "mean_grass_seconds": 12.203312,
+    "mean_successful_seconds": 102.51296666666667,
+    "mean_successful_collisions": 6.333333333333333,
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ]
+  },
+  {
+    "series": "episodes-duel-road-50k-eval",
+    "trials": 5,
+    "completed_three_laps": 1,
+    "mean_grass_seconds": 9.549994,
+    "mean_successful_seconds": 104.7246,
+    "mean_successful_collisions": 8.0,
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ]
+  },
+  {
+    "series": "episodes-duel-trace-eval",
+    "trials": 1,
+    "completed_three_laps": 0,
+    "mean_grass_seconds": 1.65,
+    "mean_successful_seconds": null,
+    "mean_successful_collisions": null,
+    "seeds": [
+      43
+    ]
+  },
+  {
+    "series": "episodes-duel-v1-20k-eval",
+    "trials": 5,
+    "completed_three_laps": 3,
+    "mean_grass_seconds": 19.45321,
+    "mean_successful_seconds": 104.98570000000001,
+    "mean_successful_collisions": 10.333333333333334,
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ]
+  }
+]

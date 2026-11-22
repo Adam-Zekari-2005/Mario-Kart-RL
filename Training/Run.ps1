@@ -3,7 +3,8 @@ param(
     [string]$Mode = 'train',
     [string]$RunId = 'kart-first',
     [string]$Source = '',
-    [ValidateSet('moo','mario')][string]$Track = 'moo',
+    [string]$Executable = '',
+    [ValidateSet('moo','mario','duel')][string]$Track = 'moo',
     [int]$Episodes = 10,
     [int]$Steps = 0,
     [int]$Seed = 42,
@@ -18,6 +19,7 @@ $pythonPath = Join-Path $projectRoot '.venv-mlagents/Scripts/python.exe'
 if (!(Test-Path $pythonPath)) { throw 'Environnement Python absent : consulter Training/README.md.' }
 $runArgs = @((Join-Path $PSScriptRoot 'run.py'), $Mode, '--run-id', $RunId, '--track', $Track, '--episodes', $Episodes, '--seed', $Seed)
 if ($Source) { $runArgs += @('--source', $Source) }
+if ($Executable) { $runArgs += @('--exe', $Executable) }
 if ($Steps -gt 0) { $runArgs += @('--steps', $Steps) }
 if ($Resume) { $runArgs += '--resume' }
 if ($Graphics) { $runArgs += '--graphics' }

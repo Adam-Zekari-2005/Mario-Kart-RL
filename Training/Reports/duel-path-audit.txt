@@ -1,0 +1,1 @@
+path=ItemPath, nodes=50, road=473, grass=0, missing=0

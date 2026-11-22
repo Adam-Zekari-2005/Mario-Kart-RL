@@ -1,0 +1,6 @@
+trial,seed,fps,reason,laps,checkpoints,seconds,collisions,grass_seconds
+0,42,30,stuck,1,28,73.799,35,42.333
+1,43,30,stuck,1,28,76.566,35,46.000
+2,44,30,stuck,2,49,109.465,44,49.466
+3,45,30,stuck,1,28,74.266,35,42.166
+4,46,30,stuck,1,29,82.066,42,45.366

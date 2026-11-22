@@ -7,6 +7,6 @@ public sealed class KartTrainingBoot : MonoBehaviour
     {
         Random.InitState(KartRunSettings.Seed);
         string track = KartRunSettings.Argument("kart-track", "moo");
-        SceneManager.LoadScene(track == "mario" ? "MarioCircuitTraining" : "MooMooTraining");
+        SceneManager.LoadScene(track == "duel" ? "MooMooMeadows" : track == "mario" ? "MarioCircuitTraining" : "MooMooTraining");
     }
 }

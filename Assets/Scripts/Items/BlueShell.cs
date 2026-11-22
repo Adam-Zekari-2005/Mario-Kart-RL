@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -62,6 +62,7 @@ public class BlueShell : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rm = GameObject.Find("RaceManager").GetComponent<RACE_MANAGER>();
+        allplayers = rm.lapCounters.FindAll(c => c && c.gameObject.activeInHierarchy).ConvertAll(c => c.gameObject).ToArray();
         sphereCollider = GetComponent<SphereCollider>();
         rb = GetComponent<Rigidbody>();
         
@@ -332,14 +333,14 @@ public class BlueShell : MonoBehaviour
                 collision.gameObject.GetComponent<OpponentItemManager>().hitByShell(); //the opponent has the function that does all this work
 
             }
-            if (collision.gameObject.tag == "Player" && Vector3.Distance(transform.position, collision.transform.position) < 5)
+            if (collision.gameObject.GetComponent<Player>() != null && Vector3.Distance(transform.position, collision.transform.position) < 5)
             {
                 if (who_threw_shell != collision.gameObject.name)
                 {
                     if (!collision.gameObject.GetComponent<ItemManager>().StarPowerUp)
                     {
                         StartCoroutine(collision.gameObject.GetComponent<Player>().hitByShell()); //the player has the function that does all this work
-                        GameObject.Find("Main Camera").GetComponent<Animator>().SetTrigger("ShellHit");
+                        if (collision.gameObject.CompareTag("Player")) GameObject.Find("Main Camera").GetComponent<Animator>().SetTrigger("ShellHit");
                     }
                 }
             }

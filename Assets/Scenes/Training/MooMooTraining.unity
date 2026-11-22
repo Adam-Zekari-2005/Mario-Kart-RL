@@ -307487,8 +307487,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KartEpisode
   checkpointGoal: 0
+  targetLaps: 1
   checkpointGoalBonus: 10
   rewardPerMetre: 0.01
+  rewardProgressOnGrass: 1
   lapBonus: 100
   failurePenalty: -10
   stuckSeconds: 15
@@ -307551,7 +307553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.ML-Agents::Unity.MLAgents.Policies.BehaviorParameters
   m_BrainParameters:
-    VectorObservationSize: 24
+    VectorObservationSize: 31
     NumStackedVectorObservations: 1
     m_ActionSpec:
       m_NumContinuousActions: 2

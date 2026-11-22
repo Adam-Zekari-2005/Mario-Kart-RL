@@ -1,0 +1,6 @@
+trial,seed,fps,reason,laps,checkpoints,seconds,collisions,grass_seconds,recoveries,human
+0,63042,60,finished,3,63,158.572,0,14.000,0,launch
+1,63043,60,finished,3,63,158.839,0,12.917,0,launch
+2,63044,60,finished,3,63,158.872,1,12.617,0,launch
+3,63045,60,finished,3,63,158.889,2,12.583,0,launch
+4,63046,60,finished,3,63,154.873,2,10.100,0,launch

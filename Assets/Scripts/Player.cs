@@ -36,6 +36,9 @@ public class Player : MonoBehaviour
 
     // what boost will I get
     float Drift_time = 0;
+    public float DriftSide => drift_left ? -1 : drift_right ? 1 : 0;
+    public int DriftIntent => drift_direction;
+    public float DriftCharge => Mathf.Clamp01(Drift_time / 6f);
     [HideInInspector]
     public float Boost_time = 0;
 
@@ -228,13 +231,12 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (trickAvailable && Controls.GetKeyDown(KeyCode.V) && REALCURRENTSPEED > 40 && !GLIDER_FLY)
-        {
+        if (!Controls.Autonomous) HandleDriftInput();
+    }
 
-            trickAvailable = false;
-            trickBoostPending = true;
-            StartCoroutine(trickJump());
-        }
+    void HandleDriftInput()
+    {
+        if (Controls.GetKeyDown(KeyCode.V)) TryPerformTrick();
         //drift input
         if(RACE_MANAGER.RACE_STARTED && !item_manager.isBullet && !RACE_MANAGER.RACE_COMPLETED)
         {
@@ -242,9 +244,23 @@ public class Player : MonoBehaviour
         }
     }
 
+    public bool TryPerformTrick()
+    {
+        if (!trickAvailable || REALCURRENTSPEED <= 40 || GLIDER_FLY || !RACE_MANAGER.RACE_STARTED || RACE_MANAGER.RACE_COMPLETED) return false;
+        trickAvailable = false;
+        trickBoostPending = true;
+        StartCoroutine(trickJump());
+        return true;
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (Controls.Autonomous)
+        {
+            Controls.BeginPhysicsStep();
+            HandleDriftInput();
+        }
 
         if (GLIDER_FLY )
         {
@@ -1039,10 +1055,10 @@ public class Player : MonoBehaviour
 
             if (other.GetComponent<CameraRotateAntigravity>().rotateCam)
             {
-                Cam.rotateAmountAntigravityX = other.GetComponent<CameraRotateAntigravity>().rotAmountX;
-                Cam.rotateAmountAntigravityZ = other.GetComponent<CameraRotateAntigravity>().rotAmountZ;
+                if (CompareTag("Player")) Cam.rotateAmountAntigravityX = other.GetComponent<CameraRotateAntigravity>().rotAmountX;
+                if (CompareTag("Player")) Cam.rotateAmountAntigravityZ = other.GetComponent<CameraRotateAntigravity>().rotAmountZ;
                 item_manager.canUseBulletAntigravity = other.GetComponent<CameraRotateAntigravity>().canUseBullet;
-                Cam.rotateCamAntiGravity = true;
+                if (CompareTag("Player")) Cam.rotateCamAntiGravity = true;
 
             }
         }
@@ -1051,11 +1067,11 @@ public class Player : MonoBehaviour
                 StartCoroutine(exitAntiGravity());
 
             if(other.gameObject.GetComponent<AntiGravityExitRotate>().rotateX || other.gameObject.GetComponent<AntiGravityExitRotate>().rotateY || other.gameObject.GetComponent<AntiGravityExitRotate>().rotateZ)
-               Cam.antiGravityTimeAgo = 0;
+               if (CompareTag("Player")) Cam.antiGravityTimeAgo = 0;
 
-            Cam.rotateAmountAntigravityX = 2;
-            Cam.rotateAmountAntigravityZ = 0;
-            Cam.rotateCamAntiGravity = false;
+            if (CompareTag("Player")) Cam.rotateAmountAntigravityX = 2;
+            if (CompareTag("Player")) Cam.rotateAmountAntigravityZ = 0;
+            if (CompareTag("Player")) Cam.rotateCamAntiGravity = false;
 
         }
 
@@ -1113,8 +1129,8 @@ public class Player : MonoBehaviour
             glideAngleZ = other.GetComponent<GetGlideAngle>().glideAngle;
             glideAngleX = other.GetComponent<GetGlideAngle>().glideAngleX;
             
-            Cam.glideAngleZ = other.GetComponent<GetGlideAngle>().glideAngle;
-            Cam.glideAngleX = other.GetComponent<GetGlideAngle>().glideAngleX;
+            if (CompareTag("Player")) Cam.glideAngleZ = other.GetComponent<GetGlideAngle>().glideAngle;
+            if (CompareTag("Player")) Cam.glideAngleX = other.GetComponent<GetGlideAngle>().glideAngleX;
 
             //we can change camera rotations during gliding, but only do the initiation once
             if (!GLIDER_FLY && other.gameObject.name != "GlidingTriggers")
@@ -1463,7 +1479,7 @@ public class Player : MonoBehaviour
             {
                 playersounds.effectSounds[20].Play();
             }
-            if(GameObject.Find("RaceManager").GetComponent<RACE_MANAGER>().FrontCam.activeSelf)
+            if(CompareTag("Player") && GameObject.Find("RaceManager").GetComponent<RACE_MANAGER>().FrontCam.activeSelf)
                 GameObject.Find("Main Camera").GetComponent<Animator>().SetBool("Vibrate", true);
         }
         else
@@ -1472,7 +1488,7 @@ public class Player : MonoBehaviour
             AccelBeforeStartDust.GetChild(0).GetComponent<ParticleSystem>().Stop();
             AccelBeforeStartDust.GetChild(1).GetComponent<ParticleSystem>().Stop();
             playersounds.effectSounds[20].Stop();
-            if(!Controls.GetKey(KeyCode.B) && GameObject.Find("RaceManager").GetComponent<RACE_MANAGER>().FrontCam.activeSelf)
+            if(CompareTag("Player") && !Controls.GetKey(KeyCode.B) && GameObject.Find("RaceManager").GetComponent<RACE_MANAGER>().FrontCam.activeSelf)
                 GameObject.Find("Main Camera").GetComponent<Animator>().SetBool("Vibrate", false);
 
         }
@@ -1549,7 +1565,9 @@ public class Player : MonoBehaviour
     }
     void Steer()
     {
-        float force = 50000;
+        float force = 50000 * Controls.SteeringGain;
+        if (Controls.Autonomous && !drift_left && !drift_right)
+            direction = Controls.GetAxis("Horizontal") > 0 ? 1 : -1;
 
         //steer
         if (Controls.GetAxis("Horizontal") != 0)

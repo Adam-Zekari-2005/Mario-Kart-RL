@@ -8,7 +8,7 @@ using Unity.InferenceEngine;
 [RequireComponent(typeof(KartEpisode), typeof(KartRunRecorder))]
 public sealed class KartAgent : Agent
 {
-    public const int ObservationCount = 24;
+    public const int ObservationCount = 31;
     KartEpisode episode;
     TrackProgress progress;
     Rigidbody body;
@@ -44,17 +44,18 @@ public sealed class KartAgent : Agent
         progress = GetComponent<TrackProgress>();
         body = GetComponent<Rigidbody>();
         player = GetComponent<Player>();
+        player.Controls.SetAutonomous(true);
         points = GetComponent<LapCounter>().checkpoints;
         randomPolicy = new System.Random(KartRunSettings.Seed);
         episode.RewardChanged += ReceiveReward;
         episode.EpisodeFinished += Finish;
-        KartKeyboard.SetAgentInput(0, 0, false);
+        player.Controls.SetRaceActions(0, 0, false);
     }
     void ReceiveReward(float delta) { if (!finished) AddReward(delta); }
     void Finish(KartEpisode result)
     {
         finished = true;
-        KartKeyboard.SetAgentInput(0, 0, false);
+        player.Controls.SetRaceActions(0, 0, false);
         Academy.Instance.StatsRecorder.Add("Kart/Checkpoints", progress.CheckpointsPassed);
         Academy.Instance.StatsRecorder.Add("Kart/LapCompleted", progress.CompletedLaps > 0 ? 1 : 0);
         Academy.Instance.StatsRecorder.Add("Kart/Collisions", result.Collisions);
@@ -70,7 +71,7 @@ public sealed class KartAgent : Agent
         if ((KartRunSettings.Mode == "train" || KartRunSettings.Mode == "evaluate") && !Academy.Instance.IsCommunicatorOn)
         {
             finished = true;
-            KartKeyboard.SetAgentInput(0, 0, false);
+            player.Controls.SetRaceActions(0, 0, false);
             Debug.LogError("Python n'est pas connecte : essai arrete pour eviter une fausse session d'apprentissage.");
 #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
@@ -88,13 +89,19 @@ public sealed class KartAgent : Agent
         ObserveKart(sensor, player, progress, body, points);
     }
 
-    // Both the training agent and the race opponent must encode the same 24 inputs.
+    // Both the training agent and the race opponent encode the same inputs.
     public static void ObserveKart(VectorSensor sensor, Player player, TrackProgress progress, Rigidbody body, Transform points)
     {
         var transform = player.transform;
         progress.Sample();
         sensor.AddObservation(Vector3.ClampMagnitude(transform.InverseTransformDirection(body.linearVelocity) / 100f, 1));
-        sensor.AddObservation(transform.InverseTransformDirection(progress.TrackDirection));
+        var items = player.GetComponent<ItemManager>();
+        var route = items ? items.path : null;
+        var tactics = player.GetComponent<RivalRaceTactics>();
+        if (tactics && tactics.enabled && tactics.NavigationPath) route = tactics.NavigationPath;
+        Vector3 roadDirection = KartRunSettings.Argument("duel-navigation", "1") == "0" ? progress.TrackDirection :
+            PathDirection(transform.position, body.linearVelocity.magnitude, route, progress.TrackDirection);
+        sensor.AddObservation(transform.InverseTransformDirection(roadDirection));
         var target = points.GetChild(progress.NextCheckpoint);
         sensor.AddObservation(Vector3.ClampMagnitude(transform.InverseTransformPoint(target.position) / 100f, 1));
         sensor.AddObservation(Mathf.Clamp(progress.ForwardSpeed / 100f, -1, 1));
@@ -111,11 +118,64 @@ public sealed class KartAgent : Agent
                     distance = Mathf.Min(distance, hit.distance);
             sensor.AddObservation(distance / 40f);
         }
+        sensor.AddObservation(player.DriftSide);
+        sensor.AddObservation(player.DriftIntent);
+        sensor.AddObservation(player.DriftCharge);
+        sensor.AddObservation(Mathf.Clamp01(player.Boost_time / 3f));
+        float ahead = Mathf.Clamp(body.linearVelocity.magnitude * .35f, 10, 30);
+        foreach (float side in new[] { -6f, 0f, 6f })
+            sensor.AddObservation(RoadAhead(player, ahead, side));
+    }
+    // A road surface is sensed before the kart reaches it. This supplies
+    // perception to PPO; it does not choose or correct the policy's steering.
+    public static float RoadAhead(Player kart, float forward, float side)
+    {
+        Vector3 point = kart.transform.position + kart.transform.forward * forward + kart.transform.right * side;
+        float nearest = float.PositiveInfinity, road = -1;
+        foreach (var hit in Physics.RaycastAll(point + Vector3.up * 8, Vector3.down, 20, kart.mask, QueryTriggerInteraction.Ignore))
+        {
+            if (hit.transform.IsChildOf(kart.transform) || hit.normal.y < .4f || hit.distance >= nearest) continue;
+            if (!hit.collider.CompareTag("Ground") && !hit.collider.CompareTag("Dirt")) continue;
+            nearest = hit.distance;
+            road = hit.collider.CompareTag("Ground") ? 1 : 0;
+        }
+        return road;
+    }
+    // A route observation, not an autopilot: PPO still chooses every action.
+    // The ordered checkpoints remain responsible for validating race progress.
+    public static Vector3 PathDirection(Vector3 position, float speed, Transform path, Vector3 fallback)
+    {
+        if (!path || path.childCount < 2) return fallback;
+        float closest = float.PositiveInfinity;
+        int segmentIndex = 0;
+        Vector3 projected = position;
+        for (int i = 0; i < path.childCount; i++)
+        {
+            Vector3 a = path.GetChild(i).position, b = path.GetChild((i + 1) % path.childCount).position;
+            Vector3 segment = b - a;
+            float t = Mathf.Clamp01(Vector3.Dot(position - a, segment) / Mathf.Max(segment.sqrMagnitude, .0001f));
+            Vector3 point = a + segment * t;
+            float distance = (position - point).sqrMagnitude;
+            if (distance >= closest) continue;
+            closest = distance; projected = point; segmentIndex = i;
+        }
+        float remaining = Mathf.Clamp(speed * .35f, 12, 32);
+        Vector3 target = projected;
+        for (int i = 0; i < path.childCount; i++)
+        {
+            Vector3 end = path.GetChild((segmentIndex + i + 1) % path.childCount).position;
+            float distance = Vector3.Distance(target, end);
+            if (distance >= remaining) { target = Vector3.MoveTowards(target, end, remaining); break; }
+            remaining -= distance;
+            target = end;
+        }
+        Vector3 direction = target - position;
+        return direction.sqrMagnitude > .001f ? direction.normalized : fallback;
     }
     public override void OnActionReceived(ActionBuffers actions)
     {
         if (finished || !RACE_MANAGER.RACE_STARTED) return;
-        KartKeyboard.SetAgentInput(ForwardThrottle(actions.ContinuousActions[0]), actions.ContinuousActions[1], actions.DiscreteActions[0] == 1);
+        player.Controls.SetRaceActions(actions.ContinuousActions[1], ForwardThrottle(actions.ContinuousActions[0]), actions.DiscreteActions[0] == 1);
     }
     // PPO still outputs [-1, 1]. Map it to coast/forward [0, 1], never reverse.
     // The original Player slows naturally when the accelerator is released.
@@ -140,6 +200,7 @@ public sealed class KartAgent : Agent
     {
         if (episode) { episode.RewardChanged -= ReceiveReward; episode.EpisodeFinished -= Finish; }
         KartKeyboard.AgentControl = false;
+        if (player) player.Controls.SetAutonomous(false);
         base.OnDisable();
     }
     void OnGUI()

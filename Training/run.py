@@ -28,7 +28,8 @@ def summarize():
     data = []
     for (run, mode, track), rows in groups.items():
         mean = lambda key: statistics.mean(float(row[key]) for row in rows)
-        completed = [row for row in rows if int(row["laps"]) > 0]
+        required_laps = 3 if track == "MooMooMeadows" else 1
+        completed = [row for row in rows if int(row["laps"]) >= required_laps]
         lap_time = statistics.mean(float(row["seconds"]) for row in completed) if completed else None
         goals = sum(row.get("reason", "") == "objectif checkpoints atteint" for row in rows)
         partial = f"{goals}/{len(rows)}" if any(int(row.get("checkpoint_goal") or 0) > 0 for row in rows) else "-"
@@ -46,7 +47,8 @@ def main():
     parser.add_argument("mode", choices=["connection", "train", "baseline", "evaluate", "model", "summarize"])
     parser.add_argument("--run-id", default="kart-first")
     parser.add_argument("--source", help="Serie a evaluer, ou poids initiaux d'un nouvel entrainement")
-    parser.add_argument("--track", choices=["moo", "mario"], default="moo")
+    parser.add_argument("--exe", help="Executable de test alternatif (permet de conserver une compilation de reference)")
+    parser.add_argument("--track", choices=["moo", "mario", "duel"], default="moo")
     parser.add_argument("--episodes", type=int, default=10)
     parser.add_argument("--steps", type=int, help="Limiter le premier essai d'entrainement")
     parser.add_argument("--seed", type=int, default=42)
@@ -56,11 +58,14 @@ def main():
     parser.add_argument("--profile", choices=["original", "balanced"], default="original")
     parser.add_argument("--goal", type=int, default=6, help="Nombre de checkpoints de l'objectif partiel ; 0 = tour complet")
     parser.add_argument("--base-port", type=int, help="Port de connexion local (5004 editeur, 5010 executable par defaut)")
+    parser.add_argument("--capture-fps", type=int, default=60, help="Cadence simulee pour Unity/ML-Agents")
     args = parser.parse_args()
     if args.editor and args.mode not in ("train", "evaluate"):
         parser.error("--editor est reserve aux modes train et evaluate")
     if args.graphics and args.mode != "connection":
         EXE = ROOT / "Builds/Training/KartTraining.exe"
+    if args.exe:
+        EXE = Path(args.exe).resolve()
     os.chdir(ROOT)
     if args.mode == "summarize":
         summarize()
@@ -79,6 +84,8 @@ def main():
     else:
         config_name = "connection_3dball.yaml" if args.mode == "connection" else ("kart_balanced_ppo.yaml" if args.profile == "balanced" else "kart_ppo.yaml")
         config = ROOT / "Training/config" / config_name
+        if args.track == "duel":
+            config = ROOT / "Training/config/kart_duel_ppo.yaml"
         if args.steps or args.editor:
             settings = yaml.safe_load(config.read_text(encoding="utf-8-sig"))
             for behavior in settings["behaviors"].values():
@@ -99,6 +106,7 @@ def main():
             parser.error("Executable absent : compiler les scenes avec Unity.")
         cmd = [sys.executable, "-m", "mlagents.trainers.learn", str(config), "--run-id", args.run_id, "--seed", str(args.seed), "--results-dir", str(ROOT / "results"), "--torch-device", "cpu", "--max-lifetime-restarts", "0"]
         cmd.extend(["--base-port", str(args.base_port if args.base_port is not None else (5004 if args.editor else 5010))])
+        cmd.extend(["--capture-frame-rate", str(args.capture_fps)])
         if not args.editor:
             cmd.extend(["--env", str(exe)])
         else:

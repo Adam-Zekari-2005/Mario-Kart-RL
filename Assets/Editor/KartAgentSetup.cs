@@ -7,7 +7,7 @@ using UnityEngine;
 
 public static class KartAgentSetup
 {
-    [MenuItem("Mario Kart/IA/Ajouter un kart IA en Play")]
+    [MenuItem("Mario Kart/IA/Ajouter un kart de test (direction fixe)")]
     static void SpawnInPlay()
     {
         var human = GameObject.FindGameObjectWithTag("Player");
@@ -16,7 +16,7 @@ public static class KartAgentSetup
         SpawnBeside(player);
     }
 
-    [MenuItem("Mario Kart/IA/Ajouter un kart IA en Play", true)]
+    [MenuItem("Mario Kart/IA/Ajouter un kart de test (direction fixe)", true)]
     static bool CanSpawn() => EditorApplication.isPlaying && RACE_MANAGER.RACE_STARTED;
 
     public static Player SpawnBeside(Player human)

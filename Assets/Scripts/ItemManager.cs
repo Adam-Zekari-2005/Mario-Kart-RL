@@ -35,6 +35,16 @@ public class ItemManager : MonoBehaviour
     public int tripleItemCount = 0;
     [HideInInspector]
     public string current_Item;
+    public bool AutoUseItems { get; set; }
+    public int ItemsCollected { get; private set; }
+    public int AutomaticItemsUsed { get; private set; }
+    public string LastAutomaticItem { get; private set; }
+    float nextAutomaticUse;
+    bool autoIssued;
+    string itemBeforeUse;
+    int ammoBeforeUse;
+    float boostBeforeUse;
+    public bool ItemReady => player_script && player_script.hasitem && item_decided;
     bool item_decided = false; //player can only use item once the scroll thingy decides item unless triple
     float GoldenMushroomTimer = 0;
     private bool startMushroomTimer = false;
@@ -86,6 +96,21 @@ public class ItemManager : MonoBehaviour
     {
 
         wayPointSystemCurrent();
+        bool useForward = player_script.Controls.GetKeyDown(KeyCode.RightShift);
+        bool useBackwards = player_script.Controls.GetKeyDown(KeyCode.LeftControl);
+        autoIssued = AutoUseItems && player_script.Controls.Autonomous && RACE_MANAGER.RACE_STARTED &&
+            !RACE_MANAGER.RACE_COMPLETED && ItemReady && !string.IsNullOrEmpty(current_Item) &&
+            !isBullet && !StarPowerUp && Time.time >= nextAutomaticUse;
+        if (autoIssued)
+        {
+            bool behind = current_Item == "Banana" || current_Item == "TripleBananas" || current_Item == "Bobomb-Hold";
+            useForward = !behind;
+            useBackwards = behind;
+            nextAutomaticUse = Time.time + .9f;
+            itemBeforeUse = current_Item;
+            ammoBeforeUse = tripleItemCount;
+            boostBeforeUse = player_script.Boost_time;
+        }
 
         if (player_script.hasitem)  //player cas collided with an itembox, and this bool is set true in the onTriggerEnter in the playerscript, and player is in need of an item, so this will start the item select method
         if (player_script.hasitem)  //player cas collided with an itembox, and this bool is set true in the onTriggerEnter in the playerscript, and player is in need of an item, so this will start the item select method
@@ -102,11 +127,11 @@ public class ItemManager : MonoBehaviour
             }
 
 
-            if ((player_script.Controls.GetKeyDown(KeyCode.RightShift) || player_script.Controls.GetKeyDown(KeyCode.LeftControl)) && item_decided && !player_script.HitByBanana_ && !player_script.HitByShell_) //if item array order changes, change the indexes of utility methods and these if statements
+            if ((useForward || useBackwards) && item_decided && !player_script.HitByBanana_ && !player_script.HitByShell_) //if item array order changes, change the indexes of utility methods and these if statements
             {
                 if (current_Item.Equals("GreenShell")) //.Equals, not ==
                 {
-                    if (player_script.Controls.GetKeyDown(KeyCode.RightShift))
+                    if (useForward)
                     {
                             if (CurrentTrailingItem != null)
                             {
@@ -119,7 +144,7 @@ public class ItemManager : MonoBehaviour
                             current_Item = ""; //1 use only
                             used_Item_Done();
                         }
-                    else if (player_script.Controls.GetKeyDown(KeyCode.LeftControl))
+                    else if (useBackwards)
                     {
                         if(CurrentTrailingItem == null)
                         {
@@ -151,14 +176,14 @@ public class ItemManager : MonoBehaviour
                 else if (current_Item.Equals("TripleGreenShells") && tripleItemCount > 0)
                 {
 
-                    if (player_script.Controls.GetKeyDown(KeyCode.RightShift))
+                    if (useForward)
                     {
                         player_script.Driver.SetTrigger("ThrowForward");
                         item_gameobjects[2].SetActive(true);
                         StartCoroutine(spawnShell(shellSpawnPos, 1));
                         tripleItemCount--;
                     }
-                    else if (player_script.Controls.GetKeyDown(KeyCode.LeftControl))
+                    else if (useBackwards)
                     {
                         player_script.Driver.SetTrigger("ThrowBackward");
                         item_gameobjects[2].SetActive(true);
@@ -182,7 +207,7 @@ public class ItemManager : MonoBehaviour
                 } //THIS IS FOR TRIPLE GREEEN SHELLS
                 else if (current_Item.Equals("RedShell"))
                 {
-                    if (player_script.Controls.GetKeyDown(KeyCode.RightShift))
+                    if (useForward)
                     {
                             if (CurrentTrailingItem != null)
                             {
@@ -195,7 +220,7 @@ public class ItemManager : MonoBehaviour
                         current_Item = ""; //1 use only
                         used_Item_Done();
                     }
-                    else if (player_script.Controls.GetKeyDown(KeyCode.LeftControl))
+                    else if (useBackwards)
                     {
                             if (CurrentTrailingItem == null)
                             {
@@ -223,14 +248,14 @@ public class ItemManager : MonoBehaviour
                 }
                 else if (current_Item.Equals("TripleRedShells") && tripleItemCount > 0)
                 {
-                    if (player_script.Controls.GetKeyDown(KeyCode.RightShift))
+                    if (useForward)
                     {
                         player_script.Driver.SetTrigger("ThrowForward");
                         item_gameobjects[4].SetActive(true);
                         StartCoroutine(spawnRedShell(shellSpawnPos, 1));
                         tripleItemCount--;
                     }
-                    else if (player_script.Controls.GetKeyDown(KeyCode.LeftControl))
+                    else if (useBackwards)
                     {
                         player_script.Driver.SetTrigger("ThrowBackward");
                         item_gameobjects[4].SetActive(true);
@@ -253,7 +278,7 @@ public class ItemManager : MonoBehaviour
                 }
                 else if (current_Item.Equals("Mushroom"))
                 {
-                    if (player_script.Controls.GetKeyDown(KeyCode.RightShift))
+                    if (useForward)
                     {
                         player_script.Boost_time = 2f;
                         for (int i = 0; i < player_script.BoostBurstPS.transform.childCount; i++) //boost burst
@@ -272,7 +297,7 @@ public class ItemManager : MonoBehaviour
                 }
                 else if (current_Item.Equals("TripleMushroom") && tripleItemCount > 0)
                 {
-                    if (player_script.Controls.GetKeyDown(KeyCode.RightShift))
+                    if (useForward)
                     {
                         player_script.Boost_time = 2.5f;
                         tripleItemCount--;
@@ -299,7 +324,7 @@ public class ItemManager : MonoBehaviour
                 }
                 else if (current_Item.Equals("Banana"))
                 {
-                    if (player_script.Controls.GetKeyDown(KeyCode.RightShift))
+                    if (useForward)
                     {
                         if(CurrentTrailingItem != null)
                             {
@@ -311,7 +336,7 @@ public class ItemManager : MonoBehaviour
                             current_Item = ""; //1 use only
                             used_Item_Done();
                     }
-                    if (player_script.Controls.GetKeyDown(KeyCode.LeftControl))
+                    if (useBackwards)
                     {
                             if (CurrentTrailingItem == null)
                             {
@@ -337,12 +362,12 @@ public class ItemManager : MonoBehaviour
                 }
                 else if (current_Item.Equals("TripleBananas"))
                 {
-                    if (player_script.Controls.GetKeyDown(KeyCode.RightShift))
+                    if (useForward)
                     {
                         player_script.Driver.SetTrigger("ThrowForward");
                         StartCoroutine(spawnBanana(1));
                     }
-                    if (player_script.Controls.GetKeyDown(KeyCode.LeftControl))
+                    if (useBackwards)
                     {
                         StartCoroutine(spawnBanana(-1));
                         
@@ -366,7 +391,7 @@ public class ItemManager : MonoBehaviour
                 }
                 else if (current_Item.Equals("GoldenMushroom"))
                 {
-                    if (player_script.Controls.GetKeyDown(KeyCode.RightShift))
+                    if (useForward)
                     {
                         startMushroomTimer = true;
                         player_script.Boost_time = 2f;
@@ -392,7 +417,7 @@ public class ItemManager : MonoBehaviour
                 }
                 else if (current_Item.Equals("Coin"))
                 {
-                    if (player_script.Controls.GetKeyDown(KeyCode.RightShift))
+                    if (useForward)
                     {
                         StartCoroutine(UseCoin());
                             current_Item = ""; //1 use only
@@ -403,7 +428,7 @@ public class ItemManager : MonoBehaviour
                 }
                 else if (current_Item.Equals("ItemStar"))
                 {
-                    if (player_script.Controls.GetKeyDown(KeyCode.RightShift))
+                    if (useForward)
                     {
                         current_Item = ""; //1 use only
                         used_Item_Done();
@@ -414,7 +439,7 @@ public class ItemManager : MonoBehaviour
                 }
                 else if (current_Item.Equals("Bullet"))
                 {
-                    if (player_script.Controls.GetKeyDown(KeyCode.RightShift) && !player_script.JUMP_PANEL)
+                    if (useForward && !player_script.JUMP_PANEL)
                     {
                             if (!player_script.antiGravity)
                             {
@@ -434,14 +459,14 @@ public class ItemManager : MonoBehaviour
                 }
                 else if (current_Item.Equals("Bobomb-Hold"))
                 {
-                    if (player_script.Controls.GetKeyDown(KeyCode.RightShift))
+                    if (useForward)
                     {
                         player_script.Driver.SetTrigger("ThrowForward");
                         StartCoroutine(useBobomb(1));
                         used_Item_Done();
                         current_Item = "";
                     }
-                    else if (player_script.Controls.GetKeyDown(KeyCode.LeftControl))
+                    else if (useBackwards)
                     {
                             player_script.Driver.SetTrigger("ThrowBackward");
                             StartCoroutine(useBobomb(-1));
@@ -451,7 +476,7 @@ public class ItemManager : MonoBehaviour
                 }
                 else if (current_Item.Equals("BlueShell"))
                 {
-                    if (player_script.Controls.GetKeyDown(KeyCode.RightShift))
+                    if (useForward)
                     {
                         player_script.Driver.SetTrigger("ThrowForward");
                         StartCoroutine(useBlueShell());
@@ -479,10 +504,24 @@ public class ItemManager : MonoBehaviour
     }
 
 
+    void LateUpdate()
+    {
+        if (!autoIssued) return;
+        if (!player_script.hasitem || current_Item != itemBeforeUse || tripleItemCount < ammoBeforeUse ||
+            (itemBeforeUse == "GoldenMushroom" && player_script.Boost_time > boostBeforeUse + .05f))
+        {
+            AutomaticItemsUsed++;
+            LastAutomaticItem = itemBeforeUse;
+            Debug.Log($"RIVAL ITEM USED: {itemBeforeUse}");
+        }
+        autoIssued = false;
+    }
+
     IEnumerator Item_Select()
     {
         //random index
         item_index = GetComponent<ItemDistributionManager>().getItemNumber();
+        ItemsCollected++;
 
 
 
@@ -758,8 +797,11 @@ public class ItemManager : MonoBehaviour
     }
     IEnumerator UseStar()
     {
-        float volume = GameObject.FindGameObjectWithTag("CourseMusic").GetComponent<AudioSource>().volume;
-        float volume2 = GameObject.FindGameObjectWithTag("CourseMusic").transform.parent.GetComponent<AudioSource>().volume;
+        bool humanMusic = CompareTag("Player");
+        AudioSource music = humanMusic ? GameObject.FindGameObjectWithTag("CourseMusic").GetComponent<AudioSource>() : null;
+        AudioSource music2 = humanMusic ? music.transform.parent.GetComponent<AudioSource>() : null;
+        float volume = music ? music.volume : 0;
+        float volume2 = music2 ? music2.volume : 0;
 
         item_gameobjects[item_index].SetActive(false);
         StarPowerUp = true;
@@ -768,10 +810,11 @@ public class ItemManager : MonoBehaviour
             playerRenderers[i].material = starMat;
             playerRenderers[i].sharedMaterial = starMat;
         }
-        GameObject.FindGameObjectWithTag("CourseMusic").GetComponent<AudioSource>().volume = 0;
-        GameObject.FindGameObjectWithTag("CourseMusic").transform.parent.GetComponent<AudioSource>().volume = 0;
-
-        GameObject.Find("StarMusic").GetComponent<AudioSource>().Play();
+        if (humanMusic)
+        {
+            music.volume = music2.volume = 0;
+            GameObject.Find("StarMusic").GetComponent<AudioSource>().Play();
+        }
         for(int i = 0; i < starPS.transform.childCount; i++)
         {
             starPS.transform.GetChild(i).GetComponent<ParticleSystem>().Play();
@@ -790,9 +833,12 @@ public class ItemManager : MonoBehaviour
 
         yield return new WaitForSeconds(7.5f);
 
-        GameObject.FindGameObjectWithTag("CourseMusic").GetComponent<AudioSource>().volume = volume;
-        GameObject.FindGameObjectWithTag("CourseMusic").transform.parent.GetComponent<AudioSource>().volume = volume2;
-        GameObject.Find("StarMusic").GetComponent<AudioSource>().Stop();
+        if (humanMusic)
+        {
+            music.volume = volume;
+            music2.volume = volume2;
+            GameObject.Find("StarMusic").GetComponent<AudioSource>().Stop();
+        }
         StarPowerUp = false;
         for (int i = 0; i < playerRenderers.Length; i++)
         {

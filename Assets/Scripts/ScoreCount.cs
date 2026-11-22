@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
@@ -20,6 +20,8 @@ public class ScoreCount : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // The cloned rival owns a coin count, not the human's HUD.
+        if (!CompareTag("Player")) { COINCOUNT = Mathf.Min(COINCOUNT, 10); return; }
         if(COINCOUNT < 10)
         {
             Coin_Text.text = "0" + COINCOUNT;

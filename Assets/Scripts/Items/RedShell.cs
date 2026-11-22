@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -67,6 +67,7 @@ public class RedShell : MonoBehaviour
         opponents = GameObject.FindGameObjectsWithTag("Opponent");
 
         rm = GameObject.Find("RaceManager").GetComponent<RACE_MANAGER>();
+        allplayers = rm.lapCounters.FindAll(c => c && c.gameObject.activeInHierarchy).ConvertAll(c => c.gameObject).ToArray();
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
 
@@ -224,65 +225,24 @@ public class RedShell : MonoBehaviour
     }
     void DetectTarget()
     {
-        if (!LockedOnTarget)
+        if (LockedOnTarget) return;
+        var owner = GameObject.Find(who_threw_shell);
+        if (!owner || !owner.TryGetComponent<LapCounter>(out var ownerProgress)) return;
+        foreach (var candidate in allplayers)
         {
-            if(who_threw_shell == "Mario")
-            {
-                for (int i = 0; i < opponents.Length; i++)
-                {
-                    if (Vector3.Distance(transform.position, opponents[i].transform.position) < 30)
-                    {
-                        if(GameObject.Find(who_threw_shell).GetComponent<LapCounter>().totalCheckpointVal < opponents[i].GetComponent<LapCounter>().totalCheckpointVal)
-                        {
-                            chase_opponent = opponents[i].transform;
-                            LockedOnTarget = true;
-                            break;
-                        }
-                        else if(GameObject.Find(who_threw_shell).GetComponent<LapCounter>().totalCheckpointVal == opponents[i].GetComponent<LapCounter>().totalCheckpointVal)
-                        {
-                            if(GameObject.Find(who_threw_shell).GetComponent<LapCounter>().distanceToNextCheckpoint > opponents[i].GetComponent<LapCounter>().distanceToNextCheckpoint)
-                            {
-                                chase_opponent = opponents[i].transform;
-                                LockedOnTarget = true;
-                                break;
-                            }
-                        }
-                        
-                    }
-                }
-            }
-            else
-            {
-                for (int i = 0; i < allplayers.Length; i++)
-                {
-                    if (Vector3.Distance(transform.position, allplayers[i].transform.position) < 30     &&     allplayers[i].name != who_threw_shell)
-                    {
-                        if (allplayers[i].GetComponent<LapCounter>().totalCheckpointVal > GameObject.Find(who_threw_shell).GetComponent<LapCounter>().totalCheckpointVal)
-                        {
-                            chase_opponent = allplayers[i].transform;
-                            LockedOnTarget = true;
-                            break;
-                        }
-                        else if(GameObject.Find(who_threw_shell).GetComponent<LapCounter>().totalCheckpointVal == allplayers[i].GetComponent<LapCounter>().totalCheckpointVal)
-                        {
-                            if(GameObject.Find(who_threw_shell).GetComponent<LapCounter>().distanceToNextCheckpoint > allplayers[i].GetComponent<LapCounter>().distanceToNextCheckpoint)
-                            {
-                                chase_opponent = allplayers[i].transform;
-                                LockedOnTarget = true;
-                                break;
-                            }
-                        }
-                        
-                    }
-
-                }
-            }
-            
-
+            if (!candidate || candidate == owner || !candidate.activeInHierarchy ||
+                Vector3.Distance(transform.position, candidate.transform.position) >= 30) continue;
+            var targetProgress = candidate.GetComponent<LapCounter>();
+            if (!targetProgress || targetProgress.LAPCOUNT > rm.MAXLAPS) continue;
+            bool ahead = targetProgress.totalCheckpointVal > ownerProgress.totalCheckpointVal ||
+                (targetProgress.totalCheckpointVal == ownerProgress.totalCheckpointVal &&
+                 targetProgress.distanceToNextCheckpoint < ownerProgress.distanceToNextCheckpoint);
+            if (!ahead) continue;
+            chase_opponent = candidate.transform;
+            LockedOnTarget = true;
+            break;
         }
     }
-
-
 
     private void OnTriggerEnter(Collider other)
     {
@@ -415,7 +375,7 @@ public class RedShell : MonoBehaviour
                 }
                 
             }
-            if(collision.gameObject.tag == "Player" && Vector3.Distance(transform.position, collision.transform.position) < 5)
+            if(collision.gameObject.GetComponent<Player>() != null && Vector3.Distance(transform.position, collision.transform.position) < 5)
             {
                 if(who_threw_shell != collision.gameObject.name)
                 {
@@ -424,7 +384,7 @@ public class RedShell : MonoBehaviour
 
                         try
                         {
-                            GameObject.Find("Main Camera").GetComponent<Animator>().SetTrigger("ShellHit");
+                            if (collision.gameObject.CompareTag("Player")) GameObject.Find("Main Camera").GetComponent<Animator>().SetTrigger("ShellHit");
                         }catch(System.Exception e)
                         {
 

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,7 +32,9 @@ public class ItemDistributionManager : MonoBehaviour
 
     public int getItemNumber()
     {
-        if(gameObject.tag == "Player")
+        position = GetComponent<LapCounter>().Position;
+        // Luigi uses Player/ItemManager too, so its item indices are the player's.
+        if (GetComponent<Player>() != null)
         {
             if (position == 1)
             {

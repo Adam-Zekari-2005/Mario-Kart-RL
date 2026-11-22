@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -200,7 +200,7 @@ public class GreenShell : MonoBehaviour
                 }
                 
             }
-            if (collision.gameObject.tag == "Player")
+            if (collision.gameObject.GetComponent<Player>() != null)
             {
                 if (lifetime > 0.05f)
                 {
@@ -208,7 +208,7 @@ public class GreenShell : MonoBehaviour
                     {
                         StartCoroutine(collision.gameObject.GetComponent<Player>().hitByShell()); //the player has the function that does all this work
 
-                        if (rm.FrontCam.activeSelf)
+                        if (collision.gameObject.CompareTag("Player") && rm.FrontCam.activeSelf)
                             GameObject.Find("Main Camera").GetComponent<Animator>().SetTrigger("ShellHit");
                     }
                     destroyShell();

@@ -10,8 +10,10 @@ public sealed class KartEpisode : MonoBehaviour
     public event System.Action<KartEpisode> EpisodeFinished;
     public bool IsEnding => ending;
     [Min(0)] public int checkpointGoal;
+    [Min(1)] public int targetLaps = 1;
     public float checkpointGoalBonus = 10f;
     [Min(0)] public float rewardPerMetre = 0.01f;
+    public bool rewardProgressOnGrass = true;
     public float lapBonus = 100;
     public float failurePenalty = -10;
     [Min(1)] public float stuckSeconds = 15;
@@ -59,8 +61,11 @@ public sealed class KartEpisode : MonoBehaviour
         bestProgress = Mathf.Max(bestProgress, progress.ProgressMetres);
         float timeCost = timePenaltyPerSecond * Time.deltaTime;
         TimeCost += timeCost;
-        AddScore(advance * rewardPerMetre - timeCost);
-        if (IsOnGrass())
+        bool onGrass = IsOnGrass();
+        // Still consume the high-water progress on grass: returning to the road
+        // must not pay for distance already covered off-road.
+        AddScore((rewardProgressOnGrass || !onGrass ? advance * rewardPerMetre : 0) - timeCost);
+        if (onGrass)
         {
             GrassSeconds += Time.deltaTime;
             float grassCost = grassPenaltyPerSecond * Time.deltaTime;
@@ -75,7 +80,7 @@ float lapReward = (progress.CompletedLaps - rewardedLaps) * lapBonus;
             LapBonusAwarded += lapReward;
             AddScore(lapReward);
             rewardedLaps = progress.CompletedLaps;
-            EndEpisode("tour termine", false);
+            if (progress.CompletedLaps >= targetLaps) EndEpisode("tour termine", false);
         }
         else if (checkpointGoal > 0 && progress.CheckpointsPassed >= checkpointGoal)
         {

@@ -1,0 +1,15 @@
+PASS item 0: Bullet, uses=1
+PASS item 1: Banana, uses=1
+PASS item 2: GreenShell, uses=1
+PASS item 3: Coin, uses=1
+PASS item 4: RedShell, uses=1
+PASS item 5: TripleBananas, uses=3
+PASS item 6: Mushroom, uses=1
+PASS item 7: TripleGreenShells, uses=3
+PASS item 8: TripleMushroom, uses=3
+PASS item 9: TripleRedShells, uses=3
+PASS item 10: GoldenMushroom, uses=1
+PASS item 11: Bobomb-Hold, uses=1
+PASS item 12: BlueShell, uses=1
+PASS item 13: ItemStar, uses=1
+RIVAL ITEMS CHECK pass=True, exceptions=False, tested=14
