@@ -24,7 +24,7 @@ plan = [
     ('Mario Circuit - sauvegarde 40k retenue', 'selected-40k-mario'),
 ]
 lines = ['# Evaluations du kart PPO', '',
-    'Modele livre : sauvegarde Kart-39951 de balanced-full-v1, copiee dans Assets/Resources/Kart.onnx. Selection : 10/10 tours Moo Moo Meadows ; verification ulterieure : 19/20. Sur Mario Circuit, ce modele atteint 12 checkpoints mais termine 0/10 tours. Le test ONNX autonome est distingue dans le tableau.', '',
+    'Historique du modele solo a 24 observations : sauvegarde Kart-39951 de balanced-full-v1, archivee dans Training/Models/solo24-kart-ppo.onnx. Ces mesures ne valident pas le modele actuel du duel ; voir 03-duel-evaluations.md. Selection : 10/10 tours Moo Moo Meadows ; verification ulterieure : 19/20. Sur Mario Circuit, ce modele atteint 12 checkpoints mais termine 0/10 tours. Le test ONNX autonome est distingue dans le tableau.', '',
     'Les lignes ci-dessous sont des evaluations sans apprentissage ni exploration aleatoire. Les graines sont conservees dans les CSV. Les essais partiels ne sont pas comptes comme des tours.', '',
     '| Evaluation | Essais | Tours termines | Checkpoints moyens | Chocs moyens | Gazon moyen (s) | Temps moyen des tours reussis (s) |',
     '|---|---:|---:|---:|---:|---:|---:|']

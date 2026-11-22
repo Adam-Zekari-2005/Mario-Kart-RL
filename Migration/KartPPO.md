@@ -1,18 +1,15 @@
-# KartPPO — branchement de l'agent
+# Joueur contre le modele PPO
 
-**Course joueur contre PPO.** Depuis le menu normal du jeu, choisir Moo Moo Meadows. Le rival utilise automatiquement Assets/Resources/Kart.onnx au d�part, avec les 24 observations et les commandes du mod�le entra�n�. Le joueur garde le clavier. Les menus IA ci-dessous sont des outils s�par�s de d�monstration.
+Depuis le menu normal, choisir Moo Moo Meadows, ou utiliser **Mario Kart > IA > Jouer contre Luigi (modele PPO)** dans Unity. Mario reste au clavier ; Luigi charge automatiquement Assets/Resources/Kart.onnx. Python n est pas necessaire pour jouer.
 
+Le modele courant utilise le comportement Kart et 31 observations. Ses commandes sont propres a chaque Player, dosees et synchronisees avec la physique. La direction de route detaillee, les checkpoints et les capteurs sont des observations : le reseau choisit la direction, l acceleration et le drift.
 
-Projet Unity 6000.6.4f1. La dépendance C# ML-Agents est fixée à 4.2.0 dans Packages/manifest.json. La 4.0.0 échoue à compiler sur cet éditeur dans Match3ActuatorComponent (ancienne API GetInstanceID).
+Les tests de livraison demandent trois tours dans la vraie scene. Le rapport, les donnees individuelles et les limites sont dans [Training/Reports/03-duel-evaluations.md](../Training/Reports/03-duel-evaluations.md). Le guide d installation et de reprise est [Training/README.md](../Training/README.md).
 
-Dans Unity, **Mario Kart → IA → Tester joueur et IA (Moo Moo Meadows)** lance un essai temporaire sur le circuit. Le kart humain conserve les commandes du jeu. Un second kart reçoit une consigne de conduite fixe via ML-Agents. La console affiche son déplacement et sa rotation. Cette consigne sert à valider les commandes avant l'entraînement.
+## Ne pas confondre avec les diagnostics
 
-Pour conduire soi-même, démarrer une course et, une fois le départ donné, choisir **Mario Kart → IA → Ajouter un kart IA en Play**. Le kart ajouté utilise la consigne de démonstration en l'absence de modèle. Il disparaît à la sortie du mode Play.
+Les menus **Diagnostic des commandes (direction fixe, sans modele)** et **Ajouter un kart de test (direction fixe)** verifient une ancienne demonstration separee. Son agent MarioKart.Demo.KartAgent utilise neuf observations et le comportement KartPPO. Il ne doit pas recevoir le modele courant a 31 observations.
 
-Pour préparer une scène de travail, sélectionner la racine possédant le composant Player du kart destiné à l'IA, puis **Mario Kart → IA → Configurer le kart sélectionné**. Enregistrer dans la scène de travail de l'équipe. Pour une course avec un joueur, laisser son kart sans KartAgent. Chaque Player possède son propre KartDriveInput. La physique reste dans Player.
+Les scenes et menus Training permettent des essais d apprentissage independants. Un ancien resultat sur un seul tour avec un kart seul ne valide pas une course humain contre IA de trois tours.
 
-**Agent de démonstration (MarioKart.Demo).** Le modèle entraîné utilise le comportement Kart, 24 observations et les scènes de Training. Pour ce modèle, suivre Training/README.md. Le comportement suivant concerne la démonstration indépendante. Behavior Name `KartPPO`, deux actions continues dans cet ordre : direction (−1 gauche, +1 droite), pédale (−1 frein puis recul, +1 accélération). Une décision tous les cinq pas physiques, commande maintenue entre deux décisions. Le mode Default utilise le trainer connecté ou le modèle assigné, avec une heuristique pour le test sans modèle. Pour la démo entraînée, assigner le modèle à Behavior Parameters et choisir Inference Only.
-
-**Vecteur d'observation (9 valeurs).** Vitesses longitudinale et latérale locales divisées par 120 et bornées à [−1, 1], direction horizontale normalisée en coordonnées locales (x puis z), puis distances aux obstacles à −75°, −35°, 0°, +35°, +75°, divisées par 35 unités (1 si aucun obstacle). Les rayons ignorent les triggers, le kart lui-même et les faces orientées vers le haut. Ils mesurent des obstacles physiques, pas les limites d'une route peinte.
-
-**Contrat environnement.** Assigner au champ Track Provider un composant implémentant IKartTrackDirection.TryGetDirection(position, out worldDirection). Sans fournisseur, l'agent vise le prochain checkpoint de LapCounter. Le module d'environnement attribuera les récompenses via AddReward et terminera les essais via EndEpisode. Après une téléportation, synchroniser également le suivi du script DontGoThroughThings. L'agent remet ses actions à zéro au début de chaque épisode.
+En course normale, une recuperation replace le rival apres une chute ou un blocage prolonge. Les evaluations strictes des performances apprises la desactivent ; les autres comptent son utilisation. Des collisions ou de courts passages sur le gazon peuvent encore arriver. La vitesse et le transfert vers d autres circuits restent des axes d amelioration.

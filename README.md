@@ -1,20 +1,17 @@
-# Mario Kart RL — Projet à trois à l’ENSISA
+# Mario Kart RL
 
-Ce projet prepare puis entraine un kart avec l'apprentissage par renforcement PPO dans Unity. Les deux circuits de travail sont Moo Moo Meadows et Mario Circuit.
+Projet Unity 6000.6.4f1 : un joueur humain affronte Luigi pilote par un modele PPO sur Moo Moo Meadows.
 
-- **Conduite au clavier et environnement d'apprentissage** : [mode d'emploi](Migration/Apprentissage.md).
-- **Installation, entrainement et evaluations PPO** : [guide de la partie 2](Training/README.md).
-- **Resultats mesures** : [rapport des evaluations](Training/Reports/02-evaluations.md).
-- **Origine du jeu et migration Unity** : [présentation de notre projet et crédits](SOURCE-README.md) et [migration](Migration/README.md).
+Pour jouer : **Mario Kart > IA > Jouer contre Luigi (modele PPO)**, ou choisir Moo Moo Meadows depuis le menu normal. Aucun Python n est necessaire pour jouer. Les menus de diagnostic a direction fixe ne testent pas le modele.
 
-Ouvrir le projet avec **Unity 6000.6.4f1**. Le mode de conduite normal reste disponible dans la scene WhiteScreen. Pour voir le modele exporte sans installer Python, choisir **Mario Kart > Apprentissage > Tester le modele - Moo Moo Meadows** ou **Tester le modele - Mario Circuit**. Le modele est dans `Assets/Resources/Kart.onnx` ; son niveau reel est indique dans le rapport, sans confondre les objectifs partiels avec un tour termine.
+- [Guide du modele, installation et entrainement](Training/README.md)
+- [Resultats du vrai duel sur trois tours](Training/Reports/03-duel-evaluations.md)
+- [Objets, tremplins et ameliorations du rival](Training/Reports/04-rival-objets-bonus.md)
+- [Modele livre et provenance](Training/Models/model-manifest.json)
+- [Environnement d apprentissage manuel](Migration/Apprentissage.md)
+- [Historique du modele solo a 24 observations](Training/Reports/02-evaluations.md)
+- [Jeu source](SOURCE-README.md) et [migration Unity](Migration/README.md)
 
-Pour installer les outils d'entrainement sur Windows depuis PowerShell a la racine du projet :
+Le modele actuel recoit 31 observations, dont la direction detaillee de la route, les obstacles, le sol devant le kart et son etat de drift. Il choisit ses commandes : la trajectoire fournit une observation, pas un pilote de remplacement.
 
-```powershell
-./Training/Setup.ps1
-```
-
-Python est installe dans le dossier local `.tools` et ML-Agents dans `.venv-mlagents`. Ces dossiers, les executables de test et les journaux ne sont pas versions. Les versions Python principales sont verrouillees dans `Training/requirements.txt` et l'environnement complet dans `Training/requirements-lock.txt`.
-
-Le modele livre a termine **20/20 essais autonomes sans affichage sur Moo Moo Meadows**, avec un temps moyen simule de **35,21 s**, et **19/20** lors d une autre serie via Python. Sa conduite conserve des collisions et des passages sur le gazon. Sur Mario Circuit, le modele retenu termine **0/10** tours : le transfert reste a ameliorer. Consulter le rapport pour les conditions et les autres sauvegardes.
+La validation demande trois tours dans la vraie scene de course, sans aide dans les tests stricts. Des collisions et des passages sur le gazon restent possibles ; les chiffres exacts et les conditions figurent dans le rapport. Les anciens resultats sur un seul tour ne doivent pas etre attribues a cette version.

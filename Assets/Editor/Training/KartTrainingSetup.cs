@@ -99,11 +99,21 @@ public static class KartTrainingSetup
     {
         BuildKartVersion(true);
     }
-    static void BuildKartVersion(bool headless)
+    public static void BuildDuelCandidate()
+    {
+        BuildKartVersion(true, "Builds/DuelCandidate/KartDuel.exe");
+    }
+    public static void BuildDuelNavigation()
+    {
+        BuildKartVersion(true, "Builds/DuelNavigation/KartDuelNav.exe");
+    }
+    static void BuildKartVersion(bool headless, string destination = null)
     {
         Prepare();
         TrackProgressChecks.Run();
         KartKeyboard.SetAgentInput(1, -0.5f, true);
+        KartDriveInputChecks.Run();
+        KartRoadSensorChecks.Run();
         if (!KartKeyboard.GetKey(KeyCode.Space) || KartKeyboard.GetKey(KeyCode.S) ||
             KartKeyboard.GetAxis("Horizontal") != -0.5f || !KartKeyboard.GetKey(KeyCode.V))
             throw new System.Exception("Commandes IA incorrectes");
@@ -117,8 +127,8 @@ public static class KartTrainingSetup
         HeadlessBuild = headless;
         try
         {
-            Build(new[] { Folder + "/KartTrainingBoot.unity", Folder + "/MooMooTraining.unity", Folder + "/MarioCircuitTraining.unity" },
-                headless ? "Builds/TrainingHeadless/KartTrainingHeadless.exe" : "Builds/Training/KartTraining.exe");
+            Build(new[] { Folder + "/KartTrainingBoot.unity", Folder + "/MooMooTraining.unity", Folder + "/MarioCircuitTraining.unity", "Assets/Scenes/MooMooMeadows.unity" },
+                destination ?? (headless ? "Builds/TrainingHeadless/KartTrainingHeadless.exe" : "Builds/Training/KartTraining.exe"));
         }
         finally { CpuOnlyBuild = HeadlessBuild = false; }
     }

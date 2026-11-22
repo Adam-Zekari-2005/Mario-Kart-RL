@@ -1,9 +1,9 @@
 {
     "unity": "6000.6.4f1",
-    "observation_count": 24,
+    "observation_count": 31,
     "continuous_actions": [
-        0.03733731806278229,
-        -0.018590331077575684
+        -0.22171393036842346,
+        0.4440009295940399
     ],
     "discrete_actions": [
         1

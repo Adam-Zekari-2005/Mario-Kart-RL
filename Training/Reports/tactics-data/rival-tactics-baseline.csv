@@ -1,0 +1,4 @@
+trial,seed,fps,reason,laps,checkpoints,seconds,collisions,grass_seconds,recoveries,human,early_grass_seconds,items_collected,items_used,ramps,boosts,planned_bonuses,cruise_requests
+0,71042,60,finished,3,63,158.572,0,14.000,0,launch,0.000,1,0,5,3,0,0
+1,71043,60,finished,3,63,158.555,1,12.417,0,launch,0.000,1,0,6,3,0,0
+2,71044,60,finished,3,63,154.873,2,10.100,0,launch,0.000,1,0,6,3,0,0

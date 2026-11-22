@@ -1,0 +1,3 @@
+DUEL GRID roads and icons=True
+PPO rival recovered after leaving the track or becoming stuck.
+DUEL CHECK idle=0,00 driven=105,27 checkpoints=63 laps=3 t=178,7 errors=False pass=True

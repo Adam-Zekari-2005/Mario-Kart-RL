@@ -58,5 +58,22 @@ class ResultsChecks(unittest.TestCase):
             finally:
                 run.RESULTS = previous
 
+    def test_duel_requires_three_laps(self):
+        with tempfile.TemporaryDirectory() as directory:
+            previous = run.RESULTS
+            run.RESULTS = Path(directory)
+            try:
+                rows = [dict(run="duel", mode="evaluate", track="MooMooMeadows", score="200", seconds="40", checkpoints="21", laps=str(laps), collisions="0") for laps in (1, 2, 3)]
+                with (run.RESULTS / "episodes-duel.csv").open("w", newline="", encoding="utf-8") as stream:
+                    writer = csv.DictWriter(stream, fieldnames=rows[0].keys())
+                    writer.writeheader()
+                    writer.writerows(rows)
+                with contextlib.redirect_stdout(io.StringIO()):
+                    run.summarize()
+                summary = json.loads((run.RESULTS / "comparison.json").read_text())[0]
+                self.assertEqual(summary["completed"], 1)
+            finally:
+                run.RESULTS = previous
+
 if __name__ == "__main__":
     unittest.main()

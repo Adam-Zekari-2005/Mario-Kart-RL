@@ -8,6 +8,8 @@ public sealed class KartLearningProfile : MonoBehaviour
     void Awake()
     {
         if (Profile != "balanced") return;
+        // The actual duel owns its three-lap reward/termination settings.
+        if (MooMooRival.LearningSession) return;
         var episode = GetComponent<KartEpisode>();
         episode.rewardPerMetre = 0.05f;
         episode.collisionPenalty = 0.25f;

@@ -1,0 +1,6 @@
+trial,seed,fps,reason,laps,checkpoints,seconds,collisions,grass_seconds,recoveries,human
+0,60042,30,finished,3,63,162.272,3,14.100,0,idle
+1,60043,30,finished,3,63,163.506,4,13.967,0,idle
+2,60044,30,finished,3,63,163.739,6,11.633,0,idle
+3,60045,30,finished,3,63,163.839,7,11.600,0,idle
+4,60046,30,finished,3,63,163.106,5,12.467,0,idle

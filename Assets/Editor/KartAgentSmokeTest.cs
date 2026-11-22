@@ -14,7 +14,7 @@ public static class KartAgentSmokeTest
     static bool failed;
     static KartAgentSmokeTest() { EditorApplication.update += Tick; }
 
-    [MenuItem("Mario Kart/IA/Tester joueur et IA (Moo Moo Meadows)")]
+    [MenuItem("Mario Kart/IA/Diagnostic des commandes (direction fixe, sans modele)")]
     public static void Run()
     {
         if (EditorApplication.isPlayingOrWillChangePlaymode || !EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return;
